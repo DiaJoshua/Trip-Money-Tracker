@@ -1,0 +1,2842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#edf3f7" />
+  <meta name="description" content="Track trip costs, contributions, tasks, and settle-up amounts in one calm shared workspace." />
+  <title>Sipit — Trip Money Tracker</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 128 128' xmlns='http://www.w3.org/2000/svg'%3E %3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230e7569'/%3E%3Cstop offset='1' stop-color='%2310a184'/%3E%3C/linearGradient%3E%3C/defs%3E %3Crect width='128' height='128' rx='30' fill='url(%23g)'/%3E %3Cg transform='translate(6,10) scale(0.97)'%3E %3Cpath d='M26 56 Q12 48 13 32' stroke='%23e05a45' stroke-width='7' fill='none' stroke-linecap='round'/%3E %3Cpath d='M94 56 Q108 50 106 36' stroke='%23e05a45' stroke-width='7' fill='none' stroke-linecap='round'/%3E %3Ccircle cx='14' cy='27' r='11' fill='%23f4715f'/%3E %3Cpath d='M5 22 L13 26' stroke='%23c74534' stroke-width='2.5' stroke-linecap='round'/%3E %3Ccircle cx='106' cy='31' r='10' fill='%23f4715f'/%3E %3Ccircle cx='106' cy='22' r='9' fill='%23fbbf24' stroke='%23e8a20c' stroke-width='1.5'/%3E %3Ctext x='106' y='26.2' text-anchor='middle' font-family='Arial, sans-serif' font-size='11' font-weight='900' fill='%238a5a00'%3E%26%238369;%3C/text%3E %3Cpath d='M32 80 Q24 88 15 90 M42 86 Q38 94 30 98 M88 80 Q96 88 105 90 M78 86 Q82 94 90 98' stroke='%23e05a45' stroke-width='5' fill='none' stroke-linecap='round'/%3E %3Cellipse cx='60' cy='64' rx='36' ry='29' fill='%23f4715f'/%3E %3Cellipse cx='60' cy='73' rx='26' ry='15' fill='%23f8917e' opacity='.6'/%3E %3Cellipse cx='46' cy='46' rx='12' ry='7' fill='%23ffffff' opacity='.16'/%3E %3Cg transform='rotate(-12 46 38)'%3E %3Cpath d='M33 38 Q46 18 59 38 Z' fill='%23fbbf24'/%3E %3Cpath d='M36 34 Q46 26 56 34' stroke='%230e7569' stroke-width='4' fill='none'/%3E %3Cellipse cx='46' cy='38' rx='17' ry='5.5' fill='%23f0ad13'/%3E %3C/g%3E %3Ccircle cx='47' cy='55' r='9' fill='%23fff'/%3E%3Ccircle cx='73' cy='55' r='9' fill='%23fff'/%3E %3Ccircle cx='48.5' cy='56.5' r='4.5' fill='%2326222e'/%3E%3Ccircle cx='71.5' cy='56.5' r='4.5' fill='%2326222e'/%3E %3Ccircle cx='50.3' cy='54.3' r='1.6' fill='%23fff'/%3E%3Ccircle cx='73.3' cy='54.3' r='1.6' fill='%23fff'/%3E %3Ccircle cx='46.9' cy='58.4' r='0.9' fill='%23fff' opacity='.8'/%3E%3Ccircle cx='69.9' cy='58.4' r='0.9' fill='%23fff' opacity='.8'/%3E %3Ccircle cx='36' cy='66' r='5' fill='%23ff9d8a' opacity='.95'/%3E %3Ccircle cx='84' cy='66' r='5' fill='%23ff9d8a' opacity='.95'/%3E %3Ccircle cx='41' cy='61.5' r='0.9' fill='%23d94f3f' opacity='.6'/%3E%3Ccircle cx='44' cy='63.5' r='0.9' fill='%23d94f3f' opacity='.6'/%3E %3Ccircle cx='79' cy='61.5' r='0.9' fill='%23d94f3f' opacity='.6'/%3E%3Ccircle cx='76' cy='63.5' r='0.9' fill='%23d94f3f' opacity='.6'/%3E %3Cpath d='M53 67 Q60 74.5 67 67' stroke='%237c2d1e' stroke-width='4' fill='none' stroke-linecap='round'/%3E %3C/g%3E %3C/svg%3E" />
+  <link rel="apple-touch-icon" href="data:image/png;base64,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" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Sipit" />
+  <meta name="application-name" content="Sipit" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="./favicon_preview.png" />
+  <script>
+    try {
+      var savedTheme = localStorage.getItem('uwingUwiTheme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark');
+      var g = localStorage.getItem('uwingUwiGlass') || 'on';
+      if (g !== 'off') {
+        document.documentElement.classList.add('glassy');
+        if (g === 'soft') document.documentElement.classList.add('glass-soft');
+        if (g === 'ultra') document.documentElement.classList.add('glass-ultra');
+      }
+    } catch (e) {}
+  </script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root { color-scheme: light; }
+    html.dark { color-scheme: dark; }
+
+    :root {
+      --bg-glow: rgba(251, 191, 36, .20);
+      --card: #ffffff; --line: #eae4d7; --chipbg: #f2f4f3;
+      --ink: #22303f; --ink-strong: #101b28; --mut: #67788a; --faint: #9aa8b6;
+      --teal: #0e7569; --teal-deep: #0a5d54; --teal-wash: #e2f4f0; --teal-ink: #0b6459;
+      --green: #0d8a5f; --green-wash: #e2f6ec; --green-ink: #0a6e4d;
+      --rose: #d63b5e; --rose-wash: #fdeaee; --rose-ink: #b52d4d;
+      --amber: #f59e0b; --amber-wash: #fdf3dd; --amber-ink: #96600a;
+      --hero1: #0e7569; --hero2: #0d9478; --hero3: #10a184;
+      --shadow: 0 12px 34px rgba(21, 40, 60, .09);
+      --shadow-sm: 0 3px 12px rgba(21, 40, 60, .06);
+      --glass: rgba(255, 255, 255, .74);
+    }
+    html.dark {
+      --bg-glow: rgba(20, 184, 166, .10);
+      --card: #16233a; --line: #253654; --chipbg: #1e2e4a;
+      --ink: #d9e3ee; --ink-strong: #f5f9fd; --mut: #93a4b8; --faint: #64788e;
+      --teal: #1cb4a1; --teal-deep: #17998a; --teal-wash: #12343a; --teal-ink: #5fd8c8;
+      --green: #27bd84; --green-wash: #103227; --green-ink: #74e2b6;
+      --rose: #f06483; --rose-wash: #3a1c26; --rose-ink: #f79bb0;
+      --amber: #e2a83c; --amber-wash: #362a10; --amber-ink: #efc478;
+      --hero1: #0d4f47; --hero2: #0d6354; --hero3: #0e705e;
+      --shadow: 0 14px 40px rgba(0, 0, 0, .42);
+      --shadow-sm: 0 3px 14px rgba(0, 0, 0, .3);
+      --glass: rgba(17, 27, 45, .76);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 88% -6%, var(--bg-glow), transparent 26rem),
+        linear-gradient(180deg, #fbf7ee 0%, #ecf6f1 50%, #ecf3f8 100%);
+      color: var(--ink);
+      min-height: 100vh;
+      font-size: 16px;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+    }
+    html.dark body {
+      background:
+        radial-gradient(circle at 88% -6%, var(--bg-glow), transparent 26rem),
+        linear-gradient(180deg, #0b1322 0%, #0e1c2e 55%, #0b1626 100%);
+    }
+    * { -webkit-tap-highlight-color: transparent; }
+    button, select, input, summary, .chip { touch-action: manipulation; }
+    button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+    button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
+      outline: 3px solid var(--teal); outline-offset: 2px;
+    }
+
+    /* ---------- Subtle drifting background glows ---------- */
+    .bgfx { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+    .bgfx i {
+      position: absolute; display: block; border-radius: 999px; will-change: transform;
+    }
+    .bgfx i:nth-child(1) {
+      width: 46vmax; height: 46vmax; left: -14vmax; top: -16vmax;
+      background: radial-gradient(circle, rgba(16, 161, 132, .13), transparent 62%);
+      animation: drift1 38s ease-in-out infinite alternate;
+    }
+    .bgfx i:nth-child(2) {
+      width: 38vmax; height: 38vmax; right: -12vmax; top: 2vmax;
+      background: radial-gradient(circle, rgba(251, 191, 36, .11), transparent 62%);
+      animation: drift2 46s ease-in-out infinite alternate;
+    }
+    .bgfx i:nth-child(3) {
+      width: 36vmax; height: 36vmax; left: 24vmax; bottom: -18vmax;
+      background: radial-gradient(circle, rgba(244, 113, 95, .09), transparent 62%);
+      animation: drift3 54s ease-in-out infinite alternate;
+    }
+    @keyframes drift1 { to { transform: translate(6vmax, 5vmax) scale(1.07); } }
+    @keyframes drift2 { to { transform: translate(-6vmax, 7vmax) scale(1.05); } }
+    @keyframes drift3 { to { transform: translate(5vmax, -6vmax) scale(1.09); } }
+    html.dark .bgfx i:nth-child(1) { background: radial-gradient(circle, rgba(28, 180, 161, .10), transparent 62%); }
+    html.dark .bgfx i:nth-child(2) { background: radial-gradient(circle, rgba(226, 168, 60, .06), transparent 62%); }
+    html.dark .bgfx i:nth-child(3) { background: radial-gradient(circle, rgba(240, 100, 131, .05), transparent 62%); }
+
+    .wrap { max-width: 1120px; margin: 0 auto; padding: calc(20px + env(safe-area-inset-top, 0px)) 14px calc(70px + env(safe-area-inset-bottom, 0px)); animation: fadeIn .35s ease both; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+    /* ---------- Header ---------- */
+    .top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .brand { display: flex; gap: 13px; align-items: flex-start; min-width: 0; }
+    .mascot-btn { flex-shrink: 0; padding: 2px; border-radius: 18px; }
+    .mascot { width: 54px; height: 47px; display: block; filter: drop-shadow(0 4px 8px rgba(244, 113, 95, .22)); }
+    .mascot-btn.wiggle .mascot { animation: wiggle .55s ease; }
+    @keyframes wiggle { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-10deg) scale(1.06); } 60% { transform: rotate(9deg) scale(1.06); } }
+    .bubble {
+      position: relative; display: inline-block; margin-top: 10px;
+      background: var(--chipbg); border-radius: 12px;
+      padding: 7px 12px; font-size: 13px; font-weight: 600; color: var(--mut);
+      max-width: 30rem;
+    }
+    .kicker { font-size: 12.5px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-ink); }
+    .titlerow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    h1 { font-size: clamp(1.55rem, 5.2vw, 2.35rem); font-weight: 900; letter-spacing: -.03em; color: var(--ink-strong); overflow-wrap: anywhere; }
+    .sub { color: var(--mut); margin-top: 3px; font-weight: 600; max-width: 34rem; font-size: 14.5px; }
+    .theme-btn {
+      flex-shrink: 0; width: 48px; height: 48px; border-radius: 16px; font-size: 21px;
+      background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow-sm);
+      display: grid; place-items: center;
+    }
+    /* ---------- ✨ Glassy iPhone-style look (toggle in ⚙️ Settings) ---------- */
+    html.glassy {
+      --card: rgba(255, 255, 255, .62); --line: rgba(255, 255, 255, .8); --chipbg: rgba(255, 255, 255, .52);
+      --glass: rgba(255, 255, 255, .5);
+      --shadow: 0 14px 44px rgba(21, 40, 60, .13); --shadow-sm: 0 5px 18px rgba(21, 40, 60, .08);
+    }
+    html.glassy.dark {
+      --card: rgba(24, 38, 63, .58); --line: rgba(148, 178, 215, .22); --chipbg: rgba(42, 62, 96, .48);
+      --glass: rgba(13, 22, 39, .55);
+    }
+    html.glassy body::before {
+      content: ''; position: fixed; inset: -12%; z-index: -1; pointer-events: none;
+      background:
+        radial-gradient(38% 30% at 12% 6%, rgba(244, 113, 95, .24), transparent 68%),
+        radial-gradient(34% 28% at 88% 12%, rgba(252, 211, 77, .24), transparent 68%),
+        radial-gradient(46% 34% at 28% 96%, rgba(16, 161, 132, .22), transparent 70%),
+        radial-gradient(30% 26% at 80% 74%, rgba(56, 189, 248, .18), transparent 68%);
+    }
+    html.glassy.dark body::before { opacity: .55; }
+    html.glassy .card, html.glassy .modal, html.glassy .theme-btn, html.glassy .jumpbar button, html.glassy .trip-chip, html.glassy .toast {
+      backdrop-filter: blur(22px) saturate(1.5); -webkit-backdrop-filter: blur(22px) saturate(1.5);
+    }
+    html.glassy .hero {
+      border: 1px solid rgba(255, 255, 255, .32);
+      background: linear-gradient(135deg, rgba(14, 117, 105, .82) 0%, rgba(13, 148, 120, .74) 55%, rgba(16, 161, 132, .68) 100%);
+    }
+    html.glassy.dark .hero { background: linear-gradient(135deg, rgba(13, 79, 71, .82) 0%, rgba(13, 99, 84, .74) 55%, rgba(14, 112, 94, .68) 100%); }
+    html.glassy.glass-soft .hero { background: linear-gradient(135deg, rgba(14, 117, 105, .92) 0%, rgba(13, 148, 120, .88) 55%, rgba(16, 161, 132, .84) 100%); }
+    html.glassy.glass-soft.dark .hero { background: linear-gradient(135deg, rgba(13, 79, 71, .92) 0%, rgba(13, 99, 84, .88) 55%, rgba(14, 112, 94, .84) 100%); }
+    html.glassy.glass-ultra .hero { background: linear-gradient(135deg, rgba(14, 117, 105, .62) 0%, rgba(13, 148, 120, .54) 55%, rgba(16, 161, 132, .48) 100%); }
+    html.glassy.glass-ultra.dark .hero { background: linear-gradient(135deg, rgba(13, 79, 71, .64) 0%, rgba(13, 99, 84, .56) 55%, rgba(14, 112, 94, .5) 100%); }
+    /* toast stays readable on frosted glass */
+    html.glassy .toast { background: rgba(13, 22, 39, .82); color: #fff; border: 1px solid rgba(255, 255, 255, .16); }
+    html.glassy.dark .toast { background: rgba(255, 255, 255, .88); color: #101b28; border-color: rgba(255, 255, 255, .5); }
+    /* Soft = a light frost · Ultra = thoroughly glassy, like iPhone notifications */
+    html.glassy.glass-soft {
+      --card: rgba(255, 255, 255, .82); --line: rgba(255, 255, 255, .9); --chipbg: rgba(255, 255, 255, .68);
+      --glass: rgba(255, 255, 255, .7);
+    }
+    html.glassy.glass-soft.dark { --card: rgba(24, 38, 63, .8); --line: rgba(148, 178, 215, .24); --chipbg: rgba(42, 62, 96, .64); --glass: rgba(13, 22, 39, .72); }
+    html.glassy.glass-soft .card, html.glassy.glass-soft .modal, html.glassy.glass-soft .theme-btn, html.glassy.glass-soft .jumpbar button, html.glassy.glass-soft .trip-chip, html.glassy.glass-soft .toast {
+      backdrop-filter: blur(9px) saturate(1.2); -webkit-backdrop-filter: blur(9px) saturate(1.2);
+    }
+    html.glassy.glass-ultra {
+      --card: rgba(255, 255, 255, .38); --line: rgba(255, 255, 255, .62); --chipbg: rgba(255, 255, 255, .3);
+      --glass: rgba(255, 255, 255, .32);
+      --shadow: 0 18px 52px rgba(21, 40, 60, .16);
+    }
+    html.glassy.glass-ultra.dark { --card: rgba(24, 38, 63, .36); --line: rgba(148, 178, 215, .18); --chipbg: rgba(42, 62, 96, .3); --glass: rgba(13, 22, 39, .34); }
+    html.glassy.glass-ultra .card, html.glassy.glass-ultra .modal, html.glassy.glass-ultra .theme-btn, html.glassy.glass-ultra .jumpbar button, html.glassy.glass-ultra .trip-chip, html.glassy.glass-ultra .toast {
+      backdrop-filter: blur(38px) saturate(1.9); -webkit-backdrop-filter: blur(38px) saturate(1.9);
+    }
+    html.glassy.glass-ultra body::before { filter: saturate(1.35); }
+    .setrow.stack { flex-wrap: wrap; }
+    .miniseg { display: flex; gap: 4px; background: var(--card); border: 1px solid var(--line); border-radius: 13px; padding: 4px; flex-basis: 100%; margin-top: 10px; }
+    .miniseg button { flex: 1; font-size: 13px; font-weight: 800; padding: 8px 2px; border-radius: 10px; color: var(--mut); }
+    .miniseg button.on { background: #34c759; color: #fff; box-shadow: 0 2px 8px rgba(52, 199, 89, .4); }
+    .setlink.danger { color: var(--rose-ink); }
+    .setlink.danger .seticon { background: var(--rose-wash); }
+    /* springy iPhone-feel presses */
+    button { transition: transform .13s cubic-bezier(.2, .9, .3, 1.4); }
+    button:active { transform: scale(.955); }
+    /* ---------- ⚙️ Settings sheet (iOS style) ---------- */
+    .setgroup { background: var(--chipbg); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; margin-top: 14px; }
+    .setrow, .setlink { display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+    .setgroup > :last-child { border-bottom: 0; }
+    .seticon { font-size: 19px; width: 36px; height: 36px; display: grid; place-items: center; background: var(--card); border-radius: 11px; flex-shrink: 0; box-shadow: var(--shadow-sm); }
+    .setlabel { flex: 1; min-width: 0; }
+    .setlabel b { display: block; font-size: 15px; color: var(--ink-strong); }
+    .setlabel small { color: var(--mut); font-size: 12.5px; }
+    .setlink { font-weight: 800; color: var(--ink-strong); text-align: left; font-size: 15px; }
+    .setlink .chev { margin-left: auto; color: var(--faint); font-size: 20px; font-weight: 800; }
+    .sw { position: relative; width: 51px; height: 31px; border-radius: 999px; background: rgba(120, 120, 128, .34); transition: background .22s ease; flex-shrink: 0; padding: 0; }
+    .sw::after { content: ''; position: absolute; top: 2px; left: 2px; width: 27px; height: 27px; border-radius: 50%; background: #fff; box-shadow: 0 3px 8px rgba(0, 0, 0, .3), 0 0 1px rgba(0, 0, 0, .12); transition: transform .22s cubic-bezier(.2, .9, .3, 1.2); }
+    .sw.on { background: #34c759; }
+    .sw.on::after { transform: translateX(20px); }
+    button.sw:active { transform: none; }
+    .mini-tasks { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; }
+    .mini-task { font-size: 12.5px; font-weight: 700; color: var(--ink); background: var(--chipbg); border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; text-align: left; }
+    .mini-task.late { border-color: #f43f5e; color: #e11d48; }
+    .cashchips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+    .cashchip { font-size: 13px; font-weight: 800; color: var(--ink); background: var(--chipbg); border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; }
+    .cashchip.settle { background: rgba(16, 185, 129, .14); border-color: rgba(16, 185, 129, .55); }
+
+    /* ---------- Sticky glass bar ---------- */
+    .stickybar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 55;
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 14px; padding-top: calc(9px + env(safe-area-inset-top, 0px));
+      background: var(--glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+      transform: translateY(-110%); transition: transform .28s ease; cursor: pointer;
+    }
+    .stickybar.show { transform: none; }
+    .sticky-uwi { width: 32px; height: 28px; flex-shrink: 0; }
+    .stickybar b { font-weight: 900; color: var(--ink-strong); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .sticky-total { font-weight: 900; color: var(--teal-ink); white-space: nowrap; }
+
+    /* ---------- Hero actions ---------- */
+    .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .copybtn.ghosty { background: rgba(255, 255, 255, .16); color: #fff; border: 1px solid rgba(255, 255, 255, .4); box-shadow: none; }
+    @media (max-width: 560px) { .hero-actions { width: 100%; } .hero-actions .copybtn { flex: 1; } }
+
+    /* ---------- Tips & activity ---------- */
+    .tipline { font-size: 12.5px; color: var(--faint); font-weight: 600; margin-top: 10px; }
+    .cloudline { margin-top: 8px; font-size: 12.5px; color: var(--faint); font-weight: 700; min-height: 1em; }
+    .acard { margin-top: 18px; padding: 16px 18px; }
+    .acard summary { font-size: 1.05rem; font-weight: 900; color: var(--ink-strong); }
+    .acard summary .hint-inline { font-size: 13px; font-weight: 600; color: var(--mut); margin-left: 8px; }
+    .aline { display: flex; align-items: baseline; gap: 10px; padding: 9px 2px; border-bottom: 1px dashed var(--line); font-size: 14px; font-weight: 600; color: var(--ink); }
+    .aline:last-child { border-bottom: 0; }
+    .aline .when { margin-left: auto; color: var(--faint); font-size: 12.5px; font-weight: 700; white-space: nowrap; }
+
+    /* ---------- Trip navigation ---------- */
+    .tripnav {
+      display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px 12px; margin-bottom: 8px;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    }
+    .tripnav::-webkit-scrollbar { display: none; }
+    .trip-chip {
+      flex-shrink: 0; display: inline-flex; align-items: center; gap: 7px;
+      border-radius: 999px; padding: 11px 17px; font-weight: 800; font-size: 14.5px;
+      background: var(--card); color: var(--mut); border: 1.5px solid var(--line);
+      box-shadow: var(--shadow-sm); transition: all .15s ease; max-width: 240px; white-space: nowrap;
+    }
+    .trip-chip span { overflow: hidden; text-overflow: ellipsis; }
+    .trip-chip.on {
+      background: linear-gradient(135deg, var(--hero1), var(--hero3));
+      color: #fff; border-color: transparent;
+    }
+    .trip-chip.new { border-style: dashed; color: var(--teal-ink); background: transparent; box-shadow: none; }
+
+    /* ---------- v2 bits: version pill, jump bar, section headers ---------- */
+    .v2 {
+      display: inline-block; font-size: 10px; font-weight: 900; letter-spacing: .06em;
+      padding: 2px 7px; border: 1.5px solid var(--teal); color: var(--teal-ink);
+      border-radius: 999px; margin-left: 6px; vertical-align: middle;
+    }
+    .jumpbar { display: flex; gap: 8px; overflow-x: auto; padding: 0 2px 14px; scrollbar-width: none; }
+    .jumpbar::-webkit-scrollbar { display: none; }
+    .jumpbar button {
+      flex-shrink: 0; background: var(--card); border: 1px solid var(--line); color: var(--mut);
+      border-radius: 12px; padding: 9px 14px; font-weight: 800; font-size: 13.5px; box-shadow: var(--shadow-sm);
+    }
+    .jumpbar button:active { transform: scale(.97); }
+    .h2row { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
+    .h2row .hint { margin-bottom: 0; }
+    .h2icon {
+      width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center;
+      font-size: 18px; flex-shrink: 0; margin-top: 2px;
+    }
+    .h2icon.sky { background: #e3f1fb; } html.dark .h2icon.sky { background: #14304a; }
+    .h2icon.green { background: var(--green-wash); }
+    .h2icon.amber { background: var(--amber-wash); }
+    .countb {
+      display: inline-block; font-size: 12px; font-weight: 800; color: var(--mut);
+      background: var(--chipbg); border-radius: 999px; padding: 2px 9px; vertical-align: 3px; margin-left: 4px;
+    }
+    .owestrip { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; align-items: center; }
+    .owestrip .lead { color: rgba(255, 255, 255, .78); font-size: 12.5px; font-weight: 800; }
+    .owestrip button {
+      background: rgba(255, 255, 255, .15); border: 1px solid rgba(255, 255, 255, .32); color: #fff;
+      border-radius: 999px; padding: 7px 13px; font-size: 12.5px; font-weight: 800;
+    }
+    .steps-mini { display: grid; gap: 8px; margin-top: 14px; }
+    .steps-mini div {
+      display: flex; gap: 10px; align-items: center; background: rgba(255, 255, 255, .13);
+      border-radius: 12px; padding: 9px 12px; font-size: 13.5px; font-weight: 700; color: rgba(255, 255, 255, .94);
+    }
+    .steps-mini b {
+      width: 22px; height: 22px; border-radius: 999px; background: #fff; color: var(--teal-deep);
+      display: grid; place-items: center; font-size: 12px; flex-shrink: 0;
+    }
+
+    /* ---------- Cards ---------- */
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 26px;
+      box-shadow: var(--shadow); padding: 20px 18px;
+    }
+    h2 { font-size: 1.3rem; font-weight: 900; letter-spacing: -.02em; color: var(--ink-strong); }
+    .hint { color: var(--mut); font-size: 14px; margin: 3px 0 14px; }
+
+    /* ---------- Hero / summary ---------- */
+    .hero {
+      margin-bottom: 18px; border: 0; color: #fff; position: relative; overflow: hidden;
+      background: linear-gradient(135deg, var(--hero1) 0%, var(--hero2) 55%, var(--hero3) 100%);
+    }
+    .hero > * { position: relative; z-index: 1; }
+    .hero-peek {
+      position: absolute; right: 24px; bottom: -13px; width: 60px; height: 52px;
+      transform: rotate(-7deg); pointer-events: none; z-index: 0;
+    }
+    @media (max-width: 560px) { .hero-peek { width: 50px; height: 44px; right: 14px; bottom: -11px; } }
+    .hero-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+    .label { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--mut); }
+    .hero .label { color: rgba(255, 255, 255, .78); }
+    .huge { font-size: clamp(2.2rem, 8vw, 3.1rem); font-weight: 900; letter-spacing: -.03em; color: #fff; line-height: 1.1; }
+    .mutetext { color: var(--mut); font-size: 14px; font-weight: 600; margin-top: 4px; }
+    .hero .mutetext { color: rgba(255, 255, 255, .82); }
+    .center { text-align: center; }
+
+    .copybtn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 52px; padding: 12px 20px; border-radius: 16px;
+      font-weight: 800; font-size: 15.5px; background: #fff; color: var(--teal-deep);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, .18); transition: transform .12s ease;
+    }
+    .copybtn:active { transform: scale(.97); }
+    @media (max-width: 560px) { .copybtn { width: 100%; } }
+
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
+    .stat { border-radius: 18px; padding: 12px 14px; background: rgba(255, 255, 255, .14); backdrop-filter: blur(6px); }
+    .stat .num { font-size: clamp(1.05rem, 3.4vw, 1.5rem); font-weight: 900; letter-spacing: -.02em; margin-top: 2px; color: #fff; }
+    .stat .label { font-size: 11.5px; }
+    @media (max-width: 430px) {
+      .stats { grid-template-columns: 1fr; }
+      .stat { display: flex; align-items: center; justify-content: space-between; }
+      .stat .num { margin-top: 0; }
+    }
+
+    .progress { height: 14px; border-radius: 999px; background: rgba(255, 255, 255, .26); overflow: hidden; margin-top: 16px; }
+    .progress > div { height: 100%; width: 0%; border-radius: 999px; background: linear-gradient(90deg, #fcd34d, #f59e0b); transition: width .5s ease; }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 52px; padding: 12px 20px; border-radius: 16px;
+      font-weight: 800; font-size: 16px; transition: transform .12s ease, opacity .15s ease, background .15s ease;
+    }
+    .btn:active { transform: scale(.97); }
+    .btn-primary { background: linear-gradient(135deg, var(--teal), var(--hero3)); color: #fff; }
+    .btn-primary:hover { opacity: .93; }
+    .btn-green { background: linear-gradient(135deg, var(--green), var(--teal)); color: #fff; }
+    .btn-green:hover { opacity: .92; }
+    .btn-ghost { background: var(--chipbg); color: var(--ink); border: 1px solid var(--line); }
+    .btn-ghost:hover { opacity: .85; }
+    .btn.small { min-height: 42px; padding: 8px 14px; border-radius: 13px; font-size: 14.5px; }
+    .btn.w100 { width: 100%; }
+    .icon-btn {
+      width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center;
+      background: var(--chipbg); border: 1px solid var(--line); font-size: 15px; flex-shrink: 0;
+      transition: transform .12s ease, opacity .15s ease;
+    }
+    .icon-btn:active { transform: scale(.94); }
+    .icon-btn.danger { background: var(--rose-wash); color: var(--rose-ink); border-color: transparent; }
+    .icon-btn.tiny { width: 34px; height: 34px; border-radius: 10px; font-size: 13px; }
+
+    /* ---------- Forms ---------- */
+    .field {
+      width: 100%; min-height: 52px; border-radius: 15px; border: 1.5px solid var(--line);
+      background: var(--card); color: var(--ink); padding: 12px 14px; font: inherit; font-size: 16px;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+    .field::placeholder { color: var(--faint); }
+    .field:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 4px rgba(14, 117, 105, .16); }
+    select.field { appearance: none; -webkit-appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--mut) 50%), linear-gradient(135deg, var(--mut) 50%, transparent 50%); background-position: calc(100% - 20px) 55%, calc(100% - 14px) 55%; background-size: 6px 6px; background-repeat: no-repeat; padding-right: 38px; }
+    .stack { display: grid; gap: 10px; }
+    .row-form { display: flex; gap: 10px; }
+    .row-form .field { flex: 1; min-width: 0; }
+    .slim { min-height: 46px; margin-top: 10px; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 380px) { .grid2 { grid-template-columns: 1fr; } }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      border: 1.5px solid var(--line); background: var(--card); color: var(--mut);
+      border-radius: 999px; padding: 9px 14px; font-weight: 800; font-size: 14px; transition: all .15s ease;
+    }
+    .chip.on { background: linear-gradient(135deg, var(--teal), var(--hero3)); border-color: transparent; color: #fff; }
+
+    /* ---------- Segmented tabs (To buy / Paid) ---------- */
+    .seg { display: flex; gap: 4px; background: var(--chipbg); border-radius: 15px; padding: 4px; margin-top: 16px; }
+    .seg button {
+      flex: 1; min-height: 42px; border-radius: 12px; font-weight: 800; font-size: 13.5px;
+      color: var(--mut); transition: all .15s ease; padding: 6px 4px;
+    }
+    .seg button.on { background: var(--card); color: var(--ink-strong); box-shadow: var(--shadow-sm); }
+    @media (max-width: 480px) { .seg button { font-size: 12px; padding: 6px 2px; } }
+
+    /* ---------- Two columns ---------- */
+    .cols { display: grid; gap: 18px; }
+    @media (min-width: 980px) { .cols { grid-template-columns: 1.12fr .88fr; align-items: start; } }
+    .colstack { display: grid; gap: 18px; align-content: start; }
+    .notesarea { min-height: 150px; resize: vertical; line-height: 1.55; font-size: 15px; }
+
+    /* ---------- Breakdown & settle-up ---------- */
+    .catline { display: flex; align-items: center; gap: 10px; margin-top: 11px; font-size: 14px; font-weight: 700; color: var(--ink); }
+    .catline .nm { width: 118px; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .catline .bar { flex: 1; height: 10px; border-radius: 999px; background: var(--chipbg); overflow: hidden; }
+    .catline .bar i { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--teal), var(--hero3)); }
+    .catline .amt { width: 84px; text-align: right; font-weight: 800; color: var(--ink-strong); font-size: 13.5px; flex-shrink: 0; }
+    .bd-h { margin-top: 20px; font-weight: 900; color: var(--ink-strong); font-size: 14.5px; }
+    .settleline {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      background: var(--chipbg); border-radius: 12px; padding: 10px 13px; margin-top: 8px;
+      font-size: 14px; font-weight: 700; color: var(--ink);
+    }
+    .settleline b { color: var(--ink-strong); }
+    .settleline .arr { color: var(--teal-ink); font-weight: 900; }
+
+    /* ---------- List rows ---------- */
+    .list { display: flex; flex-direction: column; gap: 10px; margin-top: 14px; }
+    .rowcard { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 13px 14px; box-shadow: var(--shadow-sm); transition: transform .15s ease, box-shadow .15s ease; }
+    .rowcard:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+    .row-main { display: flex; gap: 12px; align-items: flex-start; }
+    .row-emoji { width: 44px; height: 44px; border-radius: 14px; background: var(--chipbg); display: grid; place-items: center; font-size: 22px; flex-shrink: 0; }
+    .avatar { width: 44px; height: 44px; border-radius: 999px; display: grid; place-items: center; color: #fff; font-weight: 900; font-size: 15px; flex-shrink: 0; letter-spacing: .02em; border: 2.5px solid rgba(255, 255, 255, .92); box-shadow: var(--shadow-sm); }
+    html.dark .avatar { border-color: rgba(255, 255, 255, .25); }
+    .row-info { flex: 1; min-width: 0; }
+    .row-name { font-weight: 800; color: var(--ink-strong); font-size: 15.5px; overflow-wrap: anywhere; }
+    .row-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; align-items: center; }
+    .row-side { flex-shrink: 0; text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+    .row-amt { font-weight: 900; font-size: 17px; color: var(--ink-strong); letter-spacing: -.01em; }
+    .row-btns { display: flex; gap: 6px; }
+
+    .tag { font-size: 12.5px; font-weight: 800; padding: 4px 10px; border-radius: 999px; background: var(--chipbg); color: var(--mut); white-space: nowrap; }
+    .tag.paid { background: var(--green-wash); color: var(--green-ink); }
+    .tag.ok { background: var(--green-wash); color: var(--green-ink); }
+    .tag.owe { background: var(--rose-wash); color: var(--rose-ink); }
+    .tag.extra { background: var(--amber-wash); color: var(--amber-ink); }
+    .tag.note { background: var(--teal-wash); color: var(--teal-ink); }
+
+    .markpaid {
+      appearance: none; -webkit-appearance: none; font: inherit; cursor: pointer;
+      border: 1.5px dashed var(--teal); color: var(--teal-ink); background: var(--card);
+      border-radius: 999px; padding: 5px 12px; font-weight: 800; font-size: 12.5px; max-width: 170px;
+    }
+
+    .given { color: var(--mut); font-size: 14px; margin-top: 2px; }
+    .given b { color: var(--ink-strong); font-size: 15px; }
+
+    .pay-area { margin-top: 11px; }
+    .payform { display: flex; gap: 8px; }
+    .payform .field { flex: 1; min-width: 0; min-height: 46px; }
+    details { margin-top: 9px; }
+    summary { cursor: pointer; font-size: 13.5px; font-weight: 800; color: var(--mut); user-select: none; }
+    .payline { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 13.5px; font-weight: 700; color: var(--mut); background: var(--chipbg); border-radius: 10px; padding: 7px 10px; margin-top: 6px; }
+    .payline b { color: var(--ink-strong); }
+    .payline .x { color: var(--rose-ink); font-weight: 900; padding: 0 4px; }
+
+    .editbox { display: grid; gap: 9px; }
+    .editbox .btns { display: flex; gap: 8px; flex-wrap: wrap; }
+    .editbox .btns .spacer { flex: 1; }
+
+    .empty { border: 2px dashed var(--line); border-radius: 18px; padding: 26px 16px; text-align: center; color: var(--mut); font-weight: 700; margin-top: 14px; }
+    .tot { margin-top: 14px; font-weight: 800; color: var(--mut); font-size: 14px; text-align: right; }
+    .tot b { color: var(--ink-strong); }
+
+    /* ---------- To-do list ---------- */
+    .todocard { margin-top: 18px; }
+    .cols2 { display: grid; gap: 18px; }
+    @media (min-width: 980px) { .cols2 { grid-template-columns: .9fr 1.1fr; align-items: start; } }
+    .todo-check {
+      width: 34px; height: 34px; border-radius: 999px; border: 2.5px solid var(--line);
+      background: var(--card); flex-shrink: 0; display: grid; place-items: center;
+      font-size: 15px; font-weight: 900; color: transparent; transition: all .18s ease; margin-top: 2px;
+    }
+    .todo-check:hover { border-color: var(--teal); }
+    .todo-check.done { background: linear-gradient(135deg, var(--green), var(--teal)); border-color: transparent; color: #fff; animation: pop .25s ease; }
+    @keyframes pop { 0% { transform: scale(.75); } 60% { transform: scale(1.15); } 100% { transform: scale(1); } }
+    .todo-text { font-weight: 800; color: var(--ink-strong); font-size: 15.5px; overflow-wrap: anywhere; }
+    .todo-text.isdone { text-decoration: line-through; color: var(--faint); }
+    .tag.overdue { background: var(--rose-wash); color: var(--rose-ink); }
+    .tag.today { background: var(--amber-wash); color: var(--amber-ink); }
+    .tag.p-high { background: var(--rose-wash); color: var(--rose-ink); }
+    .tag.p-med { background: var(--amber-wash); color: var(--amber-ink); }
+    .tag.p-low { background: var(--teal-wash); color: var(--teal-ink); }
+    .progress2 { height: 12px; border-radius: 999px; background: var(--chipbg); overflow: hidden; }
+    .progress2 > div { height: 100%; width: 0%; border-radius: 999px; background: linear-gradient(90deg, #fcd34d, #f59e0b); transition: width .5s ease; }
+    .todo-progress-text { color: var(--mut); font-size: 13.5px; font-weight: 800; margin-top: 7px; }
+    .linkbtn { color: var(--teal-ink); font-weight: 800; text-decoration: underline; font-size: 13.5px; padding: 8px 2px; margin-top: 10px; }
+    input[type="date"].field { min-height: 52px; }
+
+    /* ---------- Footer ---------- */
+    footer { margin-top: 34px; text-align: center; color: var(--mut); font-size: 13.5px; font-weight: 600; }
+    .flinks { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px 14px; justify-content: center; }
+    .flinks button { color: var(--teal-ink); font-weight: 800; text-decoration: underline; font-size: 13.5px; padding: 6px 2px; }
+    .flinks button.danger { color: var(--rose-ink); }
+
+    /* ---------- Empty-state mascot ---------- */
+    .empty-mascot { width: 76px; height: 66px; margin: 0 auto 8px; display: block; opacity: .95; }
+    .empty p { margin: 0; }
+
+    /* ---------- Confetti ---------- */
+    .confetti { position: fixed; inset: 0; pointer-events: none; z-index: 70; overflow: hidden; }
+    .confetti span { position: absolute; top: -34px; animation: fall linear forwards; }
+    @keyframes fall { to { transform: translateY(112vh) rotate(560deg); opacity: .95; } }
+
+    /* ---------- Add-to-home modal ---------- */
+    .overlay {
+      position: fixed; inset: 0; z-index: 65; display: grid; place-items: center; padding: 16px;
+      background: rgba(2, 6, 23, .55); backdrop-filter: blur(3px); animation: fadeIn .2s ease both;
+    }
+    .overlay[hidden] { display: none !important; }
+    @media (max-width: 560px) {
+      .overlay { place-items: end center; padding: 0; }
+      .modal { width: 100%; max-width: 100%; border-radius: 26px 26px 0 0; padding-bottom: calc(24px + env(safe-area-inset-bottom)); animation: sheetUp .3s cubic-bezier(.2, .9, .2, 1) both; }
+      @keyframes sheetUp { from { transform: translateY(48px); opacity: .4; } to { transform: none; opacity: 1; } }
+    }
+    .modal {
+      background: var(--card); border: 1px solid var(--line); border-radius: 26px;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, .35); padding: 22px 20px; width: min(94vw, 440px);
+      max-height: min(88vh, 740px); overflow-y: auto;
+      animation: rise .25s cubic-bezier(.2, .9, .2, 1) both;
+    }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px) scale(.97); } to { opacity: 1; transform: none; } }
+    .modal-head { display: flex; align-items: center; gap: 12px; margin-bottom: 4px; }
+    .modal-head .mini { width: 52px; height: 45px; flex-shrink: 0; }
+    .modal-head h3 { font-size: 1.15rem; font-weight: 900; color: var(--ink-strong); flex: 1; }
+    .steps { display: grid; gap: 10px; margin: 14px 0 18px; }
+    .steps p { background: var(--chipbg); border-radius: 14px; padding: 11px 13px; font-size: 14px; color: var(--ink); }
+    .steps p.you { border: 2px solid var(--teal); background: var(--teal-wash); }
+    .steps b { color: var(--ink-strong); }
+
+    /* ---------- Toast ---------- */
+    .toast {
+      position: fixed; left: 50%; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 140%); opacity: 0;
+      background: var(--ink-strong); color: var(--card); padding: 13px 20px; border-radius: 999px;
+      font-weight: 800; font-size: 14.5px; box-shadow: 0 18px 50px rgba(0, 0, 0, .3);
+      transition: transform .25s ease, opacity .25s ease; z-index: 60; max-width: 92vw; text-align: center;
+    }
+    html.dark .toast { background: #f5f9fd; color: #101b28; }
+    .toast.show { transform: translate(-50%, 0); opacity: 1; }
+    .toast .undo {
+      background: none; border: 0; cursor: pointer; margin-left: 10px; padding: 2px 4px;
+      color: #fcd34d; font-weight: 900; font-size: 14.5px; text-decoration: underline;
+    }
+    html.dark .toast .undo { color: #b45309; }
+
+    /* ---------- v3: calm desktop-first glass workspace ---------- */
+    :root {
+      --canvas: #eaf0f5;
+      --card: rgba(255, 255, 255, .82);
+      --chipbg: rgba(238, 243, 247, .82);
+      --line: rgba(53, 72, 95, .14);
+      --ink: #354257;
+      --ink-strong: #172235;
+      --mut: #66748a;
+      --faint: #8b98a9;
+      --teal: #087a72;
+      --teal-deep: #055e59;
+      --teal-wash: rgba(8, 122, 114, .10);
+      --teal-ink: #066c65;
+      --green: #16845f;
+      --green-wash: rgba(22, 132, 95, .11);
+      --green-ink: #117052;
+      --rose: #d24d67;
+      --rose-wash: rgba(210, 77, 103, .10);
+      --rose-ink: #bd3653;
+      --amber: #be7a16;
+      --amber-wash: rgba(190, 122, 22, .10);
+      --amber-ink: #9a5d0b;
+      --hero1: #142235;
+      --hero2: #173349;
+      --hero3: #125b5d;
+      --shadow: 0 18px 54px rgba(31, 52, 74, .09);
+      --shadow-sm: 0 7px 22px rgba(31, 52, 74, .06);
+      --glass: rgba(255, 255, 255, .68);
+    }
+    html.dark {
+      --canvas: #08111d;
+      --card: rgba(16, 27, 43, .84);
+      --chipbg: rgba(31, 45, 65, .80);
+      --line: rgba(155, 179, 207, .16);
+      --ink: #ccd7e5;
+      --ink-strong: #f5f8fc;
+      --mut: #93a3b8;
+      --faint: #718198;
+      --teal: #32b9ad;
+      --teal-deep: #6fd9cf;
+      --teal-wash: rgba(50, 185, 173, .13);
+      --teal-ink: #72dcd2;
+      --green: #43c793;
+      --green-wash: rgba(67, 199, 147, .13);
+      --green-ink: #7ee2b9;
+      --rose: #f07189;
+      --rose-wash: rgba(240, 113, 137, .13);
+      --rose-ink: #f69aae;
+      --amber: #e5a84a;
+      --amber-wash: rgba(229, 168, 74, .13);
+      --amber-ink: #f0c57e;
+      --hero1: #111d2e;
+      --hero2: #173047;
+      --hero3: #145456;
+      --shadow: 0 22px 58px rgba(0, 0, 0, .28);
+      --shadow-sm: 0 8px 24px rgba(0, 0, 0, .20);
+      --glass: rgba(8, 17, 29, .68);
+    }
+
+    html { background: var(--canvas); }
+    body {
+      min-width: 0;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 8% 2%, rgba(24, 151, 143, .13), transparent 28rem),
+        radial-gradient(circle at 92% 6%, rgba(80, 120, 180, .12), transparent 30rem),
+        var(--canvas);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    html.dark body {
+      background:
+        radial-gradient(circle at 7% 1%, rgba(34, 181, 169, .10), transparent 28rem),
+        radial-gradient(circle at 94% 8%, rgba(60, 96, 149, .12), transparent 30rem),
+        var(--canvas);
+    }
+    html.glassy body::before {
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(255, 255, 255, .14), transparent 34%),
+        radial-gradient(circle at 72% 75%, rgba(8, 122, 114, .09), transparent 28rem);
+      filter: none;
+    }
+    html.dark.glassy body::before { opacity: .46; }
+    .bgfx i:nth-child(1) { width: 32vmax; height: 32vmax; opacity: .55; animation-duration: 54s; }
+    .bgfx i:nth-child(2) { width: 30vmax; height: 30vmax; opacity: .36; animation-duration: 62s; }
+    .bgfx i:nth-child(3) { display: none; }
+
+    html.glassy {
+      --card: rgba(255, 255, 255, .70);
+      --chipbg: rgba(243, 247, 250, .60);
+      --line: rgba(255, 255, 255, .70);
+      --glass: rgba(255, 255, 255, .60);
+    }
+    html.glassy.dark {
+      --card: rgba(16, 28, 46, .69);
+      --chipbg: rgba(36, 51, 73, .56);
+      --line: rgba(157, 183, 215, .17);
+      --glass: rgba(10, 20, 34, .62);
+    }
+    html.glassy.glass-soft {
+      --card: rgba(255, 255, 255, .84);
+      --chipbg: rgba(244, 247, 250, .78);
+      --line: rgba(255, 255, 255, .88);
+    }
+    html.glassy.glass-soft.dark {
+      --card: rgba(17, 29, 47, .84);
+      --chipbg: rgba(38, 53, 75, .74);
+      --line: rgba(157, 183, 215, .18);
+    }
+    html.glassy.glass-ultra {
+      --card: rgba(255, 255, 255, .48);
+      --chipbg: rgba(244, 247, 250, .38);
+      --line: rgba(255, 255, 255, .57);
+    }
+    html.glassy.glass-ultra.dark {
+      --card: rgba(16, 28, 46, .46);
+      --chipbg: rgba(38, 53, 75, .36);
+      --line: rgba(157, 183, 215, .14);
+    }
+    html.glassy .card,
+    html.glassy .modal,
+    html.glassy .sidebar,
+    html.glassy .stickybar,
+    html.glassy .toast {
+      backdrop-filter: blur(20px) saturate(1.28);
+      -webkit-backdrop-filter: blur(20px) saturate(1.28);
+    }
+    html.glassy.glass-soft .card,
+    html.glassy.glass-soft .modal,
+    html.glassy.glass-soft .sidebar { backdrop-filter: blur(10px) saturate(1.12); -webkit-backdrop-filter: blur(10px) saturate(1.12); }
+    html.glassy.glass-ultra .card,
+    html.glassy.glass-ultra .modal,
+    html.glassy.glass-ultra .sidebar { backdrop-filter: blur(32px) saturate(1.5); -webkit-backdrop-filter: blur(32px) saturate(1.5); }
+
+    .wrap {
+      width: 100%;
+      max-width: none;
+      min-height: 100dvh;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 264px minmax(0, 1fr);
+      animation: fadeIn .28s ease both;
+    }
+    .sidebar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      height: 100dvh;
+      min-width: 0;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 24px 18px max(20px, env(safe-area-inset-bottom));
+      background: rgba(246, 249, 252, .72);
+      border-right: 1px solid rgba(66, 84, 105, .12);
+      box-shadow: 12px 0 36px rgba(35, 55, 77, .035);
+      backdrop-filter: blur(24px) saturate(1.22);
+      -webkit-backdrop-filter: blur(24px) saturate(1.22);
+    }
+    html.dark .sidebar { background: rgba(9, 18, 30, .72); border-right-color: rgba(155, 179, 207, .12); }
+    .top { display: block; margin: 0 0 24px; }
+    .brand { gap: 11px; align-items: center; }
+    .brand > div { min-width: 0; }
+    .mascot-btn { border-radius: 14px; }
+    .mascot { width: 44px; height: 39px; }
+    .kicker { font-size: .74rem; letter-spacing: .13em; }
+    .v2 { margin-left: 4px; padding: 2px 6px; font-size: .58rem; letter-spacing: .04em; }
+    .titlerow { gap: 5px; flex-wrap: nowrap; }
+    .titlerow h1 {
+      max-width: 150px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 1.08rem;
+      font-weight: 780;
+      letter-spacing: -.015em;
+    }
+    .titlerow .icon-btn { opacity: .72; }
+    .sub { margin-top: 1px; font-size: .8rem; line-height: 1.35; }
+    .bubble {
+      display: block;
+      max-width: none;
+      margin-top: 14px;
+      padding: 10px 11px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--chipbg);
+      font-size: .75rem;
+      line-height: 1.45;
+      font-weight: 650;
+    }
+    .theme-btn {
+      width: 100%;
+      height: auto;
+      min-height: 44px;
+      margin-top: 14px;
+      padding: 9px 11px;
+      justify-content: flex-start;
+      gap: 10px;
+      border-radius: 12px;
+      background: transparent;
+      box-shadow: none;
+      font-size: .9rem;
+      font-weight: 750;
+      color: var(--ink);
+    }
+    .theme-btn:hover { background: var(--chipbg); }
+    .settings-label { display: inline; }
+    .side-label {
+      margin: 0 10px 8px;
+      color: var(--faint);
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    .tripnav { display: grid; gap: 5px; margin: 0 0 22px; padding: 0; overflow: visible; }
+    .trip-chip {
+      width: 100%;
+      max-width: none;
+      min-height: 42px;
+      padding: 9px 11px;
+      justify-content: flex-start;
+      border: 1px solid transparent;
+      border-radius: 11px;
+      background: transparent;
+      box-shadow: none;
+      color: var(--mut);
+      font-size: .86rem;
+      font-weight: 720;
+    }
+    .trip-chip:hover { background: var(--chipbg); color: var(--ink-strong); }
+    .trip-chip.on,
+    html.glassy .trip-chip.on {
+      color: var(--teal-ink);
+      background: var(--teal-wash);
+      border-color: rgba(8, 122, 114, .15);
+      box-shadow: none;
+    }
+    .trip-chip.new { border: 1px dashed var(--line); background: transparent; color: var(--teal-ink); }
+    .jumpbar { display: grid; gap: 3px; margin: 0; padding: 0; overflow: visible; }
+    .jumpbar button,
+    html.glassy .jumpbar button {
+      width: 100%;
+      min-height: 42px;
+      padding: 9px 11px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      border: 1px solid transparent;
+      border-radius: 11px;
+      background: transparent;
+      box-shadow: none;
+      color: var(--mut);
+      font-size: .87rem;
+      font-weight: 720;
+      text-align: left;
+    }
+    .jumpbar button span { width: 16px; color: var(--teal-ink); text-align: center; }
+    .jumpbar button:hover { background: var(--chipbg); color: var(--ink-strong); }
+    .sidebar-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin-top: auto;
+      padding: 14px 10px 2px;
+      color: var(--mut);
+      font-size: .73rem;
+      line-height: 1.45;
+    }
+    .sidebar-note b { color: var(--ink); font-weight: 750; }
+    .save-dot { width: 8px; height: 8px; margin-top: 4px; border-radius: 99px; background: var(--green); box-shadow: 0 0 0 4px var(--green-wash); flex: 0 0 auto; }
+
+    .workspace {
+      width: min(100%, 1480px);
+      min-width: 0;
+      margin: 0 auto;
+      padding: 30px clamp(22px, 3.2vw, 54px) 72px;
+    }
+    .workspace-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+    .workspace-kicker { color: var(--mut); font-size: .77rem; font-weight: 750; letter-spacing: .075em; text-transform: uppercase; }
+    .workspace-head h2 { margin-top: 1px; font-size: 1.55rem; font-weight: 780; letter-spacing: -.025em; }
+    .workspace-actions { display: flex; align-items: center; gap: 8px; }
+    .copybtn,
+    .copybtn.ghosty {
+      min-height: 44px;
+      padding: 9px 15px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      color: var(--ink);
+      box-shadow: none;
+      font-size: .88rem;
+      font-weight: 750;
+    }
+    .copybtn:hover { border-color: rgba(8, 122, 114, .35); color: var(--ink-strong); }
+    .copybtn.primary { background: var(--teal); border-color: var(--teal); color: #fff; }
+
+    .card {
+      min-width: 0;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--card);
+      box-shadow: var(--shadow-sm);
+    }
+    h2 { font-size: 1.18rem; font-weight: 780; letter-spacing: -.015em; }
+    .hint { margin: 3px 0 14px; font-size: .875rem; line-height: 1.45; }
+    .h2row { gap: 11px; margin-bottom: 18px; }
+    .h2icon {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--chipbg) !important;
+      color: var(--teal-ink);
+      font-size: 1rem;
+      font-weight: 850;
+    }
+    .countb { padding: 2px 8px; background: var(--chipbg); font-size: .7rem; }
+    #secOverview,
+    #secSpend,
+    #secFriends,
+    #secNotes,
+    #secBreak,
+    #secTodos { scroll-margin-top: 20px; }
+
+    .hero,
+    html.glassy .hero,
+    html.glassy.glass-soft .hero,
+    html.glassy.glass-ultra .hero {
+      display: grid;
+      grid-template-columns: minmax(240px, .82fr) minmax(420px, 1.18fr);
+      grid-template-areas:
+        "total stats"
+        "progress progress"
+        "progress-copy progress-copy"
+        "owe owe";
+      gap: 0 28px;
+      margin-bottom: 18px;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, .13);
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(18, 33, 52, .96), rgba(21, 58, 73, .94) 66%, rgba(14, 102, 96, .90));
+      box-shadow: 0 22px 58px rgba(19, 42, 61, .18);
+    }
+    html.dark .hero,
+    html.dark.glassy .hero,
+    html.dark.glassy.glass-soft .hero,
+    html.dark.glassy.glass-ultra .hero { background: linear-gradient(135deg, rgba(13, 25, 42, .96), rgba(18, 49, 66, .94) 66%, rgba(12, 80, 77, .91)); }
+    .hero-top { grid-area: total; display: block; }
+    .hero .huge { margin-top: 4px; font-size: clamp(2.65rem, 5vw, 4.25rem); font-weight: 760; letter-spacing: -.055em; }
+    .hero .label { font-size: .72rem; letter-spacing: .09em; }
+    .hero .mutetext { margin-top: 8px; font-size: .86rem; font-weight: 580; }
+    .stats { grid-area: stats; margin: 0; gap: 10px; align-self: center; }
+    .stat { min-height: 96px; padding: 16px; border: 1px solid rgba(255, 255, 255, .12); border-radius: 15px; background: rgba(255, 255, 255, .075); backdrop-filter: blur(8px); }
+    .stat .label { font-size: .68rem; letter-spacing: .065em; }
+    .stat .num { margin-top: 7px; font-size: clamp(1.15rem, 2.2vw, 1.65rem); font-weight: 740; }
+    .progress { grid-area: progress; height: 8px; margin-top: 24px; background: rgba(255, 255, 255, .16); }
+    .progress > div { background: linear-gradient(90deg, #63d9cd, #89e9de); }
+    .hero .center { grid-area: progress-copy; margin-top: 8px; text-align: left; font-size: .76rem; }
+    .owestrip { grid-area: owe; }
+    .owestrip .lead { color: rgba(255, 255, 255, .68); }
+    .owestrip button { border-color: rgba(255, 255, 255, .14); background: rgba(255, 255, 255, .08); }
+    .steps-mini { grid-template-columns: repeat(3, 1fr); gap: 9px; }
+    .steps-mini div { align-items: flex-start; padding: 10px; border: 1px solid rgba(255, 255, 255, .11); background: rgba(255, 255, 255, .06); font-size: .78rem; font-weight: 620; }
+    .steps-mini b { width: 20px; height: 20px; font-size: .68rem; }
+    .hero-peek { right: 22px; bottom: -12px; width: 52px; height: 46px; opacity: .72; }
+
+    .cols { grid-template-columns: minmax(0, 1.14fr) minmax(340px, .86fr); gap: 18px; align-items: start; }
+    .colstack { gap: 18px; }
+    .acard, .todocard { margin-top: 18px; }
+    .acard { padding: 20px 24px; }
+    .acard summary { font-size: 1rem; font-weight: 760; }
+    .acard summary .hint-inline { font-size: .8rem; font-weight: 560; }
+    .cols2 { grid-template-columns: 1fr; gap: 22px; }
+    @media (min-width: 1180px) { .cols2 { grid-template-columns: .78fr 1.22fr; } }
+
+    .field {
+      min-width: 0;
+      min-height: 46px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .42);
+      color: var(--ink-strong);
+      font-size: 1rem;
+    }
+    html.dark .field { background: rgba(7, 15, 26, .30); }
+    .field:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(8, 122, 114, .13); }
+    input[type="date"].field { min-height: 46px; }
+    #expForm { grid-template-columns: minmax(0, 1fr) minmax(130px, .55fr); gap: 9px; }
+    #expForm #expName { grid-column: 1; }
+    #expForm #expAmount { grid-column: 2; }
+    #expForm #catChips { grid-column: 1 / -1; }
+    #expForm #expPaidBy { grid-column: 1; }
+    #expForm > .btn { grid-column: 2; }
+    .chips { gap: 6px; }
+    .chip { min-height: 34px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 10px; background: rgba(255, 255, 255, .28); font-size: .76rem; font-weight: 720; }
+    .chip.on { border-color: rgba(8, 122, 114, .18); background: var(--teal-wash); color: var(--teal-ink); }
+    .btn {
+      min-height: 46px;
+      padding: 10px 15px;
+      border-radius: 12px;
+      font-size: .9rem;
+      font-weight: 750;
+    }
+    .btn-primary, .btn-green { background: var(--teal); color: #fff; }
+    .btn-green { background: var(--green); }
+    .btn-ghost { background: var(--chipbg); }
+    .btn.small { min-height: 40px; padding: 8px 12px; border-radius: 10px; font-size: .82rem; }
+    .icon-btn { width: 36px; height: 36px; border-radius: 10px; background: var(--chipbg); font-size: .82rem; }
+    .icon-btn.tiny { width: 30px; height: 30px; border-radius: 8px; }
+    button { transition: transform .13s ease, background .16s ease, border-color .16s ease, color .16s ease, opacity .16s ease; }
+    button:active { transform: scale(.97); }
+
+    .seg { gap: 3px; padding: 3px; border: 1px solid var(--line); border-radius: 12px; background: var(--chipbg); }
+    .seg button { min-height: 38px; border-radius: 9px; font-size: .78rem; font-weight: 720; }
+    .seg button.on { box-shadow: none; }
+    .slim { min-height: 44px; margin-top: 9px; }
+    .tipline { margin-top: 9px; font-size: .76rem; line-height: 1.45; font-weight: 560; }
+
+    .list { gap: 8px; margin-top: 12px; }
+    .rowcard { padding: 12px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255, 255, 255, .30); box-shadow: none; }
+    html.dark .rowcard { background: rgba(5, 13, 23, .18); }
+    .rowcard:hover { transform: none; border-color: rgba(8, 122, 114, .30); box-shadow: none; }
+    .row-main { gap: 10px; }
+    .row-emoji, .avatar { width: 40px; height: 40px; border-radius: 11px; font-size: 1.05rem; }
+    .avatar { border-radius: 12px; font-size: .78rem; }
+    .row-name, .todo-text { font-size: .92rem; font-weight: 760; }
+    .given { font-size: .81rem; }
+    .given b { font-size: .88rem; }
+    .row-amt { font-size: .96rem; font-weight: 760; }
+    .tag, .markpaid { padding: 4px 8px; font-size: .68rem; font-weight: 720; }
+    .markpaid { max-width: 154px; background: transparent; }
+    .tot { font-size: .8rem; }
+    .empty { padding: 24px 14px; border-width: 1px; border-radius: 14px; font-size: .85rem; }
+    .empty-mascot { width: 58px; height: 51px; }
+    .payline, .settleline { border: 1px solid var(--line); background: var(--chipbg); font-size: .8rem; }
+    .cashchip, .mini-task { font-size: .72rem; }
+    .progress2 { height: 8px; }
+    .progress2 > div, .catline .bar i { background: var(--teal); }
+    .catline { font-size: .82rem; }
+    .catline .amt { font-size: .8rem; }
+    .aline { font-size: .82rem; }
+    .notesarea { min-height: 122px; }
+
+    .overlay { background: rgba(5, 12, 22, .50); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .modal { width: min(92vw, 470px); padding: 22px; border-radius: 20px; background: var(--card); }
+    .setgroup { border-radius: 14px; }
+    .setrow, .setlink { padding: 11px 12px; }
+    .seticon { width: 34px; height: 34px; border-radius: 9px; font-size: 1rem; }
+    .miniseg { border-radius: 11px; }
+    .miniseg button { min-height: 36px; border-radius: 8px; }
+    .toast { border-radius: 12px; font-size: .83rem; }
+    .stickybar { display: none; }
+    footer { margin-top: 26px; font-size: .78rem; }
+
+    @media (max-width: 1180px) {
+      .wrap { grid-template-columns: 230px minmax(0, 1fr); }
+      .workspace { padding-inline: 24px; }
+      .cols { grid-template-columns: 1fr; }
+      .titlerow h1 { max-width: 120px; }
+    }
+
+    @media (max-width: 1050px) and (min-width: 861px) {
+      .hero,
+      html.glassy .hero,
+      html.glassy.glass-soft .hero,
+      html.glassy.glass-ultra .hero {
+        grid-template-columns: 1fr;
+        grid-template-areas: "total" "stats" "progress" "progress-copy" "owe";
+      }
+      .stats { margin-top: 20px; }
+    }
+
+    @media (max-width: 860px) {
+      .wrap { display: block; min-height: 100vh; }
+      .sidebar {
+        position: relative;
+        height: auto;
+        padding: calc(14px + env(safe-area-inset-top)) 18px 12px;
+        display: block;
+        overflow: visible;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 10px 32px rgba(31, 52, 74, .045);
+      }
+      .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+      .brand { align-items: center; }
+      .titlerow h1 { max-width: 48vw; font-size: 1.02rem; }
+      .sub, .bubble { display: none; }
+      .theme-btn { width: 44px; min-height: 44px; margin: 0; padding: 0; justify-content: center; }
+      .settings-label { display: none; }
+      .side-label { margin: 0 3px 6px; }
+      .tripnav { display: flex; gap: 6px; margin-bottom: 12px; overflow-x: auto; }
+      .trip-chip { width: auto; max-width: 210px; flex-shrink: 0; }
+      .jumpbar { display: flex; gap: 5px; overflow-x: auto; }
+      .jumpbar button, html.glassy .jumpbar button { width: auto; flex: 0 0 auto; min-height: 38px; padding: 7px 10px; border-color: var(--line); background: var(--chipbg); font-size: .78rem; }
+      .jumpbar button span { width: auto; }
+      .sidebar-note { display: none; }
+      .workspace { width: 100%; padding: 22px 18px 80px; }
+      .stickybar { display: flex; }
+      .hero { grid-template-columns: minmax(0, .85fr) minmax(360px, 1.15fr); padding: 24px; gap: 0 18px; }
+      .steps-mini { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .workspace { padding: 18px 14px 72px; }
+      .workspace-head { align-items: flex-start; margin-bottom: 14px; }
+      .workspace-head > div:first-child { display: none; }
+      .workspace-actions { width: 100%; display: grid; grid-template-columns: 1fr 1fr; }
+      .workspace-actions .copybtn { width: 100%; min-width: 0; padding-inline: 10px; }
+      .workspace-actions .primary { grid-column: 1 / -1; grid-row: 1; }
+      .hero,
+      html.glassy .hero,
+      html.glassy.glass-soft .hero,
+      html.glassy.glass-ultra .hero {
+        grid-template-columns: 1fr;
+        grid-template-areas: "total" "stats" "progress" "progress-copy" "owe";
+        padding: 22px 18px;
+        border-radius: 19px;
+      }
+      .hero .huge { font-size: clamp(2.5rem, 14vw, 3.6rem); }
+      .stats { margin-top: 20px; grid-template-columns: 1fr 1fr; }
+      .stat { min-height: 82px; padding: 13px; }
+      .stat:last-child { grid-column: 1 / -1; min-height: 74px; }
+      .progress { margin-top: 20px; }
+      .card { padding: 18px; border-radius: 17px; }
+      .h2row { margin-bottom: 15px; }
+      #expForm { grid-template-columns: 1fr; }
+      #expForm #expName,
+      #expForm #expAmount,
+      #expForm #catChips,
+      #expForm #expPaidBy,
+      #expForm > .btn { grid-column: 1; }
+      .cols2, .grid2 { grid-template-columns: 1fr; }
+      .acard { padding: 18px; }
+      .acard summary .hint-inline { display: block; margin: 2px 0 0; }
+      .row-form { align-items: stretch; }
+      .row-form .btn { white-space: nowrap; }
+      .row-main { flex-wrap: wrap; }
+      .row-info { min-width: calc(100% - 54px); }
+      .row-side { width: 100%; flex-direction: row; justify-content: flex-end; }
+      .row-tags { row-gap: 5px; }
+      .hero-peek { right: 12px; }
+      .catline { display: grid; grid-template-columns: minmax(86px, .8fr) 1fr auto; gap: 7px; }
+      .catline .nm, .catline .amt { width: auto; }
+      .toast { bottom: calc(14px + env(safe-area-inset-bottom)); width: calc(100% - 28px); }
+    }
+
+    @media (max-width: 430px) {
+      .sidebar { padding-inline: 14px; }
+      .mascot { width: 40px; height: 35px; }
+      .kicker { font-size: .68rem; }
+      .v2 { display: none; }
+      .titlerow h1 { max-width: 54vw; }
+      .side-label { font-size: .64rem; }
+      .workspace-actions { gap: 6px; }
+      .copybtn, .copybtn.ghosty { min-height: 42px; font-size: .81rem; }
+      .stats { grid-template-columns: 1fr; }
+      .stat:last-child { grid-column: auto; }
+      .stat { min-height: 70px; display: flex; align-items: center; justify-content: space-between; }
+      .stat .num { margin-top: 0; }
+      .chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+      .chips::-webkit-scrollbar { display: none; }
+      .chip { flex: 0 0 auto; }
+      .row-form, .payform { display: grid; grid-template-columns: 1fr; }
+      .row-form .btn, .payform .btn { width: 100%; }
+      .seg { overflow-x: auto; }
+      .seg button { min-width: 94px; }
+      .row-emoji, .avatar { width: 36px; height: 36px; }
+      .row-info { min-width: calc(100% - 46px); }
+      .card { padding: 16px; }
+      .modal { border-radius: 20px 20px 0 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bgfx" aria-hidden="true"><i></i><i></i><i></i></div>
+  <svg style="display:none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="uwiSym" viewBox="0 0 120 104">
+      <path d="M26 56 Q12 48 13 32" stroke="#e05a45" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M94 56 Q108 50 106 36" stroke="#e05a45" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <circle cx="14" cy="27" r="11" fill="#f4715f"/>
+      <path d="M5 22 L13 26" stroke="#c74534" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="106" cy="31" r="10" fill="#f4715f"/>
+      <circle cx="106" cy="22" r="9" fill="#fbbf24" stroke="#e8a20c" stroke-width="1.5"/>
+      <text x="106" y="26.2" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="900" fill="#8a5a00">&#8369;</text>
+      <path d="M32 80 Q24 88 15 90 M42 86 Q38 94 30 98 M88 80 Q96 88 105 90 M78 86 Q82 94 90 98" stroke="#e05a45" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="60" cy="64" rx="36" ry="29" fill="#f4715f"/>
+      <ellipse cx="60" cy="73" rx="26" ry="15" fill="#f8917e" opacity=".6"/>
+      <ellipse cx="46" cy="46" rx="12" ry="7" fill="#ffffff" opacity=".16"/>
+      <g transform="rotate(-12 46 38)">
+        <path d="M33 38 Q46 18 59 38 Z" fill="#fbbf24"/>
+        <path d="M36 34 Q46 26 56 34" stroke="#0e7569" stroke-width="4" fill="none"/>
+        <ellipse cx="46" cy="38" rx="17" ry="5.5" fill="#f0ad13"/>
+      </g>
+      <circle cx="47" cy="55" r="9" fill="#fff"/><circle cx="73" cy="55" r="9" fill="#fff"/>
+      <circle cx="48.5" cy="56.5" r="4.5" fill="#26222e"/><circle cx="71.5" cy="56.5" r="4.5" fill="#26222e"/>
+      <circle cx="50.3" cy="54.3" r="1.6" fill="#fff"/><circle cx="73.3" cy="54.3" r="1.6" fill="#fff"/>
+      <circle cx="46.9" cy="58.4" r="0.9" fill="#fff" opacity=".8"/><circle cx="69.9" cy="58.4" r="0.9" fill="#fff" opacity=".8"/>
+      <circle cx="36" cy="66" r="5" fill="#ff9d8a" opacity=".95"/>
+      <circle cx="84" cy="66" r="5" fill="#ff9d8a" opacity=".95"/>
+      <circle cx="41" cy="61.5" r="0.9" fill="#d94f3f" opacity=".6"/><circle cx="44" cy="63.5" r="0.9" fill="#d94f3f" opacity=".6"/>
+      <circle cx="79" cy="61.5" r="0.9" fill="#d94f3f" opacity=".6"/><circle cx="76" cy="63.5" r="0.9" fill="#d94f3f" opacity=".6"/>
+      <path d="M53 67 Q60 74.5 67 67" stroke="#7c2d1e" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="uwiCool" viewBox="0 0 120 104">
+      <path d="M26 56 Q12 48 13 32" stroke="#e05a45" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M94 56 Q108 50 106 36" stroke="#e05a45" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <circle cx="14" cy="27" r="11" fill="#f4715f"/>
+      <path d="M5 22 L13 26" stroke="#c74534" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="106" cy="31" r="10" fill="#f4715f"/>
+      <circle cx="106" cy="22" r="9" fill="#fbbf24" stroke="#e8a20c" stroke-width="1.5"/>
+      <text x="106" y="26.2" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="900" fill="#8a5a00">&#8369;</text>
+      <path d="M32 80 Q24 88 15 90 M42 86 Q38 94 30 98 M88 80 Q96 88 105 90 M78 86 Q82 94 90 98" stroke="#e05a45" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="60" cy="64" rx="36" ry="29" fill="#f4715f"/>
+      <ellipse cx="60" cy="73" rx="26" ry="15" fill="#f8917e" opacity=".6"/>
+      <ellipse cx="46" cy="46" rx="12" ry="7" fill="#ffffff" opacity=".16"/>
+      <g transform="rotate(-12 46 38)">
+        <path d="M33 38 Q46 18 59 38 Z" fill="#fbbf24"/>
+        <path d="M36 34 Q46 26 56 34" stroke="#0e7569" stroke-width="4" fill="none"/>
+        <ellipse cx="46" cy="38" rx="17" ry="5.5" fill="#f0ad13"/>
+      </g>
+      <rect x="38" y="49" width="17" height="11" rx="5" fill="#26222e"/>
+      <rect x="65" y="49" width="17" height="11" rx="5" fill="#26222e"/>
+      <path d="M55 53 L65 53" stroke="#26222e" stroke-width="3"/>
+      <path d="M38 53 L28 50 M82 53 L92 50" stroke="#26222e" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M42 52 L46 56" stroke="#ffffff" stroke-width="1.6" opacity=".55" stroke-linecap="round"/>
+      <path d="M69 52 L73 56" stroke="#ffffff" stroke-width="1.6" opacity=".55" stroke-linecap="round"/>
+      <circle cx="36" cy="66" r="5" fill="#ff9d8a" opacity=".95"/>
+      <circle cx="84" cy="66" r="5" fill="#ff9d8a" opacity=".95"/>
+      <circle cx="41" cy="61.5" r="0.9" fill="#d94f3f" opacity=".6"/><circle cx="44" cy="63.5" r="0.9" fill="#d94f3f" opacity=".6"/>
+      <circle cx="79" cy="61.5" r="0.9" fill="#d94f3f" opacity=".6"/><circle cx="76" cy="63.5" r="0.9" fill="#d94f3f" opacity=".6"/>
+      <path d="M55 68 Q60 72 65 68" stroke="#7c2d1e" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="uwiYay" viewBox="0 0 120 104">
+      <path d="M26 56 Q12 48 13 32" stroke="#e05a45" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M94 56 Q108 44 107 28" stroke="#e05a45" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <circle cx="14" cy="27" r="11" fill="#f4715f"/>
+      <path d="M5 22 L13 26" stroke="#c74534" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="106" cy="23" r="11" fill="#f4715f"/>
+      <path d="M115 18 L107 22" stroke="#c74534" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M32 80 Q24 88 15 90 M42 86 Q38 94 30 98 M88 80 Q96 88 105 90 M78 86 Q82 94 90 98" stroke="#e05a45" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="60" cy="64" rx="36" ry="29" fill="#f4715f"/>
+      <ellipse cx="60" cy="73" rx="26" ry="15" fill="#f8917e" opacity=".6"/>
+      <ellipse cx="46" cy="46" rx="12" ry="7" fill="#ffffff" opacity=".16"/>
+      <g transform="rotate(-12 46 38)">
+        <path d="M33 38 Q46 18 59 38 Z" fill="#fbbf24"/>
+        <path d="M36 34 Q46 26 56 34" stroke="#0e7569" stroke-width="4" fill="none"/>
+        <ellipse cx="46" cy="38" rx="17" ry="5.5" fill="#f0ad13"/>
+      </g>
+      <circle cx="47" cy="55" r="9" fill="#fff"/><circle cx="73" cy="55" r="9" fill="#fff"/>
+      <circle cx="48.5" cy="56.5" r="4.5" fill="#26222e"/><circle cx="71.5" cy="56.5" r="4.5" fill="#26222e"/>
+      <circle cx="50.3" cy="54.3" r="1.6" fill="#fff"/><circle cx="73.3" cy="54.3" r="1.6" fill="#fff"/>
+      <path d="M40 45 Q47 41.5 53 45" stroke="#c74534" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M67 45 Q73 41.5 80 45" stroke="#c74534" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <circle cx="36" cy="66" r="5" fill="#ff9d8a" opacity=".95"/>
+      <circle cx="84" cy="66" r="5" fill="#ff9d8a" opacity=".95"/>
+      <ellipse cx="60" cy="69.5" rx="7" ry="5.5" fill="#7c2d1e"/><ellipse cx="60" cy="71.5" rx="4" ry="2.6" fill="#ff8a76"/>
+    </symbol>
+  </svg>
+  <div id="stickybar" class="stickybar" aria-hidden="true">
+    <svg class="sticky-uwi" aria-hidden="true"><use href="#uwiSym"/></svg>
+    <b id="stickyName">Trip</b>
+    <span id="stickyTotal" class="sticky-total">₱0</span>
+    <button id="stickyShare" class="icon-btn tiny" type="button" title="Share update" aria-label="Share update">📤</button>
+  </div>
+  <div class="wrap">
+
+    <aside class="sidebar" aria-label="Trip navigation">
+
+    <header class="top">
+      <div class="brand">
+        <button id="mascotBtn" class="mascot-btn" type="button" title="That's Sipit! Tap for a tip" aria-label="Sipit the crab mascot — tap for a tip">
+          <svg class="mascot" role="img" aria-label="Sipit the crab"><use href="#uwiSym"/></svg>
+        </button>
+        <div>
+          <div class="kicker">Sipit <span class="v2">Trip ledger</span></div>
+          <div class="titlerow">
+            <h1 id="tripTitle">Trip</h1>
+            <button id="renameBtn" class="icon-btn tiny" type="button" title="Rename this trip" aria-label="Rename this trip">✏️</button>
+          </div>
+          <p class="sub">Your shared trip money, all in one place.</p>
+          <div id="uwiBubble" class="bubble"></div>
+        </div>
+      </div>
+      <button id="settingsBtn" class="theme-btn" type="button" title="Settings" aria-label="Open settings"><span aria-hidden="true">⚙</span><span class="settings-label">Settings</span></button>
+    </header>
+
+    <!-- Trip switcher -->
+    <p class="side-label">Trips</p>
+    <nav id="tripNav" class="tripnav" aria-label="Your trips"></nav>
+
+    <!-- Jump to section -->
+    <p class="side-label">Workspace</p>
+    <nav class="jumpbar" aria-label="Jump to section">
+      <button type="button" onclick="jump('secOverview')"><span aria-hidden="true">◫</span> Overview</button>
+      <button type="button" onclick="jump('secSpend')"><span aria-hidden="true">↗</span> Spending</button>
+      <button type="button" onclick="jump('secFriends')"><span aria-hidden="true">◎</span> People</button>
+      <button type="button" onclick="jump('secTodos')"><span aria-hidden="true">✓</span> Tasks</button>
+      <button type="button" onclick="jump('secBreak')"><span aria-hidden="true">⌁</span> Insights</button>
+    </nav>
+
+    <div class="sidebar-note">
+      <span class="save-dot" aria-hidden="true"></span>
+      <p><b>Saved automatically</b><br />Your trip stays on this device.</p>
+    </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="workspace-head">
+        <div>
+          <p class="workspace-kicker">Trip workspace</p>
+          <h2>Overview</h2>
+        </div>
+        <div class="workspace-actions">
+          <button id="copyBtn" class="copybtn ghosty" type="button">Copy update</button>
+          <button id="shareBtn" class="copybtn" type="button">Share</button>
+          <button id="quickAddBtn" class="copybtn primary" type="button">＋ Add expense</button>
+        </div>
+      </header>
+
+    <!-- Summary -->
+    <section class="card hero" id="secOverview" aria-label="Trip summary">
+      <div class="hero-top">
+        <div>
+          <p class="label">Trip total</p>
+          <p id="tripTotal" class="huge">₱0</p>
+          <p id="tripSubline" class="mutetext"></p>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><p class="label">Money collected</p><p id="collected" class="num">₱0</p></div>
+        <div class="stat"><p class="label">Still needed</p><p id="needed" class="num">₱0</p></div>
+        <div class="stat"><p class="label">Each person gives</p><p id="share" class="num">₱0</p></div>
+      </div>
+      <div class="progress"><div id="bar"></div></div>
+      <p id="pctText" class="mutetext center">0% of the money is in</p>
+      <div id="oweStrip" class="owestrip"></div>
+      <svg class="hero-peek" aria-hidden="true"><use href="#uwiCool"/></svg>
+    </section>
+
+    <div class="cols">
+
+      <!-- Expenses -->
+      <section class="card" id="secSpend" aria-label="Spending list">
+        <div class="h2row">
+          <span class="h2icon sky" aria-hidden="true">↗</span>
+          <div>
+            <h2>Spending <span id="expCount" class="countb">0</span></h2>
+            <p class="hint">Plan costs, then mark each one paid when money moves.</p>
+          </div>
+        </div>
+        <form id="expForm" class="stack" autocomplete="off">
+          <input id="expName" class="field" list="expIdeas" autocomplete="off" placeholder="Expense name" aria-label="Expense name" required maxlength="60" />
+          <datalist id="expIdeas"></datalist>
+          <input id="expAmount" class="field" type="text" inputmode="decimal" autocomplete="off" placeholder="Amount in ₱" aria-label="Expense amount in pesos" required />
+          <div id="catChips" class="chips" aria-label="Category"></div>
+          <select id="expPaidBy" class="field" aria-label="Who paid for this?"></select>
+          <button class="btn btn-primary w100" type="submit">＋ Add expense</button>
+        </form>
+        <p class="tipline">Not paid yet? Leave the payer blank and update it later.</p>
+        <div id="segTabs" class="seg" role="tablist" aria-label="Filter by paid status"></div>
+        <input id="search" class="field slim" type="search" placeholder="Search expenses" aria-label="Search expenses" autocomplete="off" />
+        <div id="expList" class="list"></div>
+        <div id="expEmpty" class="empty" hidden>Nothing here yet — add the first item above 🙂</div>
+        <p id="expTotals" class="tot"></p>
+      </section>
+
+      <!-- People + Notes column -->
+      <div class="colstack">
+      <section class="card" id="secFriends" aria-label="Friends and contributions">
+        <div class="h2row">
+          <span class="h2icon green" aria-hidden="true">◎</span>
+          <div>
+            <h2>People <span id="friendCount" class="countb">0</span></h2>
+            <p class="hint">See who has paid, who is short, and who is settled.</p>
+          </div>
+        </div>
+        <form id="personForm" class="row-form" autocomplete="off">
+          <input id="personName" class="field" placeholder="Person's name" aria-label="Person's name" required maxlength="30" />
+          <button class="btn btn-green" type="submit">＋ Add person</button>
+        </form>
+        <p class="tipline">Add a payment from a person's card whenever they contribute.</p>
+        <div id="peopleList" class="list"></div>
+        <div id="peopleEmpty" class="empty" hidden><svg class="empty-mascot" aria-hidden="true"><use href="#uwiSym"/></svg><p>No friends added yet.</p></div>
+      </section>
+
+      <!-- Notes -->
+      <section class="card" id="secNotes" aria-label="Trip notes">
+        <div class="h2row">
+          <span class="h2icon sky" aria-hidden="true">⌁</span>
+          <div>
+            <h2>Trip notes</h2>
+            <p class="hint">Keep the details everyone needs close by.</p>
+          </div>
+        </div>
+        <textarea id="tripNotes" class="field notesarea" aria-label="Trip notes" placeholder="Meet-up time, address, reminders…" maxlength="5000"></textarea>
+      </section>
+      </div>
+
+    </div>
+
+    <!-- Breakdown & settle-up -->
+    <details class="card acard" id="secBreak">
+      <summary>Breakdown &amp; settle-up <span class="hint-inline">Categories and the simplest transfers</span></summary>
+      <div id="catBars"></div>
+      <p class="bd-h">Simplest way to settle up</p>
+      <div id="settleList"></div>
+    </details>
+
+    <!-- To-dos -->
+    <section class="card todocard" id="secTodos" aria-label="Trip to-do list">
+      <div class="h2row">
+        <span class="h2icon amber" aria-hidden="true">✓</span>
+        <div>
+          <h2>Tasks <span id="todoCount" class="countb">0</span></h2>
+          <p class="hint">Keep trip work assigned and on schedule.</p>
+        </div>
+      </div>
+      <div class="cols2">
+        <div>
+          <form id="todoForm" class="stack" autocomplete="off">
+            <input id="todoText" class="field" placeholder="What needs to be done?" aria-label="Task description" required maxlength="80" />
+            <div class="grid2">
+              <input id="todoDue" class="field" type="date" aria-label="Due date (optional)" title="Due date (optional)" />
+              <select id="todoWho" class="field" aria-label="Who will do it?"></select>
+            </div>
+            <div id="prioChips" class="chips" aria-label="Priority"></div>
+            <button class="btn btn-primary w100" type="submit">＋ Add task</button>
+          </form>
+          <p class="tipline">Dated tasks move up as their deadline gets closer.</p>
+          <div id="todoSuggest"></div>
+        </div>
+        <div>
+          <div class="progress2"><div id="todoBar"></div></div>
+          <p id="todoProgressText" class="todo-progress-text"></p>
+          <div id="todoTabs" class="seg" role="tablist" aria-label="Filter tasks"></div>
+          <div id="todoList" class="list"></div>
+          <div id="todoEmpty" class="empty" hidden></div>
+          <button id="clearDoneBtn" class="linkbtn" type="button" hidden>🧹 Clear finished tasks</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent activity -->
+    <details class="card acard" id="activityCard">
+      <summary>Recent activity <span class="hint-inline">Latest changes to this trip</span></summary>
+      <div id="activityList"></div>
+    </details>
+
+    <footer>
+      <p>Sipit · made for simpler trips</p>
+      <div class="flinks">
+        <button id="footSettings" type="button">⚙️ Settings</button>
+      </div>
+      <p id="cloudStatus" class="cloudline"></p>
+      <input type="file" id="restoreFile" accept=".json,application/json" hidden />
+    </footer>
+
+    </main>
+  </div>
+
+  <div id="settingsModal" class="overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+      <div class="modal-head">
+        <svg class="mini" aria-hidden="true"><use href="#uwiCool"/></svg>
+        <h3 id="settingsTitle">Settings</h3>
+        <button id="settingsClose" class="icon-btn" type="button" aria-label="Close settings">✕</button>
+      </div>
+      <div class="setgroup" role="group" aria-label="Look and feel">
+        <div class="setrow"><span class="seticon">🌙</span><div class="setlabel"><b>Dark mode</b><small>Easy on the eyes at night</small></div><button id="swTheme" class="sw" type="button" role="switch" aria-checked="false" aria-label="Dark mode"></button></div>
+        <div class="setrow stack"><span class="seticon">✨</span><div class="setlabel"><b>Glassy look</b><small>Ultra = thoroughly frosted, like iPhone notifications</small></div>
+          <div class="miniseg" role="radiogroup" aria-label="How glassy">
+            <button id="glassOff" type="button" role="radio" aria-checked="false">Off</button>
+            <button id="glassSoft" type="button" role="radio" aria-checked="false">Soft</button>
+            <button id="glassOn" type="button" role="radio" aria-checked="true">Glassy</button>
+            <button id="glassUltra" type="button" role="radio" aria-checked="false">Ultra</button>
+          </div>
+        </div>
+        <div class="setrow"><span class="seticon">🔊</span><div class="setlabel"><b>Sounds</b><small>Blips, coin dings & fanfares</small></div><button id="swSound" class="sw" type="button" role="switch" aria-checked="true" aria-label="Sounds"></button></div>
+        <div class="setrow"><span class="seticon">📳</span><div class="setlabel"><b>Vibration</b><small>Tiny buzz on actions (phones)</small></div><button id="swBuzz" class="sw" type="button" role="switch" aria-checked="true" aria-label="Vibration"></button></div>
+      </div>
+      <div class="setgroup" role="group" aria-label="Quick actions">
+        <button id="setCloud" class="setlink" type="button"><span class="seticon">☁️</span> Cloud sync — PC + phone <span class="chev">›</span></button>
+        <button id="setA2hs" class="setlink" type="button"><span class="seticon">📲</span> Add to home screen <span class="chev">›</span></button>
+        <button id="setBackup" class="setlink" type="button"><span class="seticon">💾</span> Save backup <span class="chev">›</span></button>
+        <button id="setCsv" class="setlink" type="button"><span class="seticon">📊</span> Export CSV <span class="chev">›</span></button>
+        <button id="setRestore" class="setlink" type="button"><span class="seticon">📥</span> Load backup <span class="chev">›</span></button>
+      </div>
+      <div class="setgroup" role="group" aria-label="Careful zone">
+        <button id="setDelTrip" class="setlink danger" type="button"><span class="seticon">🗑</span> Delete this trip <span class="chev">›</span></button>
+        <button id="setEraseAll" class="setlink danger" type="button"><span class="seticon">⚠️</span> Erase everything <span class="chev">›</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="cloudModal" class="overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cloudTitle">
+      <div class="modal-head">
+        <svg class="mini" aria-hidden="true"><use href="#uwiSym"/></svg>
+        <h3 id="cloudTitle">☁️ Cloud sync</h3>
+        <button id="cloudClose" class="icon-btn" type="button" aria-label="Close">✕</button>
+      </div>
+      <div id="cloudBody"></div>
+    </div>
+  </div>
+
+  <div id="a2hs" class="overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="a2hsTitle">
+      <div class="modal-head">
+        <svg class="mini" aria-hidden="true"><use href="#uwiYay"/></svg>
+        <h3 id="a2hsTitle">Put it on your home screen</h3>
+        <button id="a2hsClose" class="icon-btn" type="button" aria-label="Close">✕</button>
+      </div>
+      <p class="hint">It opens like a real app after this — icon, name, and all. 😊</p>
+      <div class="steps">
+        <p id="stepIos"><b>📱 iPhone / iPad (Safari):</b> tap the Share button (square with ⬆️) → scroll down → <b>Add to Home Screen</b>.</p>
+        <p id="stepAndroid"><b>🤖 Android (Chrome):</b> tap the <b>⋮</b> menu at the top right → <b>Add to Home screen</b>.</p>
+        <p id="stepDesktop"><b>💻 Computer:</b> just bookmark it (Ctrl/Cmd + D), or in Chrome: menu → Cast, save and share → <b>Create shortcut</b>.</p>
+      </div>
+      <button id="a2hsOk" class="btn btn-primary w100" type="button">Got it!</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script>
+    'use strict';
+
+    /* ---------- Helpers ---------- */
+    const $ = (id) => document.getElementById(id);
+    const peso = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP', maximumFractionDigits: 0 });
+    const cleanAmount = (v) => { const n = Number(v); return Number.isFinite(n) ? Math.max(0, Math.min(n, 999999999999)) : 0; };
+    const fmt = (n) => peso.format(Math.round(cleanAmount(n)));
+    const uid = () => (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : 'id-' + Date.now() + '-' + Math.random().toString(36).slice(2);
+    const todayISO = () => new Date().toISOString().slice(0, 10);
+    const escapeHtml = (v) => String(v ?? '').replace(/[&<>'"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[c]));
+    const safeId = (v) => /^[A-Za-z0-9_-]{1,100}$/.test(String(v || '')) ? String(v) : uid();
+    const safeRef = (v) => /^[A-Za-z0-9_-]{1,100}$/.test(String(v || '')) ? String(v) : '';
+    const niceDate = (iso) => { try { return new Date(iso + 'T00:00:00').toLocaleDateString('en-PH', { month: 'short', day: 'numeric' }); } catch (e) { return ''; } };
+
+    const KEY = 'uwingUwiV3State';
+    const THEME_KEY = 'uwingUwiTheme';
+    const CATS = { Food: '🍗', Drinks: '🥤', Breakfast: '🍳', Snacks: '🍿', Ingredients: '🧄', Travel: '🚌', Other: '📦' };
+    const POT = 'pot'; // "shared money" marker
+    const PRIO = { high: ['🔥', 'High'], med: ['⚡', 'Medium'], low: ['🌿', 'Low'] };
+    const TODO_IDEAS = [
+      ['Book the cottage & pay reservation', 'high'],
+      ['Collect everyone’s share', 'high'],
+      ['Buy ice + last-minute stuff', 'low'],
+      ['Bring speaker, cards & chargers', 'low']
+    ];
+
+    /* ---------- Blank canvas by default ---------- */
+    function blankTrip(name) { return { id: uid(), name: name || 'My trip', notes: '', people: [], expenses: [], todos: [], activity: [] }; }
+
+    /* ---------- Normalizing / migration ---------- */
+    function normalizeLists(raw) {
+      const people = Array.isArray(raw && raw.people) ? raw.people : [];
+      const expenses = Array.isArray(raw && raw.expenses) ? raw.expenses : [];
+      return {
+        people: people.map((p) => ({
+          id: safeId(p.id),
+          name: String(p.name || 'Friend').slice(0, 40),
+          payments: (Array.isArray(p.payments) ? p.payments : []).map((x) => ({
+            id: safeId(x.id),
+            amount: cleanAmount(x.amount),
+            date: String(x.date || todayISO())
+          }))
+        })),
+        expenses: expenses.map((e) => ({
+          id: safeId(e.id),
+          name: String(e.name || 'Item').slice(0, 80),
+          amount: cleanAmount(e.amount),
+          category: CATS[e.category] ? e.category : 'Other',
+          paidBy: e.paidBy === POT ? POT : safeRef(e.paidBy),
+          note: String(e.note || '').slice(0, 60),
+          date: String(e.date || todayISO())
+        })),
+        todos: (Array.isArray(raw && raw.todos) ? raw.todos : []).map((t) => ({
+          id: safeId(t.id),
+          text: String(t.text || 'Task').slice(0, 100),
+          done: !!t.done,
+          due: /^\d{4}-\d{2}-\d{2}$/.test(String(t.due || '')) ? String(t.due) : '',
+          who: safeRef(t.who),
+          prio: PRIO[t.prio] ? t.prio : 'med',
+          createdAt: String(t.createdAt || ''),
+          doneAt: String(t.doneAt || '')
+        })),
+        activity: (Array.isArray(raw && raw.activity) ? raw.activity : []).slice(0, 30).map((a) => ({
+          id: safeId(a.id),
+          icon: String(a.icon || '•').slice(0, 4),
+          text: String(a.text || '').slice(0, 140),
+          at: String(a.at || '')
+        }))
+      };
+    }
+    function normalizeState(raw) {
+      // Accepts v3 {trips,currentTripId}, or v2 {people,expenses} which gets wrapped.
+      if (raw && Array.isArray(raw.trips)) {
+        const trips = raw.trips.map((t) => Object.assign(
+          { id: safeId(t.id), name: String(t.name || 'My trip').slice(0, 40), notes: String(t.notes || '').slice(0, 5000) },
+          normalizeLists(t)
+        ));
+        trips.forEach((t) => { if (t.name === 'Uwing Uwi Resort Trip') t.name = 'Trip'; });
+        if (!trips.length) return null;
+        const requestedCurrent = safeRef(raw.currentTripId);
+        const current = trips.some((t) => t.id === requestedCurrent) ? requestedCurrent : trips[0].id;
+        return { trips, currentTripId: current, updatedAt: String(raw.updatedAt || '') };
+      }
+      if (raw && (Array.isArray(raw.people) || Array.isArray(raw.expenses))) {
+        const t = Object.assign({ id: uid(), name: 'Trip' }, normalizeLists(raw));
+        if (!t.people.length && !t.expenses.length) return null;
+        return { trips: [t], currentTripId: t.id, updatedAt: '' };
+      }
+      return null;
+    }
+    function loadState() {
+      try {
+        const parsed = normalizeState(JSON.parse(localStorage.getItem(KEY) || 'null'));
+        if (parsed) return parsed;
+      } catch (e) {}
+      const t = blankTrip('My trip');
+      return { trips: [t], currentTripId: t.id, updatedAt: '' };
+    }
+    function save() {
+      if (!adopting) state.updatedAt = new Date().toISOString();
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+      queueCloudPush();
+    }
+
+    /* ---------- State ---------- */
+    let state = loadState();
+    let selectedCat = 'Food';
+    let payFilter = 'all';     // 'all' | 'topay' | 'paid'
+    let editingExp = null;     // expense id being edited
+    let editingPerson = null;  // person id being renamed
+    let editingTodo = null;    // todo id being edited
+    let payFor = null;         // person id with the "add money" box open
+    let searchText = '';
+    let todoFilter = 'all';    // 'all' | 'today' | 'up' | 'done'
+    let selectedPrio = 'med';
+
+    const trip = () => state.trips.find((t) => t.id === state.currentTripId) || state.trips[0];
+
+    /* ---------- Math ---------- */
+    const tripTotal = () => trip().expenses.reduce((s, e) => s + (Number(e.amount) || 0), 0);
+    const personGiven = (p) => p.payments.reduce((s, x) => s + (Number(x.amount) || 0), 0)
+      + trip().expenses.filter((e) => e.paidBy === p.id).reduce((s, e) => s + (Number(e.amount) || 0), 0);
+    const totalCollected = () => trip().people.reduce((s, p) => s + personGiven(p), 0);
+    const shareEach = () => tripTotal() / Math.max(trip().people.length, 1);
+    const personById = (id) => trip().people.find((p) => p.id === id);
+
+    function statusOf(p) {
+      const diff = personGiven(p) - shareEach();
+      if (tripTotal() === 0) return { cls: 'ok', text: '—' };
+      if (Math.abs(diff) < 1) return { cls: 'ok', text: '✓ Settled' };
+      if (diff < 0) return { cls: 'owe', text: 'needs ' + fmt(-diff) + ' more' };
+      return { cls: 'extra', text: fmt(diff) + ' extra 🌟' };
+    }
+
+    /* ---------- Toast + one-tap Undo ---------- */
+    let toastTimer;
+    function toast(msg, withUndo) {
+      const t = $('toast');
+      t.innerHTML = escapeHtml(msg) + (withUndo ? '<button type="button" class="undo" onclick="undoLast()">Undo</button>' : '');
+      t.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => t.classList.remove('show'), withUndo ? 6000 : 1800);
+    }
+
+    let pendingUndo = null;
+    function snapshotForUndo() { pendingUndo = { json: JSON.stringify(state), at: Date.now() }; }
+    function undoLast() {
+      if (!pendingUndo || Date.now() - pendingUndo.at > 8000) { pendingUndo = null; return; }
+      try { state = JSON.parse(pendingUndo.json); } catch (e) { return; }
+      pendingUndo = null;
+      editingExp = null; editingPerson = null; editingTodo = null; payFor = null;
+      play('undo'); render(); toast('Brought it back ✓');
+    }
+
+    /* ---------- Uwi the mascot, confetti & celebrations ---------- */
+    const CHEERS = [
+      'Tip: tap 💸 Mark as paid when someone pays for an item.',
+      'Tip: the 📋 button copies a money update for your group chat.',
+      'Tip: ＋ New trip starts fresh but keeps your friends.',
+      'Tip: deleted something by mistake? Undo is in the black popup 😌',
+      'Tip: tap the round circle to finish a task. So satisfying ✅',
+      'Tip: ⚙️ Settings → Add to home screen — I become an app! 📲',
+      'Kaya natin ’to, barkada! 💪',
+      'Beach day loading… 🏖️',
+      'Piso by piso, beach by beach 🌊',
+      'Don’t forget the yelo! 🧊',
+      'Save a backup once in a while — future you says thanks 🙏'
+    ];
+    function setBubble() {
+      // Uwi is context-aware: he mentions what actually needs attention.
+      const total = tripTotal(), collected = totalCollected();
+      const overdue = todosOf().filter((t) => !t.done && t.due && t.due < todayISO()).length;
+      const smart = [];
+      if (overdue) smart.push(overdue + ' task' + (overdue > 1 ? 's are' : ' is') + ' overdue — go go go! ⏰');
+      if (!cloud && (trip().expenses.length || trip().people.length)) smart.push('Want this on your PC AND phone? Open ⚙️ Settings → Cloud sync!');
+      let lastBk = 0; try { lastBk = Number(localStorage.getItem('uwingUwiLastBackup')) || 0; } catch (e) {}
+      if ((trip().expenses.length > 3 || collected > 0) && Date.now() - lastBk > 14 * 86400000) smart.push('No recent backup — ⚙️ Settings → Save backup takes 2 seconds 💾');
+      if (total > 0 && collected >= total) smart.push('Trip is fully funded — you legends! 🎉');
+      else if (total > 0 && collected / total >= .75) smart.push('So close! Only ' + fmt(total - collected) + ' to go 💪');
+      else if (total > 0 && collected === 0 && trip().people.length > 1) smart.push('No money in yet — who wants to be first? 😄');
+      const pool = (smart.length && Math.random() < .7) ? smart : CHEERS;
+      $('uwiBubble').textContent = '🦀 ' + pool[Math.floor(Math.random() * pool.length)];
+    }
+    const BUZZ_KEY = 'uwingUwiBuzz';
+    let buzzOn = true;
+    try { buzzOn = localStorage.getItem(BUZZ_KEY) !== 'off'; } catch (e) {}
+    const buzz = (ms) => { try { if (buzzOn && navigator.vibrate) navigator.vibrate(ms || 12); } catch (e) {} };
+
+    /* ---------- Sounds: tiny built-in synth SFX, toggleable with the 🔊 button ---------- */
+    const SOUND_KEY = 'uwingUwiSound';
+    let soundOn = false;
+    try { soundOn = localStorage.getItem(SOUND_KEY) === 'on'; } catch (e) {}
+    let audioC = null;
+    function audioCtx() {
+      try {
+        if (!audioC) audioC = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioC.state === 'suspended') audioC.resume();
+        return audioC;
+      } catch (e) { return null; }
+    }
+    function tone(o) {
+      const ctx = audioCtx(); if (!ctx) return;
+      const t0 = ctx.currentTime + (o.at || 0), dur = o.dur || .1;
+      const osc = ctx.createOscillator(), g = ctx.createGain();
+      osc.type = o.type || 'sine';
+      osc.frequency.setValueAtTime(o.f0, t0);
+      if (o.f1) osc.frequency.exponentialRampToValueAtTime(o.f1, t0 + dur);
+      g.gain.setValueAtTime(.0001, t0);
+      g.gain.exponentialRampToValueAtTime(o.vol || .08, t0 + .008);
+      g.gain.exponentialRampToValueAtTime(.0001, t0 + dur);
+      osc.connect(g); g.connect(ctx.destination);
+      osc.start(t0); osc.stop(t0 + dur + .06);
+    }
+    let lastSfxAt = 0;
+    const claimSfx = () => { lastSfxAt = performance.now(); };
+    const SFX = {
+      hover()   { tone({ f0: 1350, f1: 1600, dur: .03, vol: .012 }); },
+      tap()     { tone({ type: 'triangle', f0: 470, f1: 330, dur: .055, vol: .05 }); },
+      tick()    { claimSfx(); tone({ f0: 950, f1: 1150, dur: .045, vol: .035 }); },
+      add()     { claimSfx(); tone({ f0: 523, dur: .08, vol: .09 }); tone({ f0: 784, dur: .13, vol: .08, at: .07 }); },
+      del()     { claimSfx(); tone({ type: 'triangle', f0: 330, f1: 140, dur: .17, vol: .07 }); },
+      coin()    { claimSfx(); tone({ type: 'square', f0: 988, dur: .06, vol: .04 }); tone({ type: 'square', f0: 1319, dur: .17, vol: .04, at: .065 }); },
+      done()    { claimSfx(); tone({ f0: 660, dur: .09, vol: .09 }); tone({ f0: 880, dur: .16, vol: .08, at: .08 }); },
+      undo()    { claimSfx(); tone({ f0: 720, f1: 430, dur: .11, vol: .06 }); tone({ f0: 560, f1: 480, dur: .09, vol: .05, at: .1 }); },
+      crab()    { claimSfx(); tone({ f0: 480, f1: 690, dur: .09, vol: .08 }); tone({ f0: 690, f1: 950, dur: .11, vol: .07, at: .1 }); },
+      fanfare() {
+        claimSfx();
+        [[523, 0], [659, .1], [784, .2], [1047, .3]].forEach((n) => tone({ type: 'triangle', f0: n[0], dur: .24, vol: .07, at: n[1] }));
+        tone({ f0: 1568, f1: 2093, dur: .3, vol: .025, at: .34 });
+      }
+    };
+    function play(name) { if (soundOn && SFX[name]) { try { SFX[name](); } catch (e) {} } }
+    /* hover blips (mouse only), plus a soft tap for any button — specific sounds "claim" the click so nothing plays twice */
+    let lastHoverEl = null, lastHoverAt = 0, lastPressAt = 0;
+    document.addEventListener('pointerdown', () => { lastPressAt = performance.now(); }, { passive: true, capture: true });
+    document.addEventListener('pointerover', (e) => {
+      if (!soundOn || e.pointerType !== 'mouse') return;
+      const el = e.target && e.target.closest ? e.target.closest('button, select, a') : null;
+      if (!el) { lastHoverEl = null; return; }
+      if (el === lastHoverEl) return;
+      lastHoverEl = el;
+      const now = performance.now();
+      if (now - lastHoverAt < 70 || now - lastPressAt < 450) return; // no blips right after a click re-renders the list
+      lastHoverAt = now;
+      play('hover');
+    }, { passive: true });
+    document.addEventListener('click', (e) => {
+      if (!soundOn) return;
+      const el = e.target && e.target.closest ? e.target.closest('button, a') : null;
+      if (!el || el.id === 'swSound') return;
+      if (performance.now() - lastSfxAt < 150) return;
+      play('tap');
+    });
+    document.addEventListener('change', (e) => {
+      if (!soundOn || !e.target || e.target.tagName !== 'SELECT') return;
+      if (performance.now() - lastSfxAt < 150) return;
+      play('tick');
+    });
+    function applySound(on, persist) {
+      soundOn = on;
+      if (persist !== false) { try { localStorage.setItem(SOUND_KEY, on ? 'on' : 'off'); } catch (e) {} }
+      syncSwitches();
+    }
+    /* ---------- ⚙️ Settings sheet: switches + quick actions ---------- */
+    const GLASS_KEY = 'uwingUwiGlass';
+    const GLASS_LEVELS = ['off', 'soft', 'on', 'ultra'];
+    let glassLevel = 'on';
+    function applyGlass(level, persist) {
+      if (GLASS_LEVELS.indexOf(level) < 0) level = 'on';
+      glassLevel = level;
+      const h = document.documentElement;
+      h.classList.toggle('glassy', level !== 'off');
+      h.classList.toggle('glass-soft', level === 'soft');
+      h.classList.toggle('glass-ultra', level === 'ultra');
+      if (persist !== false) { try { localStorage.setItem(GLASS_KEY, level); } catch (e) {} }
+      syncSwitches();
+    }
+    function syncSwitches() {
+      const set = (id, on) => { const b = $(id); if (!b) return; b.classList.toggle('on', !!on); b.setAttribute('aria-checked', on ? 'true' : 'false'); };
+      set('swTheme', document.documentElement.classList.contains('dark'));
+      GLASS_LEVELS.forEach((k) => {
+        const b = $('glass' + k.charAt(0).toUpperCase() + k.slice(1));
+        if (b) { b.classList.toggle('on', glassLevel === k); b.setAttribute('aria-checked', glassLevel === k ? 'true' : 'false'); }
+      });
+      set('swSound', soundOn);
+      set('swBuzz', buzzOn);
+    }
+    $('settingsBtn').addEventListener('click', () => { syncSwitches(); $('settingsModal').hidden = false; });
+    $('settingsClose').addEventListener('click', () => { $('settingsModal').hidden = true; });
+    $('settingsModal').addEventListener('click', (e) => { if (e.target === $('settingsModal')) $('settingsModal').hidden = true; });
+    $('swTheme').addEventListener('click', () => applyTheme(!document.documentElement.classList.contains('dark')));
+    GLASS_LEVELS.forEach((lv) => {
+      $('glass' + lv.charAt(0).toUpperCase() + lv.slice(1)).addEventListener('click', () => { applyGlass(lv); play('tick'); });
+    });
+    $('swSound').addEventListener('click', () => {
+      applySound(!soundOn);
+      if (soundOn) { play('crab'); toast('Sounds on 🔊'); } else { toast('Sounds off 🔇'); }
+    });
+    $('swBuzz').addEventListener('click', () => {
+      buzzOn = !buzzOn;
+      try { localStorage.setItem(BUZZ_KEY, buzzOn ? 'on' : 'off'); } catch (e) {}
+      if (buzzOn) buzz(20);
+      syncSwitches();
+    });
+    $('setCloud').addEventListener('click', () => { $('settingsModal').hidden = true; renderCloudModal(); $('cloudModal').hidden = false; });
+    $('setA2hs').addEventListener('click', () => { $('settingsModal').hidden = true; openA2hs(); });
+    $('setBackup').addEventListener('click', () => { $('settingsModal').hidden = true; downloadBackup(); });
+    $('setCsv').addEventListener('click', () => { $('settingsModal').hidden = true; exportCSV(); });
+    $('setRestore').addEventListener('click', () => { $('settingsModal').hidden = true; $('restoreFile').click(); });
+    $('setDelTrip').addEventListener('click', () => { $('settingsModal').hidden = true; deleteTrip(); });
+    $('setEraseAll').addEventListener('click', () => { $('settingsModal').hidden = true; eraseAll(); });
+    applySound(soundOn, false);
+
+    /* ---------- Little helpers for a smoother feel ---------- */
+    // Type math right in amount boxes: 120+80, 3*250, (500+40)/2 …
+    function evalMath(v) {
+      const str = String(v || '').replace(/[₱,\s]/g, '');
+      if (!str) return 0;
+      if (!/^[\d+\-*/().]+$/.test(str)) return Number(str) || 0;
+      try { return cleanAmount(Function('"use strict";return (' + str + ')')()); } catch (e) { return 0; }
+    }
+    // Big numbers count up/down smoothly instead of jumping
+    const moneyPrev = {};
+    const reduceMotion = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+    function setMoney(id, val) {
+      const el = $(id); if (!el) return;
+      const from = moneyPrev[id];
+      moneyPrev[id] = val;
+      if (reduceMotion || from === undefined || from === val || !isFinite(from)) { el.textContent = fmt(val); return; }
+      if (el._raf) cancelAnimationFrame(el._raf);
+      const t0 = performance.now(), dur = 450;
+      const step = (t) => {
+        const k = Math.min(1, (t - t0) / dur), e2 = 1 - Math.pow(1 - k, 3);
+        el.textContent = fmt(from + (val - from) * e2);
+        el._raf = k < 1 ? requestAnimationFrame(step) : null;
+      };
+      el._raf = requestAnimationFrame(step);
+    }
+    // Item names you've used before pop up as suggestions
+    function updateIdeas() {
+      const dl = $('expIdeas'); if (!dl) return;
+      const seen = {}, out = [];
+      state.trips.forEach((t) => t.expenses.forEach((e) => {
+        const k = e.name.trim().toLowerCase();
+        if (k && !seen[k]) { seen[k] = 1; out.push(e.name.trim()); }
+      }));
+      dl.innerHTML = out.slice(0, 40).map((n) => '<option value="' + escapeHtml(n) + '"></option>').join('');
+    }
+    // Quick cash chips when adding money (tap ＋500 twice = 1000)
+    function cashChipsHTML(p) {
+      const owe = Math.round(shareEach() - personGiven(p));
+      const chips = [];
+      if (owe >= 1) chips.push('<button type="button" class="cashchip settle" onclick="fillPay(' + owe + ', true)">✓ ' + fmt(owe) + ' settles it</button>');
+      [100, 200, 500, 1000].forEach((v) => chips.push('<button type="button" class="cashchip" onclick="fillPay(' + v + ')">＋' + v + '</button>'));
+      return chips.join('');
+    }
+    function fillPay(amt, exact) {
+      const inp = $('payAmt'); if (!inp) return;
+      const cur = exact ? 0 : evalMath(inp.value);
+      inp.value = String(Math.max(0, Math.round((cur + amt) * 100) / 100));
+      play('tick'); inp.focus();
+    }
+    // Each friend's card shows what they signed up to do
+    function miniTasksHTML(p) {
+      const mine = todosOf().filter((t) => !t.done && t.who === p.id);
+      if (!mine.length) return '';
+      const today = todayISO();
+      const chips = mine.slice(0, 3).map((t) =>
+        '<button type="button" class="mini-task' + (t.due && t.due < today ? ' late' : '') + '" onclick="jump(\'secTodos\')" title="See it in the to-do list">' +
+        (t.due && t.due < today ? '⏰ ' : '🎯 ') + escapeHtml(t.text.length > 26 ? t.text.slice(0, 25) + '…' : t.text) + '</button>').join('');
+      const more = mine.length > 3 ? '<button type="button" class="mini-task" onclick="jump(\'secTodos\')">＋' + (mine.length - 3) + ' more</button>' : '';
+      return '<div class="mini-tasks">' + chips + more + '</div>';
+    }
+    // One-tap spreadsheet of the whole trip
+    function exportCSV() {
+      const t = trip();
+      const esc = (v) => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"';
+      const rows = [['SPENDING — ' + t.name], ['Item', 'Category', 'Amount (PHP)', 'Paid by', 'Date']];
+      t.expenses.forEach((e) => rows.push([e.name, e.category, e.amount, e.paidBy === POT ? 'Shared money' : ((personById(e.paidBy) || {}).name || 'Not paid yet'), e.date]));
+      rows.push([], ['MONEY GIVEN'], ['Friend', 'Amount (PHP)', 'Date']);
+      t.people.forEach((p) => p.payments.forEach((x) => rows.push([p.name, x.amount, x.date])));
+      rows.push([], ['Trip total', tripTotal()], ['Collected', totalCollected()], ['Each person', Math.round(shareEach())]);
+      const csv = '\ufeff' + rows.map((r) => r.map(esc).join(',')).join('\r\n');
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+      a.download = (t.name.replace(/[^\w\- ]+/g, '').trim().replace(/\s+/g, '-').toLowerCase() || 'trip') + '-money.csv';
+      document.body.appendChild(a); a.click(); a.remove();
+      play('done'); toast('Spreadsheet downloaded 📊');
+    }
+
+    const actsOf = () => trip().activity || (trip().activity = []);
+    function logAct(icon, text) {
+      actsOf().unshift({ id: uid(), icon, text: String(text).slice(0, 140), at: new Date().toISOString() });
+      if (actsOf().length > 30) trip().activity = actsOf().slice(0, 30);
+    }
+    function timeAgo(iso) {
+      const ms = Date.now() - Date.parse(iso);
+      if (!isFinite(ms) || ms < 0) return '';
+      const m = Math.floor(ms / 60000);
+      if (m < 1) return 'just now';
+      if (m < 60) return m + 'm ago';
+      const h = Math.floor(m / 60);
+      if (h < 24) return h + 'h ago';
+      if (h < 48) return 'yesterday';
+      try { return new Date(iso).toLocaleDateString('en-PH', { month: 'short', day: 'numeric' }); } catch (e) { return ''; }
+    }
+    function renderActivity() {
+      const acts = actsOf();
+      $('activityList').innerHTML = acts.length
+        ? acts.map((a) => '<div class="aline"><span>' + escapeHtml(a.icon) + '</span><span>' + escapeHtml(a.text) + '</span><span class="when">' + timeAgo(a.at) + '</span></div>').join('')
+        : '<div class="aline"><span>🌱</span><span>Nothing yet — money moves and finished tasks will show up here.</span></div>';
+    }
+    function confetti() {
+      play('fanfare');
+      const EMO = ['🎉', '🎊', '⭐', '🌴', '🥥', '🦀', '💚'];
+      const wrap = document.createElement('div'); wrap.className = 'confetti';
+      for (let i = 0; i < 18; i++) {
+        const s = document.createElement('span');
+        s.textContent = EMO[i % EMO.length];
+        s.style.left = (Math.random() * 100) + 'vw';
+        s.style.animationDelay = (Math.random() * .5) + 's';
+        s.style.animationDuration = (1.7 + Math.random() * 1.3) + 's';
+        s.style.fontSize = (15 + Math.random() * 18) + 'px';
+        wrap.appendChild(s);
+      }
+      document.body.appendChild(wrap);
+      setTimeout(() => wrap.remove(), 3600);
+    }
+    const fundedSeen = {};
+    const halfSeen = {};
+    function setEmpty(el, text, variant) { el.innerHTML = '<svg class="empty-mascot" aria-hidden="true"><use href="#' + (variant || 'uwiSym') + '"/></svg><p>' + text + '</p>'; }
+
+    /* ---------- Trip navigation ---------- */
+    function renderTripNav() {
+      $('tripNav').innerHTML = state.trips.map((t) =>
+        '<button type="button" class="trip-chip' + (t.id === state.currentTripId ? ' on' : '') + '" onclick="switchTrip(\'' + t.id + '\')"><span>' + escapeHtml(t.name) + '</span></button>'
+      ).join('') +
+      '<button type="button" class="trip-chip new" onclick="createTrip()">＋ New trip</button>';
+      $('tripTitle').textContent = trip().name;
+      document.title = trip().name + ' · Sipit';
+    }
+    function switchTrip(id) {
+      if (!state.trips.some((t) => t.id === id)) return;
+      state.currentTripId = id;
+      editingExp = null; editingPerson = null; editingTodo = null; payFor = null; searchText = ''; payFilter = 'all'; todoFilter = 'all';
+      $('search').value = '';
+      render(); toast('Now viewing: ' + trip().name);
+    }
+    function createTrip() {
+      const name = (prompt('Name for the new trip or event?\n(e.g. Christmas Party, Beach 2027)') || '').trim();
+      if (!name) return;
+      const friends = trip().people.map((p) => ({ id: uid(), name: p.name, payments: [] }));
+      const t = { id: uid(), name: name.slice(0, 40), notes: '', people: friends, expenses: [], todos: [], activity: [{ id: uid(), icon: '🌴', text: 'Trip created — friends copied over', at: new Date().toISOString() }] };
+      state.trips.push(t);
+      state.currentTripId = t.id;
+      editingExp = null; editingPerson = null; editingTodo = null; payFor = null; searchText = ''; payFilter = 'all'; todoFilter = 'all';
+      $('search').value = '';
+      play('add'); render(); toast('“' + t.name + '” created — friends copied over 🎉');
+    }
+    function renameTrip() {
+      const name = (prompt('New name for this trip?', trip().name) || '').trim();
+      if (!name) return;
+      trip().name = name.slice(0, 40);
+      logAct('✏️', 'Trip renamed to “' + trip().name + '”');
+      play('tick'); render(); toast('Renamed ✓');
+    }
+    function deleteTrip() {
+      const t = trip();
+      snapshotForUndo();
+      state.trips = state.trips.filter((x) => x.id !== t.id);
+      if (!state.trips.length) state.trips.push(blankTrip('My trip'));
+      state.currentTripId = state.trips[0].id;
+      editingExp = null; editingPerson = null; editingTodo = null; payFor = null; searchText = ''; payFilter = 'all'; todoFilter = 'all';
+      $('search').value = '';
+      play('del'); render(); toast('Deleted trip: ' + t.name, true);
+    }
+
+    /* ---------- Render: summary ---------- */
+    function renderSummary() {
+      const total = tripTotal(), collected = totalCollected(), n = trip().expenses.length;
+      const unpaid = trip().expenses.filter((e) => !e.paidBy);
+      const pct = total > 0 ? Math.min(100, Math.round(collected / total * 100)) : 0;
+      setMoney('tripTotal', total);
+      $('tripSubline').textContent = n === 0 ? 'The list is empty.'
+        : n + (n === 1 ? ' thing' : ' things') + ' on the list' + (unpaid.length ? ' · ' + unpaid.length + ' not paid yet' : ' · all paid ✓');
+      setMoney('collected', collected);
+      setMoney('needed', Math.max(total - collected, 0));
+      setMoney('share', shareEach());
+      $('bar').style.width = pct + '%';
+      $('pctText').textContent = total > 0 ? pct + '% of the money is in (' + trip().people.length + ' people sharing)' : 'Add things to the list to see the split.';
+      $('stickyName').textContent = trip().name;
+      $('stickyTotal').textContent = fmt(total);
+      $('expCount').textContent = trip().expenses.length;
+      $('friendCount').textContent = trip().people.length;
+      $('todoCount').textContent = todosOf().length;
+      renderOweStrip(total, collected);
+      const funded = total > 0 && collected >= total;
+      if (fundedSeen[trip().id] === undefined) fundedSeen[trip().id] = funded;
+      else if (funded && !fundedSeen[trip().id]) {
+        fundedSeen[trip().id] = true; confetti();
+        setTimeout(() => toast('Fully funded! 🎉💰 Sipit is proud of you.'), 700);
+      }
+      else if (!funded) fundedSeen[trip().id] = false;
+      const half = total > 0 && collected >= total / 2;
+      if (halfSeen[trip().id] === undefined) halfSeen[trip().id] = half;
+      else if (half && !halfSeen[trip().id]) { halfSeen[trip().id] = true; if (!funded) { play('coin'); toast('Halfway funded! 💪 Keep it coming.'); } }
+      else if (!half) halfSeen[trip().id] = false;
+    }
+
+    function renderOweStrip(total, collected) {
+      const el = $('oweStrip');
+      if (trip().people.length === 0 && trip().expenses.length === 0) {
+        el.innerHTML = '<div class="steps-mini">' +
+          '<div><b>1</b><span>Add the people joining</span></div>' +
+          '<div><b>2</b><span>List the trip expenses</span></div>' +
+          '<div><b>3</b><span>Record payments as they happen</span></div>' +
+        '</div>';
+        return;
+      }
+      if (total <= 0) { el.innerHTML = ''; return; }
+      const short = trip().people
+        .map((p) => ({ p, owe: shareEach() - personGiven(p) }))
+        .filter((x) => x.owe >= 1)
+        .sort((a, b) => b.owe - a.owe);
+      if (!short.length) { el.innerHTML = ''; return; }
+      const chips = short.slice(0, 3).map((x) =>
+        '<button type="button" onclick="jump(\'secFriends\')">' + escapeHtml(x.p.name.split(' ')[0]) + ' · ' + fmt(x.owe) + '</button>'
+      ).join('');
+      const more = short.length > 3 ? '<button type="button" onclick="jump(\'secFriends\')">+' + (short.length - 3) + ' more</button>' : '';
+      el.innerHTML = '<span class="lead">Waiting on:</span>' + chips + more;
+    }
+    function jump(id) {
+      const el = $(id);
+      if (!el) return;
+      if (el.tagName === 'DETAILS') el.open = true;
+      if (el.scrollIntoView) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    /* ---------- Notes ---------- */
+    function renderNotes() {
+      const ta = $('tripNotes');
+      if (ta && document.activeElement !== ta) ta.value = trip().notes || '';
+    }
+
+    /* ---------- Breakdown & settle-up ---------- */
+    function settleSuggestions() {
+      const share = shareEach();
+      const bal = trip().people.map((p) => ({ name: p.name, v: personGiven(p) - share }));
+      const debt = bal.filter((x) => x.v <= -1).map((x) => ({ name: x.name, v: -x.v })).sort((a, b) => b.v - a.v);
+      const cred = bal.filter((x) => x.v >= 1).map((x) => ({ name: x.name, v: x.v })).sort((a, b) => b.v - a.v);
+      const out = [];
+      let i = 0, j = 0;
+      while (i < debt.length && j < cred.length && out.length < 12) {
+        const amt = Math.min(debt[i].v, cred[j].v);
+        if (amt >= 1) out.push({ from: debt[i].name, to: cred[j].name, amt });
+        debt[i].v -= amt; cred[j].v -= amt;
+        if (debt[i].v < 1) i++;
+        if (cred[j].v < 1) j++;
+      }
+      return out;
+    }
+    function renderBreakdown() {
+      const totals = Object.keys(CATS)
+        .map((c) => [c, trip().expenses.filter((e) => e.category === c).reduce((s, e) => s + (Number(e.amount) || 0), 0)])
+        .filter((x) => x[1] > 0)
+        .sort((a, b) => b[1] - a[1]);
+      const top = totals.length ? totals[0][1] : 0;
+      $('catBars').innerHTML = totals.length
+        ? totals.map(([c, v]) =>
+            '<div class="catline"><span class="nm">' + CATS[c] + ' ' + c + '</span><span class="bar"><i style="width:' + Math.max(6, Math.round(v / top * 100)) + '%"></i></span><span class="amt">' + fmt(v) + '</span></div>'
+          ).join('')
+        : '<p class="hint" style="margin:10px 0 0">Nothing to break down yet — add some items first.</p>';
+      const s = settleSuggestions();
+      $('settleList').innerHTML = s.length
+        ? s.map((x) => '<div class="settleline"><span>' + escapeHtml(x.from) + ' <span class="arr">→</span> ' + escapeHtml(x.to) + '</span><b>' + fmt(x.amt) + '</b></div>').join('')
+        : '<p class="hint" style="margin:8px 0 0">' + (trip().people.length && tripTotal() > 0 ? 'No transfers needed — just collect from whoever is on the “waiting on” list 😊' : 'Add friends and expenses to see settle-up suggestions.') + '</p>';
+    }
+
+    /* ---------- Render: chips, tabs, who-paid options ---------- */
+    function renderChips() {
+      $('catChips').innerHTML = Object.keys(CATS).map((c) =>
+        '<button type="button" class="chip' + (c === selectedCat ? ' on' : '') + '" onclick="setCat(\'' + c + '\')">' + CATS[c] + ' ' + c + '</button>'
+      ).join('');
+    }
+    function setCat(c) { selectedCat = c; renderChips(); }
+
+    function renderSegTabs() {
+      const n = trip().expenses.length;
+      const topay = trip().expenses.filter((e) => !e.paidBy).length;
+      const tabs = [
+        ['all', 'All (' + n + ')'],
+        ['topay', '🛒 To buy (' + topay + ')'],
+        ['paid', '✓ Paid (' + (n - topay) + ')']
+      ];
+      $('segTabs').innerHTML = tabs.map(([f, label]) =>
+        '<button type="button" role="tab" aria-selected="' + (payFilter === f) + '" class="' + (payFilter === f ? 'on' : '') + '" onclick="setFilter(\'' + f + '\')">' + label + '</button>'
+      ).join('');
+    }
+    function setFilter(f) { payFilter = f; renderSegTabs(); renderExpenses(); }
+
+    function paidChoiceOptions(current) {
+      return '<option value="' + POT + '"' + (current === POT ? ' selected' : '') + '>🤝 Shared money paid</option>' +
+        trip().people.map((p) => '<option value="' + p.id + '"' + (current === p.id ? ' selected' : '') + '>👤 ' + escapeHtml(p.name) + ' paid</option>').join('');
+    }
+    function renderPaidBySelect() {
+      const sel = $('expPaidBy'); const current = sel.value || '';
+      sel.innerHTML = '<option value="">🕐 Not paid yet (just planning)</option>' + paidChoiceOptions(current);
+      sel.value = [...sel.options].some((o) => o.value === current) ? current : '';
+    }
+
+    /* ---------- Render: expenses ---------- */
+    function paidLabel(e) {
+      if (e.paidBy === POT) return '✓ Shared money paid';
+      const p = personById(e.paidBy);
+      return '✓ ' + (p ? escapeHtml(p.name) : 'Someone') + ' paid';
+    }
+
+    function expenseRowHTML(e) {
+      if (editingExp === e.id) {
+        return '<article class="rowcard"><div class="editbox">' +
+          '<input id="eeName" class="field" value="' + escapeHtml(e.name) + '" maxlength="60" placeholder="What is it?" />' +
+          '<input id="eeAmount" class="field" type="text" inputmode="decimal" autocomplete="off" value="' + (Number(e.amount) || 0) + '" placeholder="How much? (₱ — 120+80 works)" />' +
+          '<div class="grid2">' +
+            '<select id="eeCat" class="field">' + Object.keys(CATS).map((c) => '<option' + (c === e.category ? ' selected' : '') + '>' + c + '</option>').join('') + '</select>' +
+            '<select id="eePaid" class="field"><option value=""' + (!e.paidBy ? ' selected' : '') + '>🕐 Not paid yet</option>' + paidChoiceOptions(e.paidBy) + '</select>' +
+          '</div>' +
+          '<input id="eeNote" class="field" value="' + escapeHtml(e.note) + '" maxlength="60" placeholder="Note (optional, e.g. Dothy will bring this)" />' +
+          '<div class="btns">' +
+            '<button type="button" class="btn btn-primary small" onclick="saveExpense(\'' + e.id + '\')">✓ Save</button>' +
+            '<button type="button" class="btn btn-ghost small" onclick="closeEditors()">Cancel</button>' +
+            '<span class="spacer"></span>' +
+            '<button type="button" class="icon-btn danger" title="Delete" aria-label="Delete item" onclick="deleteExpense(\'' + e.id + '\')">🗑</button>' +
+          '</div>' +
+        '</div></article>';
+      }
+      const tags = ['<span class="tag">' + (CATS[e.category] || '📦') + ' ' + escapeHtml(e.category) + '</span>'];
+      if (e.note) tags.push('<span class="tag note">✋ ' + escapeHtml(e.note) + '</span>');
+      tags.push(e.paidBy
+        ? '<span class="tag paid">' + paidLabel(e) + '</span>'
+        : '<select class="markpaid" aria-label="Mark as paid" onchange="markPaid(\'' + e.id + '\', this.value)"><option value="" selected disabled>💸 Mark as paid ▾</option>' + paidChoiceOptions('') + '</select>');
+      return '<article class="rowcard">' +
+        '<div class="row-main">' +
+          '<div class="row-emoji">' + (CATS[e.category] || '📦') + '</div>' +
+          '<div class="row-info"><p class="row-name">' + escapeHtml(e.name) + '</p><div class="row-tags">' + tags.join('') + '</div></div>' +
+          '<div class="row-side"><p class="row-amt">' + fmt(e.amount) + '</p>' +
+            '<div class="row-btns">' +
+              '<button type="button" class="icon-btn" title="Edit" aria-label="Edit item" onclick="editExpense(\'' + e.id + '\')">✏️</button>' +
+              '<button type="button" class="icon-btn danger" title="Delete" aria-label="Delete item" onclick="deleteExpense(\'' + e.id + '\')">✕</button>' +
+            '</div>' +
+          '</div>' +
+        '</div></article>';
+    }
+
+    function renderExpenses() {
+      const q = searchText.trim().toLowerCase();
+      const list = trip().expenses.filter((e) =>
+        (payFilter === 'all' || (payFilter === 'topay' ? !e.paidBy : !!e.paidBy)) &&
+        (!q || (e.name + ' ' + e.category + ' ' + e.note).toLowerCase().includes(q))
+      );
+      $('expList').innerHTML = list.map(expenseRowHTML).join('');
+      const empty = $('expEmpty');
+      if (trip().expenses.length === 0) { empty.hidden = false; setEmpty(empty, 'Nothing here yet — add the first item above 🙂'); }
+      else if (list.length === 0 && q) { empty.hidden = false; setEmpty(empty, 'Nothing matches your search.'); }
+      else if (list.length === 0 && payFilter === 'topay') { empty.hidden = false; setEmpty(empty, 'Everything is paid — nice! ✓', 'uwiCool'); }
+      else if (list.length === 0 && payFilter === 'paid') { empty.hidden = false; setEmpty(empty, 'Nothing has been paid yet.'); }
+      else { empty.hidden = true; }
+      const paidSum = trip().expenses.filter((e) => e.paidBy).reduce((s, e) => s + e.amount, 0);
+      $('expTotals').innerHTML = trip().expenses.length
+        ? 'Already paid: <b>' + fmt(paidSum) + '</b> · Still to pay: <b>' + fmt(tripTotal() - paidSum) + '</b>'
+        : '';
+    }
+
+    /* ---------- Render: people ---------- */
+    function avatarColor(name) {
+      let h = 0; for (const ch of String(name)) h = (h * 31 + ch.charCodeAt(0)) % 360;
+      return 'hsl(' + h + ', 55%, 45%)';
+    }
+    const initials = (name) => String(name).trim().split(/\s+/).slice(0, 2).map((w) => w[0] || '').join('').toUpperCase() || '🙂';
+
+    function personRowHTML(p) {
+      if (editingPerson === p.id) {
+        return '<article class="rowcard"><div class="editbox">' +
+          '<input id="epName" class="field" value="' + escapeHtml(p.name) + '" maxlength="30" placeholder="Friend\'s name" />' +
+          '<div class="btns">' +
+            '<button type="button" class="btn btn-primary small" onclick="savePerson(\'' + p.id + '\')">✓ Save</button>' +
+            '<button type="button" class="btn btn-ghost small" onclick="closeEditors()">Cancel</button>' +
+            '<span class="spacer"></span>' +
+            '<button type="button" class="icon-btn danger" title="Remove friend" aria-label="Remove friend" onclick="deletePerson(\'' + p.id + '\')">🗑</button>' +
+          '</div>' +
+        '</div></article>';
+      }
+      const given = personGiven(p);
+      const st = statusOf(p);
+      const direct = trip().expenses.filter((e) => e.paidBy === p.id);
+      const nRecords = p.payments.length + direct.length;
+      const payBox = payFor === p.id
+        ? '<div class="cashchips">' + cashChipsHTML(p) + '</div>' +
+          '<form class="payform" onsubmit="return addPayment(event, \'' + p.id + '\')">' +
+            '<input id="payAmt" class="field" type="text" inputmode="decimal" autocomplete="off" placeholder="How much? (₱ — 500+500 works)" required />' +
+            '<button class="btn btn-green small" type="submit">✓ Save</button>' +
+            '<button class="btn btn-ghost small" type="button" onclick="closePay()">✕</button>' +
+          '</form>'
+        : '<button type="button" class="btn btn-green small w100" onclick="openPay(\'' + p.id + '\')">＋ Add money from ' + escapeHtml(p.name.split(' ')[0]) + '</button>';
+      const records = nRecords === 0 ? '' :
+        '<details><summary>' + nRecords + ' money record' + (nRecords === 1 ? '' : 's') + '</summary>' +
+          p.payments.map((x) => '<div class="payline"><span>💵 gave cash · ' + niceDate(x.date) + '</span><span><b>' + fmt(x.amount) + '</b> <button type="button" class="x" title="Remove this payment" onclick="deletePayment(\'' + p.id + '\',\'' + x.id + '\')">✕</button></span></div>').join('') +
+          direct.map((e) => '<div class="payline"><span>🧾 paid for ' + escapeHtml(e.name) + '</span><b>' + fmt(e.amount) + '</b></div>').join('') +
+        '</details>';
+      return '<article class="rowcard">' +
+        '<div class="row-main">' +
+          '<div class="avatar" style="background:' + avatarColor(p.name) + '">' + escapeHtml(initials(p.name)) + '</div>' +
+          '<div class="row-info">' +
+            '<p class="row-name">' + escapeHtml(p.name) + '</p>' +
+            '<p class="given">has given <b>' + fmt(given) + '</b></p>' +
+            '<div class="row-tags"><span class="tag ' + st.cls + '">' + st.text + '</span></div>' +
+            miniTasksHTML(p) +
+          '</div>' +
+          '<div class="row-side"><div class="row-btns">' +
+            '<button type="button" class="icon-btn" title="Rename" aria-label="Rename friend" onclick="editPerson(\'' + p.id + '\')">✏️</button>' +
+            '<button type="button" class="icon-btn danger" title="Remove" aria-label="Remove friend" onclick="deletePerson(\'' + p.id + '\')">✕</button>' +
+          '</div></div>' +
+        '</div>' +
+        '<div class="pay-area">' + payBox + records + '</div>' +
+      '</article>';
+    }
+
+    function renderPeople() {
+      $('peopleList').innerHTML = trip().people.map(personRowHTML).join('');
+      $('peopleEmpty').hidden = trip().people.length !== 0;
+    }
+
+    /* ---------- Render all ---------- */
+    function render(shouldSave) {
+      renderTripNav(); renderSummary(); renderChips(); renderSegTabs(); renderPaidBySelect(); renderExpenses(); renderPeople(); renderTodos(); renderActivity(); renderNotes(); renderBreakdown(); updateIdeas();
+      if (shouldSave !== false) save();
+      if (payFor && $('payAmt')) $('payAmt').focus();
+      if (editingExp && $('eeName')) $('eeName').focus();
+      if (editingPerson && $('epName')) $('epName').focus();
+      if (editingTodo && $('tdText')) $('tdText').focus();
+    }
+    function closeEditors() { editingExp = null; editingPerson = null; editingTodo = null; payFor = null; render(); }
+
+    /* ---------- Actions: expenses ---------- */
+    function addExpense(ev) {
+      ev.preventDefault();
+      const name = $('expName').value.trim();
+      const amount = Math.max(0, evalMath($('expAmount').value));
+      if (!name) return;
+      if (amount <= 0) { toast('Enter an amount greater than zero'); $('expAmount').focus(); return; }
+      trip().expenses.unshift({ id: uid(), name, amount, category: selectedCat, paidBy: $('expPaidBy').value || '', note: '', date: todayISO() });
+      logAct('🧾', 'Added “' + name + '” (' + fmt(amount) + ')');
+      $('expName').value = ''; $('expAmount').value = ''; $('expPaidBy').value = '';
+      buzz(); play('add'); render(); toast('Added: ' + name + ' ✓'); $('expName').focus();
+    }
+    function editExpense(id) { editingExp = id; editingPerson = null; payFor = null; render(); }
+    function saveExpense(id) {
+      const e = trip().expenses.find((x) => x.id === id); if (!e) return;
+      const name = $('eeName').value.trim();
+      const amount = Math.max(0, evalMath($('eeAmount').value));
+      if (amount <= 0) { toast('Enter an amount greater than zero'); $('eeAmount').focus(); return; }
+      if (name) e.name = name;
+      e.amount = amount;
+      e.category = CATS[$('eeCat').value] ? $('eeCat').value : 'Other';
+      e.paidBy = $('eePaid').value;
+      e.note = $('eeNote').value.trim();
+      editingExp = null; play('tick'); render(); toast('Saved ✓');
+    }
+    function deleteExpense(id) {
+      const e = trip().expenses.find((x) => x.id === id); if (!e) return;
+      snapshotForUndo();
+      trip().expenses = trip().expenses.filter((x) => x.id !== id);
+      logAct('🗑', 'Removed “' + e.name + '”');
+      if (editingExp === id) editingExp = null;
+      buzz(); play('del'); render(); toast('Removed ' + e.name, true);
+    }
+    function markPaid(id, value) {
+      if (!value) return;
+      const e = trip().expenses.find((x) => x.id === id); if (!e) return;
+      e.paidBy = value;
+      const payer = value === POT ? 'shared money' : ((personById(value) || {}).name || 'someone');
+      logAct('💸', '“' + e.name + '” paid by ' + payer);
+      buzz(); play('coin'); render();
+      toast(e.paidBy === POT ? 'Paid with shared money ✓' : ((personById(value) || {}).name || 'Someone') + ' paid ✓');
+    }
+
+    /* ---------- Actions: people ---------- */
+    function addPerson(ev) {
+      ev.preventDefault();
+      const name = $('personName').value.trim(); if (!name) return;
+      if (trip().people.some((x) => x.name.toLowerCase() === name.toLowerCase())) {
+        play('undo'); toast('“' + name + '” is already on this trip 😅 — maybe add a nickname?'); return;
+      }
+      trip().people.push({ id: uid(), name, payments: [] });
+      logAct('👋', name + ' joined the trip');
+      $('personName').value = '';
+      buzz(); play('add'); render(); toast(name + ' joined the trip 🎉');
+    }
+    function editPerson(id) { editingPerson = id; editingExp = null; payFor = null; render(); }
+    function savePerson(id) {
+      const p = personById(id); if (!p) return;
+      const name = $('epName').value.trim();
+      if (name && trip().people.some((x) => x.id !== id && x.name.toLowerCase() === name.toLowerCase())) {
+        toast('That name is already on this trip'); $('epName').focus(); return;
+      }
+      if (name) p.name = name;
+      editingPerson = null; play('tick'); render(); toast('Saved ✓');
+    }
+    function deletePerson(id) {
+      const p = personById(id); if (!p) return;
+      snapshotForUndo();
+      trip().expenses.forEach((e) => { if (e.paidBy === id) e.paidBy = POT; });
+      todosOf().forEach((t) => { if (t.who === id) t.who = ''; });
+      trip().people = trip().people.filter((x) => x.id !== id);
+      logAct('👋', p.name + ' left the trip'); buzz(); play('del');
+      if (editingPerson === id) editingPerson = null;
+      if (payFor === id) payFor = null;
+      render(); toast(p.name + ' removed', true);
+    }
+    function openPay(id) { payFor = id; editingExp = null; editingPerson = null; render(); }
+    function closePay() { payFor = null; render(); }
+    function addPayment(ev, id) {
+      ev.preventDefault();
+      const p = personById(id); if (!p) return false;
+      const amount = Math.max(0, evalMath($('payAmt').value));
+      if (amount > 0) {
+        p.payments.push({ id: uid(), amount, date: todayISO() });
+        logAct('💵', p.name + ' gave ' + fmt(amount));
+        buzz(); play('coin');
+        toast(p.name + ' gave ' + fmt(amount) + ' 💚');
+      }
+      payFor = null; render();
+      return false;
+    }
+    function deletePayment(personId, payId) {
+      const p = personById(personId); if (!p) return;
+      const pay = p.payments.find((x) => x.id === payId); if (!pay) return;
+      snapshotForUndo();
+      p.payments = p.payments.filter((x) => x.id !== payId);
+      logAct('🗑', 'Removed ' + fmt(pay.amount) + ' payment from ' + p.name);
+      buzz(); play('del'); render(); toast('Removed ' + fmt(pay.amount) + ' from ' + p.name, true);
+    }
+
+    /* ---------- To-dos ---------- */
+    const todosOf = () => trip().todos || (trip().todos = []);
+    const prioRank = { high: 0, med: 1, low: 2 };
+
+    function dueInfo(t) {
+      if (t.done || !t.due) return null;
+      const today = todayISO();
+      if (t.due < today) return { cls: 'overdue', label: '⏰ Overdue · ' + niceDate(t.due) };
+      if (t.due === today) return { cls: 'today', label: '⏰ Due today' };
+      return { cls: '', label: '📅 ' + niceDate(t.due) };
+    }
+    function todoCounts() {
+      const ts = todosOf();
+      const open = ts.filter((t) => !t.done);
+      const today = todayISO();
+      return {
+        all: ts.length,
+        today: open.filter((t) => t.due && t.due <= today).length,
+        up: open.filter((t) => !t.due || t.due > today).length,
+        done: ts.length - open.length
+      };
+    }
+    function sortedTodos() {
+      const today = todayISO();
+      const rank = (t) => t.done ? 9 : !t.due ? 3 : t.due < today ? 0 : t.due === today ? 1 : 2;
+      return [...todosOf()].sort((a, b) =>
+        rank(a) - rank(b) ||
+        String(a.due || '9999').localeCompare(String(b.due || '9999')) ||
+        prioRank[a.prio] - prioRank[b.prio] ||
+        String(b.createdAt).localeCompare(String(a.createdAt))
+      );
+    }
+    function renderTodoWho() {
+      const sel = $('todoWho'); const current = sel.value || '';
+      sel.innerHTML = '<option value="">🙋 Anyone can do it</option>' +
+        trip().people.map((p) => '<option value="' + p.id + '"' + (current === p.id ? ' selected' : '') + '>👤 ' + escapeHtml(p.name) + '</option>').join('');
+      sel.value = [...sel.options].some((o) => o.value === current) ? current : '';
+    }
+    function renderPrioChips() {
+      $('prioChips').innerHTML = Object.keys(PRIO).map((k) =>
+        '<button type="button" class="chip' + (k === selectedPrio ? ' on' : '') + '" onclick="setPrio(\'' + k + '\')">' + PRIO[k][0] + ' ' + PRIO[k][1] + '</button>'
+      ).join('');
+    }
+    function setPrio(k) { if (PRIO[k]) { selectedPrio = k; renderPrioChips(); } }
+    function renderTodoTabs() {
+      const c = todoCounts();
+      const tabs = [['all', 'All (' + c.all + ')'], ['today', '⏰ Today (' + c.today + ')'], ['up', '🔜 Upcoming (' + c.up + ')'], ['done', '✓ Done (' + c.done + ')']];
+      $('todoTabs').innerHTML = tabs.map(([f, label]) =>
+        '<button type="button" role="tab" aria-selected="' + (todoFilter === f) + '" class="' + (todoFilter === f ? 'on' : '') + '" onclick="setTodoFilter(\'' + f + '\')">' + label + '</button>'
+      ).join('');
+    }
+    function setTodoFilter(f) { todoFilter = f; renderTodoTabs(); renderTodoList(); }
+
+    function todoRowHTML(t) {
+      if (editingTodo === t.id) {
+        return '<article class="rowcard"><div class="editbox">' +
+          '<input id="tdText" class="field" value="' + escapeHtml(t.text) + '" maxlength="80" placeholder="What needs doing?" />' +
+          '<div class="grid2">' +
+            '<input id="tdDue" class="field" type="date" value="' + escapeHtml(t.due) + '" />' +
+            '<select id="tdWho" class="field"><option value="">🙋 Anyone can do it</option>' + trip().people.map((p) => '<option value="' + p.id + '"' + (p.id === t.who ? ' selected' : '') + '>👤 ' + escapeHtml(p.name) + '</option>').join('') + '</select>' +
+          '</div>' +
+          '<select id="tdPrio" class="field">' + Object.keys(PRIO).map((k) => '<option value="' + k + '"' + (k === t.prio ? ' selected' : '') + '>' + PRIO[k][0] + ' ' + PRIO[k][1] + ' priority</option>').join('') + '</select>' +
+          '<div class="btns">' +
+            '<button type="button" class="btn btn-primary small" onclick="saveTodo(\'' + t.id + '\')">✓ Save</button>' +
+            '<button type="button" class="btn btn-ghost small" onclick="closeEditors()">Cancel</button>' +
+            '<span class="spacer"></span>' +
+            '<button type="button" class="icon-btn danger" title="Delete" aria-label="Delete task" onclick="deleteTodo(\'' + t.id + '\')">🗑</button>' +
+          '</div>' +
+        '</div></article>';
+      }
+      const who = personById(t.who);
+      const di = dueInfo(t);
+      const tags = [];
+      if (di) tags.push('<span class="tag ' + di.cls + '">' + di.label + '</span>');
+      if (who) tags.push('<span class="tag note">👤 ' + escapeHtml(who.name) + '</span>');
+      if (!t.done) tags.push('<span class="tag p-' + t.prio + '">' + PRIO[t.prio][0] + ' ' + PRIO[t.prio][1] + '</span>');
+      else tags.push('<span class="tag paid">✓ done' + (t.doneAt ? ' · ' + niceDate(t.doneAt) : '') + '</span>');
+      return '<article class="rowcard">' +
+        '<div class="row-main">' +
+          '<button type="button" class="todo-check' + (t.done ? ' done' : '') + '" aria-label="' + (t.done ? 'Mark as not done' : 'Mark as done') + '" onclick="toggleTodo(\'' + t.id + '\')">✓</button>' +
+          '<div class="row-info"><p class="todo-text' + (t.done ? ' isdone' : '') + '">' + escapeHtml(t.text) + '</p>' + (tags.length ? '<div class="row-tags">' + tags.join('') + '</div>' : '') + '</div>' +
+          '<div class="row-side"><div class="row-btns">' +
+            '<button type="button" class="icon-btn" title="Edit" aria-label="Edit task" onclick="editTodo(\'' + t.id + '\')">✏️</button>' +
+            '<button type="button" class="icon-btn danger" title="Delete" aria-label="Delete task" onclick="deleteTodo(\'' + t.id + '\')">✕</button>' +
+          '</div></div>' +
+        '</div></article>';
+    }
+    function renderTodoList() {
+      const today = todayISO();
+      const list = sortedTodos().filter((t) =>
+        todoFilter === 'all' ? true :
+        todoFilter === 'today' ? (!t.done && t.due && t.due <= today) :
+        todoFilter === 'up' ? (!t.done && (!t.due || t.due > today)) :
+        t.done
+      );
+      $('todoList').innerHTML = list.map(todoRowHTML).join('');
+      const c = todoCounts();
+      const empty = $('todoEmpty');
+      if (c.all === 0) { empty.hidden = false; setEmpty(empty, 'No tasks yet — add one, or tap a quick idea 🙂'); }
+      else if (!list.length) {
+        empty.hidden = false;
+        setEmpty(empty, todoFilter === 'today' ? 'Nothing due today — chill 🌴' : todoFilter === 'up' ? 'No upcoming tasks.' : todoFilter === 'done' ? 'Nothing finished yet.' : '', todoFilter === 'today' ? 'uwiCool' : 'uwiSym');
+      } else empty.hidden = true;
+      const pctT = c.all ? Math.round(c.done / c.all * 100) : 0;
+      $('todoBar').style.width = pctT + '%';
+      $('todoProgressText').textContent = c.all ? c.done + ' of ' + c.all + ' tasks done (' + pctT + '%)' : 'Add tasks to see progress here.';
+      $('todoSuggest').innerHTML = c.all === 0
+        ? '<p class="hint" style="margin:14px 0 8px">Quick ideas:</p><div class="chips">' + TODO_IDEAS.map((s, i) => '<button type="button" class="chip" onclick="addSuggested(' + i + ')">＋ ' + escapeHtml(s[0]) + '</button>').join('') + '</div>'
+        : '';
+      $('clearDoneBtn').hidden = c.done === 0;
+    }
+    function renderTodos() { renderTodoWho(); renderPrioChips(); renderTodoTabs(); renderTodoList(); }
+
+    function addTodo(ev) {
+      ev.preventDefault();
+      const text = $('todoText').value.trim(); if (!text) return;
+      todosOf().unshift({ id: uid(), text, done: false, due: $('todoDue').value || '', who: $('todoWho').value || '', prio: selectedPrio, createdAt: new Date().toISOString(), doneAt: '' });
+      logAct('📝', 'New task: ' + text);
+      $('todoText').value = ''; $('todoDue').value = '';
+      buzz(); play('add'); render(); toast('Task added ✓'); $('todoText').focus();
+    }
+    function addSuggested(i) {
+      const s = TODO_IDEAS[i]; if (!s) return;
+      todosOf().unshift({ id: uid(), text: s[0], done: false, due: '', who: '', prio: s[1], createdAt: new Date().toISOString(), doneAt: '' });
+      play('add'); render(); toast('Task added ✓');
+    }
+    function toggleTodo(id) {
+      const t = todosOf().find((x) => x.id === id); if (!t) return;
+      t.done = !t.done; t.doneAt = t.done ? todayISO() : '';
+      logAct(t.done ? '✅' : '↩️', (t.done ? 'Done: ' : 'Reopened: ') + t.text);
+      buzz(); play(t.done ? 'done' : 'undo'); render();
+      const c = todoCounts();
+      if (t.done && c.all > 0 && c.done === c.all) { confetti(); toast('All tasks done! 🎉 Beach mode.'); }
+    }
+    function editTodo(id) { editingTodo = id; editingExp = null; editingPerson = null; payFor = null; render(); }
+    function saveTodo(id) {
+      const t = todosOf().find((x) => x.id === id); if (!t) return;
+      const text = $('tdText').value.trim(); if (text) t.text = text;
+      t.due = $('tdDue').value || '';
+      t.who = $('tdWho').value || '';
+      t.prio = PRIO[$('tdPrio').value] ? $('tdPrio').value : 'med';
+      editingTodo = null; play('tick'); render(); toast('Saved ✓');
+    }
+    function deleteTodo(id) {
+      const t = todosOf().find((x) => x.id === id); if (!t) return;
+      snapshotForUndo();
+      trip().todos = todosOf().filter((x) => x.id !== id);
+      if (editingTodo === id) editingTodo = null;
+      play('del'); render(); toast('Removed task', true);
+    }
+    function clearDone() {
+      if (!todosOf().some((t) => t.done)) return;
+      snapshotForUndo();
+      trip().todos = todosOf().filter((t) => !t.done);
+      play('del'); render(); toast('Cleared finished tasks', true);
+    }
+
+    /* ---------- Cloud sync (free & optional) ---------- */
+    const CLOUD_KEY = 'uwingUwiCloudV1';
+    const CLOUD_BASE = 'https://jsonblob.com/api/jsonBlob';
+    let cloud = null;
+    try { cloud = JSON.parse(localStorage.getItem(CLOUD_KEY) || 'null'); } catch (e) {}
+    let cloudTimer = null;
+    let adopting = false;
+
+    function setCloudStatus(text) { const el = $('cloudStatus'); if (el) el.textContent = text; }
+    function fetchT(url, opts) {
+      const ctrl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+      const t = ctrl ? setTimeout(() => ctrl.abort(), 12000) : null;
+      return fetch(url, Object.assign({ headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' } }, opts, ctrl ? { signal: ctrl.signal } : {}))
+        .finally(() => { if (t) clearTimeout(t); });
+    }
+    function queueCloudPush() {
+      if (!cloud || adopting || typeof fetch === 'undefined') return;
+      setCloudStatus('☁️ syncing…');
+      clearTimeout(cloudTimer);
+      cloudTimer = setTimeout(cloudPush, 900);
+    }
+    function cloudPush() {
+      if (!cloud) return;
+      fetchT(CLOUD_BASE + '/' + encodeURIComponent(cloud.id), { method: 'PUT', body: JSON.stringify(state) })
+        .then((r) => {
+          if (!r.ok) throw new Error('bad');
+          setCloudStatus('☁️ synced ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+        })
+        .catch(() => setCloudStatus('☁️ offline — your changes will sync when internet is back'));
+    }
+    function cloudPull(quiet) {
+      if (!cloud || typeof fetch === 'undefined') return;
+      setCloudStatus('☁️ checking for updates…');
+      fetchT(CLOUD_BASE + '/' + encodeURIComponent(cloud.id))
+        .then((r) => { if (!r.ok) throw new Error('bad'); return r.json(); })
+        .then((raw) => {
+          if (String(raw.updatedAt || '') > String(state.updatedAt || '')) {
+            const data = normalizeState(raw);
+            if (data) {
+              adopting = true;
+              state = data;
+              editingExp = null; editingPerson = null; editingTodo = null; payFor = null;
+              render();
+              adopting = false;
+              if (!quiet) toast('Updated from the cloud ☁️');
+            }
+          }
+          setCloudStatus('☁️ synced ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+        })
+        .catch(() => setCloudStatus('☁️ offline — using this device’s copy'));
+    }
+    function enableCloud() {
+      if (typeof fetch === 'undefined') { toast('This browser can’t reach the internet'); return; }
+      setCloudStatus('☁️ setting up…');
+      fetchT(CLOUD_BASE, { method: 'POST', body: JSON.stringify(state) })
+        .then((r) => {
+          if (!r.ok) throw new Error('bad');
+          const loc = r.headers.get('Location') || r.headers.get('location') || '';
+          const id = (loc.split('/').pop() || '').trim();
+          if (!id) throw new Error('noloc');
+          cloud = { provider: 'jsonblob', id: id };
+          try { localStorage.setItem(CLOUD_KEY, JSON.stringify(cloud)); } catch (e) {}
+          renderCloudModal();
+          setCloudStatus('☁️ synced — cloud sync is on');
+          toast('Cloud sync is on! Share the trip code 🎉'); confetti();
+        })
+        .catch(() => { setCloudStatus(''); toast('Could not reach the free cloud — check your internet and try again'); });
+    }
+    function joinCloudClick() { joinCloud(($('joinCode') || { value: '' }).value); }
+    function joinCloud(code) {
+      code = String(code || '').trim().split('/').pop();
+      if (!code) { toast('Paste the trip code first'); return; }
+      if (typeof fetch === 'undefined') { toast('This browser can’t reach the internet'); return; }
+      setCloudStatus('☁️ joining…');
+      fetchT(CLOUD_BASE + '/' + encodeURIComponent(code))
+        .then((r) => { if (!r.ok) throw new Error('bad'); return r.json(); })
+        .then((raw) => {
+          const data = normalizeState(raw);
+          if (!data) throw new Error('shape');
+          adopting = true;
+          state = data;
+          try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+          editingExp = null; editingPerson = null; editingTodo = null; payFor = null;
+          render();
+          adopting = false;
+          cloud = { provider: 'jsonblob', id: code };
+          try { localStorage.setItem(CLOUD_KEY, JSON.stringify(cloud)); } catch (e) {}
+          renderCloudModal();
+          setCloudStatus('☁️ synced — following the trip cloud');
+          toast('Joined! This device now follows the trip ☁️'); confetti();
+        })
+        .catch(() => { setCloudStatus(''); toast('Code not found — double-check it and try again'); });
+    }
+    function leaveCloud() {
+      cloud = null;
+      try { localStorage.removeItem(CLOUD_KEY); } catch (e) {}
+      renderCloudModal();
+      setCloudStatus('');
+      toast('Cloud sync turned off on this device');
+    }
+    function copyCode() {
+      if (!cloud) return;
+      const done = () => toast('Trip code copied — send it to the barkada 💌');
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(cloud.id).then(done).catch(() => fallbackCopy(cloud.id, done));
+      else fallbackCopy(cloud.id, done);
+    }
+    function renderCloudModal() {
+      const body = $('cloudBody');
+      if (!body) return;
+      if (!cloud) {
+        body.innerHTML =
+          '<p class="hint">Turn this on and the whole tracker saves to a free cloud. Open the file on any other phone or computer, paste the <b>trip code</b>, and everything appears — and stays in sync.</p>' +
+          '<button class="btn btn-primary w100" type="button" onclick="enableCloud()">☁️ Turn on cloud sync</button>' +
+          '<p class="hint" style="margin:16px 0 8px"><b>Got a code from a friend?</b></p>' +
+          '<div class="row-form"><input id="joinCode" class="field" placeholder="Paste the trip code" autocomplete="off" /><button class="btn btn-green" type="button" onclick="joinCloudClick()">Join</button></div>' +
+          '<p class="tipline">💡 Anyone with the code can see and edit this trip — share it with the barkada only. Uses a free community service (jsonblob.com), so keep an occasional backup too. Works offline; syncs when internet returns.</p>';
+      } else {
+        body.innerHTML =
+          '<p class="hint">This device follows a trip cloud. Share this code with the barkada, or type it on your other devices:</p>' +
+          '<div class="row-form"><input id="codeShow" class="field" readonly value="' + escapeHtml(cloud.id) + '" onclick="this.select()" /><button class="btn btn-primary" type="button" onclick="copyCode()">Copy</button></div>' +
+          '<p class="tipline">💡 On the other device: open the tracker → ☁️ Cloud sync → paste the code → Join. Last save wins if two people edit at the exact same time.</p>' +
+          '<button class="btn btn-ghost small w100" style="margin-top:14px" type="button" onclick="leaveCloud()">Turn off on this device</button>';
+      }
+    }
+
+    /* ---------- Copy summary for group chat ---------- */
+    function buildSummaryText() {
+      const total = tripTotal(), collected = totalCollected();
+      const pct = total > 0 ? Math.round(collected / total * 100) : 0;
+      const unpaid = trip().expenses.filter((e) => !e.paidBy);
+      const lines = [
+        '🏖️ ' + trip().name.toUpperCase() + ' — money update',
+        '💰 Trip total: ' + fmt(total),
+        '✅ Collected: ' + fmt(collected) + ' (' + pct + '%)',
+        '🔴 Still needed: ' + fmt(Math.max(total - collected, 0)),
+        '👥 Each person: ' + fmt(shareEach()) + ' (' + trip().people.length + ' people)',
+        ''
+      ];
+      if (trip().people.length) {
+        lines.push('Where everyone stands:');
+        trip().people.forEach((p) => {
+          const diff = personGiven(p) - shareEach();
+          const st = total === 0 ? '' : Math.abs(diff) < 1 ? ' — settled ✓' : diff < 0 ? ' — needs ' + fmt(-diff) + ' more' : ' — ' + fmt(diff) + ' extra';
+          lines.push('• ' + p.name + ': gave ' + fmt(personGiven(p)) + st);
+        });
+      }
+      if (unpaid.length) {
+        lines.push('', '🛒 Still to buy/pay: ' + unpaid.length + ' item' + (unpaid.length === 1 ? '' : 's') + ' worth ' + fmt(unpaid.reduce((s, e) => s + e.amount, 0)));
+      }
+      const ts = todosOf();
+      if (ts.length) {
+        const open = ts.filter((t) => !t.done);
+        lines.push('', '✅ Tasks: ' + (ts.length - open.length) + '/' + ts.length + ' done');
+        open.slice(0, 3).forEach((t) => {
+          const who = personById(t.who);
+          lines.push('◻ ' + t.text + (t.due ? ' (due ' + niceDate(t.due) + ')' : '') + (who ? ' — ' + who.name : ''));
+        });
+        if (open.length > 3) lines.push('…and ' + (open.length - 3) + ' more');
+      }
+      const st = settleSuggestions();
+      if (st.length) {
+        lines.push('', '💱 Easiest settle-up:');
+        st.forEach((x) => lines.push('• ' + x.from + ' → ' + x.to + ': ' + fmt(x.amt)));
+      }
+      return lines.join('\n');
+    }
+    function copySummary() {
+      const text = buildSummaryText();
+      const done = () => { play('done'); toast('Copied! Paste it in your group chat 💬'); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+      } else { fallbackCopy(text, done); }
+    }
+    function shareSummary() {
+      const text = buildSummaryText();
+      if (navigator.share) {
+        navigator.share({ title: trip().name + ' — money update', text: text }).then(() => { play('done'); toast('Shared! 💌'); }).catch(() => {});
+      } else {
+        copySummary(); // no share sheet on this browser — copy instead
+      }
+    }
+    function fallbackCopy(text, done) {
+      const ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch (e) { toast('Could not copy on this browser'); }
+      document.body.removeChild(ta);
+    }
+
+    /* ---------- Backup / restore / reset ---------- */
+    function downloadBackup() {
+      const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'trip-money-backup.json';
+      link.click();
+      URL.revokeObjectURL(link.href);
+      try { localStorage.setItem('uwingUwiLastBackup', String(Date.now())); } catch (e) {}
+      toast('Backup downloaded 📥 (all trips included)');
+    }
+    function restoreBackup(file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const data = normalizeState(JSON.parse(reader.result));
+          if (!data) throw new Error('empty');
+          state = data;
+          editingExp = null; editingPerson = null; editingTodo = null; payFor = null; searchText = ''; payFilter = 'all'; todoFilter = 'all';
+          $('search').value = '';
+          play('done'); render(); toast('Backup loaded ✓');
+        } catch (e) { toast('That file is not a valid backup'); }
+      };
+      reader.readAsText(file);
+    }
+
+    /* ---------- Theme (follows your phone until you choose) ---------- */
+    function applyTheme(dark, persist) {
+      document.documentElement.classList.toggle('dark', dark);
+      if (persist !== false) { try { localStorage.setItem(THEME_KEY, dark ? 'dark' : 'light'); } catch (e) {} }
+      syncSwitches();
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', dark ? '#08111d' : '#eaf0f5');
+    }
+    try {
+      if (window.matchMedia && !localStorage.getItem(THEME_KEY)) {
+        const mq = matchMedia('(prefers-color-scheme: dark)');
+        if (mq.addEventListener) mq.addEventListener('change', (e) => { if (!localStorage.getItem(THEME_KEY)) applyTheme(e.matches, false); });
+      }
+    } catch (e) {}
+
+    /* ---------- Wire up ---------- */
+    $('expForm').addEventListener('submit', addExpense);
+    $('personForm').addEventListener('submit', addPerson);
+    $('todoForm').addEventListener('submit', addTodo);
+    let notesTimer;
+    $('tripNotes').addEventListener('input', () => {
+      trip().notes = $('tripNotes').value.slice(0, 5000);
+      clearTimeout(notesTimer);
+      notesTimer = setTimeout(save, 500);
+    });
+    $('clearDoneBtn').addEventListener('click', clearDone);
+    $('search').addEventListener('input', () => { searchText = $('search').value; renderExpenses(); });
+    $('copyBtn').addEventListener('click', copySummary);
+    $('quickAddBtn').addEventListener('click', () => {
+      jump('secSpend');
+      window.setTimeout(() => $('expName').focus(), 360);
+    });
+    $('renameBtn').addEventListener('click', renameTrip);
+    $('restoreFile').addEventListener('change', (e) => { if (e.target.files[0]) restoreBackup(e.target.files[0]); e.target.value = ''; });
+    $('mascotBtn').addEventListener('click', () => {
+      play('crab');
+      const btn = $('mascotBtn');
+      btn.classList.remove('wiggle'); void btn.offsetWidth; btn.classList.add('wiggle');
+      setBubble();
+    });
+    let deferredInstallPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredInstallPrompt = e;
+    });
+    async function openA2hs() {
+      if (deferredInstallPrompt) {
+        deferredInstallPrompt.prompt();
+        try { await deferredInstallPrompt.userChoice; } catch (e) {}
+        deferredInstallPrompt = null;
+        return;
+      }
+      const ua = navigator.userAgent || '';
+      const isIOS = /iPhone|iPad|iPod/i.test(ua);
+      const isAndroid = /Android/i.test(ua);
+      $('stepIos').classList.toggle('you', isIOS);
+      $('stepAndroid').classList.toggle('you', isAndroid);
+      $('stepDesktop').classList.toggle('you', !isIOS && !isAndroid);
+      $('a2hs').hidden = false;
+    }
+    $('a2hsClose').addEventListener('click', () => { $('a2hs').hidden = true; });
+    $('a2hsOk').addEventListener('click', () => { $('a2hs').hidden = true; });
+    $('a2hs').addEventListener('click', (e) => { if (e.target === $('a2hs')) $('a2hs').hidden = true; });
+    $('shareBtn').addEventListener('click', shareSummary);
+    $('stickyShare').addEventListener('click', (e) => { e.stopPropagation(); shareSummary(); });
+    $('stickybar').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    window.addEventListener('scroll', () => {
+      $('stickybar').classList.toggle('show', window.scrollY > 260);
+    }, { passive: true });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (!$('settingsModal').hidden) { $('settingsModal').hidden = true; return; }
+        if (!$('a2hs').hidden) { $('a2hs').hidden = true; return; }
+        if (!$('cloudModal').hidden) { $('cloudModal').hidden = true; return; }
+        if (editingExp || editingPerson || editingTodo || payFor) closeEditors();
+      } else if (e.key === '/' && !/^(INPUT|SELECT|TEXTAREA)$/.test((e.target && e.target.tagName) || '')) {
+        e.preventDefault(); $('search').focus();
+      }
+    });
+    $('cloudClose').addEventListener('click', () => { $('cloudModal').hidden = true; });
+    $('cloudModal').addEventListener('click', (e) => { if (e.target === $('cloudModal')) $('cloudModal').hidden = true; });
+    window.addEventListener('online', () => { cloudPull(true); queueCloudPush(); });
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') cloudPull(true); });
+    window.addEventListener('focus', () => cloudPull(true));
+    setInterval(() => { // keeps PC + phone fresh while the app is open
+      if (cloud && document.visibilityState === 'visible' && navigator.onLine !== false) cloudPull(true);
+    }, 25000);
+    function eraseAll() {
+      if (!confirm('Erase ALL trips, items, friends, and payments?')) return;
+      snapshotForUndo();
+      state = { trips: [blankTrip('My trip')], currentTripId: null };
+      state.currentTripId = state.trips[0].id;
+      editingExp = null; editingPerson = null; editingTodo = null; payFor = null;
+      play('del'); render(); toast('Everything erased', true);
+    }
+    $('footSettings').addEventListener('click', () => { syncSwitches(); $('settingsModal').hidden = false; });
+
+    applyTheme(document.documentElement.classList.contains('dark'), false);
+    let storedGlass = 'on'; try { storedGlass = localStorage.getItem(GLASS_KEY) || 'on'; } catch (e) {}
+    applyGlass(storedGlass, false);
+    setBubble();
+    render(false);
+    if (cloud) { setCloudStatus('☁️ cloud sync is on'); cloudPull(true); }
+
+    if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+    }
+
+    // expose handlers used by inline onclick/onchange attributes
+    window.setCat = setCat; window.setFilter = setFilter; window.markPaid = markPaid;
+    window.switchTrip = switchTrip; window.createTrip = createTrip;
+    window.editExpense = editExpense; window.saveExpense = saveExpense; window.deleteExpense = deleteExpense;
+    window.editPerson = editPerson; window.savePerson = savePerson; window.deletePerson = deletePerson;
+    window.openPay = openPay; window.closePay = closePay; window.addPayment = addPayment; window.deletePayment = deletePayment;
+    window.closeEditors = closeEditors; window.undoLast = undoLast;
+    window.setPrio = setPrio; window.setTodoFilter = setTodoFilter; window.addSuggested = addSuggested;
+    window.toggleTodo = toggleTodo; window.editTodo = editTodo; window.saveTodo = saveTodo; window.deleteTodo = deleteTodo;
+    window.enableCloud = enableCloud; window.joinCloudClick = joinCloudClick; window.leaveCloud = leaveCloud; window.copyCode = copyCode;
+    window.jump = jump; window.fillPay = fillPay;
+  </script>
+</body>
+</html>
