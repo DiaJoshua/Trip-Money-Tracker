@@ -1120,9 +1120,21 @@
       .theme-btn { width: 44px; min-height: 44px; margin: 0; padding: 0; justify-content: center; }
       .settings-label { display: none; }
       .side-label { margin: 0 3px 6px; }
-      .tripnav { display: flex; gap: 6px; margin-bottom: 12px; overflow-x: auto; }
+      .tripnav {
+        display: flex; gap: 6px; margin-bottom: 12px; overflow-x: auto;
+        -webkit-overflow-scrolling: touch; scroll-padding-right: 18px;
+        padding-right: 18px; margin-right: -18px;
+        -webkit-mask-image: linear-gradient(to right, transparent, black 10px, black calc(100% - 22px), transparent);
+        mask-image: linear-gradient(to right, transparent, black 10px, black calc(100% - 22px), transparent);
+      }
       .trip-chip { width: auto; max-width: 210px; flex-shrink: 0; }
-      .jumpbar { display: flex; gap: 5px; overflow-x: auto; }
+      .jumpbar {
+        display: flex; gap: 5px; overflow-x: auto;
+        -webkit-overflow-scrolling: touch; scroll-padding-right: 18px;
+        padding-right: 18px; margin-right: -18px;
+        -webkit-mask-image: linear-gradient(to right, transparent, black 10px, black calc(100% - 22px), transparent);
+        mask-image: linear-gradient(to right, transparent, black 10px, black calc(100% - 22px), transparent);
+      }
       .jumpbar button, html.glassy .jumpbar button { width: auto; flex: 0 0 auto; min-height: 38px; padding: 7px 10px; border-color: var(--line); background: var(--chipbg); font-size: .78rem; }
       .jumpbar button span { width: auto; }
       .cloud-login-btn { margin: 0 0 12px; min-height: 48px; }
@@ -1179,6 +1191,7 @@
 
     @media (max-width: 430px) {
       .sidebar { padding-inline: 14px; }
+      .tripnav, .jumpbar { padding-right: 14px; margin-right: -14px; }
       .mascot { width: 40px; height: 35px; }
       .kicker { font-size: .68rem; }
       .v2 { display: none; }
@@ -1190,7 +1203,12 @@
       .stat:last-child { grid-column: auto; }
       .stat { min-height: 70px; display: flex; align-items: center; justify-content: space-between; }
       .stat .num { margin-top: 0; }
-      .chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+      .chips {
+        flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none;
+        -webkit-overflow-scrolling: touch; padding-right: 14px;
+        -webkit-mask-image: linear-gradient(to right, transparent, black 10px, black calc(100% - 20px), transparent);
+        mask-image: linear-gradient(to right, transparent, black 10px, black calc(100% - 20px), transparent);
+      }
       .chips::-webkit-scrollbar { display: none; }
       .chip { flex: 0 0 auto; }
       .row-form, .payform { display: grid; grid-template-columns: 1fr; }

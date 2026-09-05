@@ -1,40 +1,53 @@
-const CACHE_NAME = 'sipit-v4-cloud-2026-09-05';
+const CACHE_NAME = "sipit-v5-cloud-2026-09-05";
 const CORE_ASSETS = [
-  './',
-  './index.html',
-  './manifest.webmanifest',
-  './favicon_preview.png',
-  './icon-192.png',
-  './icon-512.png'
+  "./",
+  "./index.html",
+  "./manifest.webmanifest",
+  "./favicon_preview.png",
+  "./icon-192.png",
+  "./icon-512.png",
 ];
 
-self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(CORE_ASSETS)));
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(CORE_ASSETS)),
+  );
   self.skipWaiting();
 });
 
-self.addEventListener('activate', (event) => {
+self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys()
-      .then((keys) => Promise.all(keys.filter((key) => key.startsWith('sipit-') && key !== CACHE_NAME).map((key) => caches.delete(key))))
-      .then(() => self.clients.claim())
+    caches
+      .keys()
+      .then((keys) =>
+        Promise.all(
+          keys
+            .filter((key) => key.startsWith("sipit-") && key !== CACHE_NAME)
+            .map((key) => caches.delete(key)),
+        ),
+      )
+      .then(() => self.clients.claim()),
   );
 });
 
-self.addEventListener('fetch', (event) => {
-  if (event.request.method !== 'GET' || new URL(event.request.url).origin !== self.location.origin) return;
+self.addEventListener("fetch", (event) => {
+  if (
+    event.request.method !== "GET" ||
+    new URL(event.request.url).origin !== self.location.origin
+  )
+    return;
 
-  if (event.request.mode === 'navigate') {
+  if (event.request.mode === "navigate") {
     event.respondWith(
       fetch(event.request)
         .then(async (response) => {
           if (response.ok) {
             const cache = await caches.open(CACHE_NAME);
-            await cache.put('./index.html', response.clone());
+            await cache.put("./index.html", response.clone());
           }
           return response;
         })
-        .catch(() => caches.match('./index.html'))
+        .catch(() => caches.match("./index.html")),
     );
     return;
   }
@@ -47,5 +60,7 @@ self.addEventListener('fetch', (event) => {
     return response;
   });
   event.waitUntil(fresh.then(() => undefined).catch(() => undefined));
-  event.respondWith(caches.match(event.request).then((cached) => cached || fresh));
+  event.respondWith(
+    caches.match(event.request).then((cached) => cached || fresh),
+  );
 });
