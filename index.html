@@ -7,13 +7,13 @@
   <meta name="description" content="Track trip costs, contributions, tasks, and settle-up amounts in one calm shared workspace." />
   <title>Sipit — Trip Money Tracker</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 128 128' xmlns='http://www.w3.org/2000/svg'%3E %3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230e7569'/%3E%3Cstop offset='1' stop-color='%2310a184'/%3E%3C/linearGradient%3E%3C/defs%3E %3Crect width='128' height='128' rx='30' fill='url(%23g)'/%3E %3Cg transform='translate(6,10) scale(0.97)'%3E %3Cpath d='M26 56 Q12 48 13 32' stroke='%23e05a45' stroke-width='7' fill='none' stroke-linecap='round'/%3E %3Cpath d='M94 56 Q108 50 106 36' stroke='%23e05a45' stroke-width='7' fill='none' stroke-linecap='round'/%3E %3Ccircle cx='14' cy='27' r='11' fill='%23f4715f'/%3E %3Cpath d='M5 22 L13 26' stroke='%23c74534' stroke-width='2.5' stroke-linecap='round'/%3E %3Ccircle cx='106' cy='31' r='10' fill='%23f4715f'/%3E %3Ccircle cx='106' cy='22' r='9' fill='%23fbbf24' stroke='%23e8a20c' stroke-width='1.5'/%3E %3Ctext x='106' y='26.2' text-anchor='middle' font-family='Arial, sans-serif' font-size='11' font-weight='900' fill='%238a5a00'%3E%26%238369;%3C/text%3E %3Cpath d='M32 80 Q24 88 15 90 M42 86 Q38 94 30 98 M88 80 Q96 88 105 90 M78 86 Q82 94 90 98' stroke='%23e05a45' stroke-width='5' fill='none' stroke-linecap='round'/%3E %3Cellipse cx='60' cy='64' rx='36' ry='29' fill='%23f4715f'/%3E %3Cellipse cx='60' cy='73' rx='26' ry='15' fill='%23f8917e' opacity='.6'/%3E %3Cellipse cx='46' cy='46' rx='12' ry='7' fill='%23ffffff' opacity='.16'/%3E %3Cg transform='rotate(-12 46 38)'%3E %3Cpath d='M33 38 Q46 18 59 38 Z' fill='%23fbbf24'/%3E %3Cpath d='M36 34 Q46 26 56 34' stroke='%230e7569' stroke-width='4' fill='none'/%3E %3Cellipse cx='46' cy='38' rx='17' ry='5.5' fill='%23f0ad13'/%3E %3C/g%3E %3Ccircle cx='47' cy='55' r='9' fill='%23fff'/%3E%3Ccircle cx='73' cy='55' r='9' fill='%23fff'/%3E %3Ccircle cx='48.5' cy='56.5' r='4.5' fill='%2326222e'/%3E%3Ccircle cx='71.5' cy='56.5' r='4.5' fill='%2326222e'/%3E %3Ccircle cx='50.3' cy='54.3' r='1.6' fill='%23fff'/%3E%3Ccircle cx='73.3' cy='54.3' r='1.6' fill='%23fff'/%3E %3Ccircle cx='46.9' cy='58.4' r='0.9' fill='%23fff' opacity='.8'/%3E%3Ccircle cx='69.9' cy='58.4' r='0.9' fill='%23fff' opacity='.8'/%3E %3Ccircle cx='36' cy='66' r='5' fill='%23ff9d8a' opacity='.95'/%3E %3Ccircle cx='84' cy='66' r='5' fill='%23ff9d8a' opacity='.95'/%3E %3Ccircle cx='41' cy='61.5' r='0.9' fill='%23d94f3f' opacity='.6'/%3E%3Ccircle cx='44' cy='63.5' r='0.9' fill='%23d94f3f' opacity='.6'/%3E %3Ccircle cx='79' cy='61.5' r='0.9' fill='%23d94f3f' opacity='.6'/%3E%3Ccircle cx='76' cy='63.5' r='0.9' fill='%23d94f3f' opacity='.6'/%3E %3Cpath d='M53 67 Q60 74.5 67 67' stroke='%237c2d1e' stroke-width='4' fill='none' stroke-linecap='round'/%3E %3C/g%3E %3C/svg%3E" />
-  <link rel="apple-touch-icon" href="data:image/png;base64,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" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="Sipit" />
   <meta name="application-name" content="Sipit" />
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="apple-touch-icon" href="./favicon_preview.png" />
+  <link rel="preconnect" href="https://js.puter.com" crossorigin />
   <script>
     try {
       var savedTheme = localStorage.getItem('uwingUwiTheme');
@@ -79,6 +79,7 @@
     * { -webkit-tap-highlight-color: transparent; }
     button, select, input, summary, .chip { touch-action: manipulation; }
     button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+    button:disabled { cursor: wait; opacity: .58; transform: none !important; }
     button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
       outline: 3px solid var(--teal); outline-offset: 2px;
     }
@@ -155,7 +156,7 @@
         radial-gradient(30% 26% at 80% 74%, rgba(56, 189, 248, .18), transparent 68%);
     }
     html.glassy.dark body::before { opacity: .55; }
-    html.glassy .card, html.glassy .modal, html.glassy .theme-btn, html.glassy .jumpbar button, html.glassy .trip-chip, html.glassy .toast {
+    html.glassy .card, html.glassy .modal, html.glassy .theme-btn, html.glassy .cloud-login-btn, html.glassy .jumpbar button, html.glassy .trip-chip, html.glassy .toast {
       backdrop-filter: blur(22px) saturate(1.5); -webkit-backdrop-filter: blur(22px) saturate(1.5);
     }
     html.glassy .hero {
@@ -176,7 +177,7 @@
       --glass: rgba(255, 255, 255, .7);
     }
     html.glassy.glass-soft.dark { --card: rgba(24, 38, 63, .8); --line: rgba(148, 178, 215, .24); --chipbg: rgba(42, 62, 96, .64); --glass: rgba(13, 22, 39, .72); }
-    html.glassy.glass-soft .card, html.glassy.glass-soft .modal, html.glassy.glass-soft .theme-btn, html.glassy.glass-soft .jumpbar button, html.glassy.glass-soft .trip-chip, html.glassy.glass-soft .toast {
+    html.glassy.glass-soft .card, html.glassy.glass-soft .modal, html.glassy.glass-soft .theme-btn, html.glassy.glass-soft .cloud-login-btn, html.glassy.glass-soft .jumpbar button, html.glassy.glass-soft .trip-chip, html.glassy.glass-soft .toast {
       backdrop-filter: blur(9px) saturate(1.2); -webkit-backdrop-filter: blur(9px) saturate(1.2);
     }
     html.glassy.glass-ultra {
@@ -185,7 +186,7 @@
       --shadow: 0 18px 52px rgba(21, 40, 60, .16);
     }
     html.glassy.glass-ultra.dark { --card: rgba(24, 38, 63, .36); --line: rgba(148, 178, 215, .18); --chipbg: rgba(42, 62, 96, .3); --glass: rgba(13, 22, 39, .34); }
-    html.glassy.glass-ultra .card, html.glassy.glass-ultra .modal, html.glassy.glass-ultra .theme-btn, html.glassy.glass-ultra .jumpbar button, html.glassy.glass-ultra .trip-chip, html.glassy.glass-ultra .toast {
+    html.glassy.glass-ultra .card, html.glassy.glass-ultra .modal, html.glassy.glass-ultra .theme-btn, html.glassy.glass-ultra .cloud-login-btn, html.glassy.glass-ultra .jumpbar button, html.glassy.glass-ultra .trip-chip, html.glassy.glass-ultra .toast {
       backdrop-filter: blur(38px) saturate(1.9); -webkit-backdrop-filter: blur(38px) saturate(1.9);
     }
     html.glassy.glass-ultra body::before { filter: saturate(1.35); }
@@ -511,9 +512,40 @@
 
     /* ---------- Footer ---------- */
     footer { margin-top: 34px; text-align: center; color: var(--mut); font-size: 13.5px; font-weight: 600; }
-    .flinks { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px 14px; justify-content: center; }
-    .flinks button { color: var(--teal-ink); font-weight: 800; text-decoration: underline; font-size: 13.5px; padding: 6px 2px; }
-    .flinks button.danger { color: var(--rose-ink); }
+    .cloud-intro { padding: 18px 10px 8px; text-align: center; }
+    .cloud-mark {
+      width: 66px; height: 66px; margin: 0 auto 14px; display: grid; place-items: center;
+      border: 1px solid rgba(8, 122, 114, .2); border-radius: 21px;
+      background: linear-gradient(145deg, rgba(16, 161, 132, .2), rgba(56, 189, 248, .13));
+      box-shadow: 0 13px 30px rgba(8, 122, 114, .13); font-size: 1.75rem;
+    }
+    .cloud-intro h4 { color: var(--ink-strong); font-size: 1.08rem; font-weight: 850; letter-spacing: -.015em; }
+    .cloud-intro p { max-width: 25rem; margin: 7px auto 0; color: var(--mut); font-size: .88rem; line-height: 1.55; }
+    .cloud-benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; margin: 14px 0; }
+    .cloud-benefits span {
+      min-width: 0; padding: 10px 6px; border: 1px solid var(--line); border-radius: 12px;
+      background: var(--chipbg); color: var(--mut); font-size: .72rem; font-weight: 750; text-align: center;
+    }
+    .cloud-account {
+      display: flex; align-items: center; gap: 11px; margin-top: 15px; padding: 13px;
+      border: 1px solid var(--line); border-radius: 14px; background: var(--chipbg);
+    }
+    .cloud-avatar {
+      width: 42px; height: 42px; flex: 0 0 auto; display: grid; place-items: center;
+      border-radius: 13px; background: linear-gradient(135deg, var(--teal), var(--green));
+      color: #fff; font-size: 1rem; font-weight: 900; text-transform: uppercase;
+    }
+    .cloud-account-copy { min-width: 0; flex: 1; }
+    .cloud-account-copy b, .cloud-account-copy small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .cloud-account-copy b { color: var(--ink-strong); font-size: .91rem; }
+    .cloud-account-copy small { margin-top: 2px; color: var(--mut); font-size: .75rem; }
+    .cloud-pill { padding: 5px 8px; border-radius: 999px; background: var(--green-wash); color: var(--green-ink); font-size: .7rem; font-weight: 850; }
+    .cloud-panel { margin-top: 11px; padding: 14px; border: 1px solid rgba(8, 122, 114, .18); border-radius: 14px; background: var(--teal-wash); }
+    .cloud-panel b { display: block; color: var(--ink-strong); font-size: .9rem; }
+    .cloud-panel p { margin-top: 4px; color: var(--mut); font-size: .79rem; line-height: 1.5; }
+    .cloud-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+    .cloud-actions .wide { grid-column: 1 / -1; }
+    .cloud-error { margin-top: 12px; padding: 11px 12px; border-radius: 12px; background: var(--rose-wash); color: var(--rose-ink); font-size: .8rem; font-weight: 700; line-height: 1.45; }
 
     /* ---------- Empty-state mascot ---------- */
     .empty-mascot { width: 76px; height: 66px; margin: 0 auto 8px; display: block; opacity: .95; }
@@ -776,6 +808,25 @@
     }
     .theme-btn:hover { background: var(--chipbg); }
     .settings-label { display: inline; }
+    .cloud-login-btn {
+      width: 100%; min-height: 54px; margin: 0 0 22px; padding: 9px 10px;
+      display: flex; align-items: center; gap: 10px; text-align: left;
+      border: 1px solid rgba(8, 122, 114, .18); border-radius: 13px;
+      background: linear-gradient(135deg, var(--teal-wash), rgba(255, 255, 255, .28));
+      color: var(--ink); box-shadow: var(--shadow-sm);
+    }
+    html.dark .cloud-login-btn { background: linear-gradient(135deg, rgba(16, 161, 132, .17), rgba(42, 62, 96, .24)); }
+    .cloud-login-btn:hover { border-color: rgba(8, 122, 114, .38); transform: translateY(-1px); }
+    .cloud-login-icon {
+      width: 34px; height: 34px; display: grid; place-items: center; flex: 0 0 auto;
+      border-radius: 10px; background: var(--card); color: var(--teal-ink); font-size: 1.05rem;
+    }
+    .cloud-login-copy { min-width: 0; flex: 1; }
+    .cloud-login-copy b, .cloud-login-copy small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .cloud-login-copy b { font-size: .86rem; font-weight: 800; }
+    .cloud-login-copy small { margin-top: 1px; color: var(--mut); font-size: .69rem; font-weight: 650; }
+    .cloud-login-dot { width: 8px; height: 8px; flex: 0 0 auto; border-radius: 99px; background: var(--faint); }
+    .cloud-login-btn.on .cloud-login-dot { background: var(--green); box-shadow: 0 0 0 4px var(--green-wash); }
     .side-label {
       margin: 0 10px 8px;
       color: var(--faint);
@@ -1074,6 +1125,7 @@
       .jumpbar { display: flex; gap: 5px; overflow-x: auto; }
       .jumpbar button, html.glassy .jumpbar button { width: auto; flex: 0 0 auto; min-height: 38px; padding: 7px 10px; border-color: var(--line); background: var(--chipbg); font-size: .78rem; }
       .jumpbar button span { width: auto; }
+      .cloud-login-btn { margin: 0 0 12px; min-height: 48px; }
       .sidebar-note { display: none; }
       .workspace { width: 100%; padding: 22px 18px 80px; }
       .stickybar { display: flex; }
@@ -1143,6 +1195,7 @@
       .chip { flex: 0 0 auto; }
       .row-form, .payform { display: grid; grid-template-columns: 1fr; }
       .row-form .btn, .payform .btn { width: 100%; }
+      .cloud-benefits { grid-template-columns: 1fr; }
       .seg { overflow-x: auto; }
       .seg button { min-width: 94px; }
       .row-emoji, .avatar { width: 36px; height: 36px; }
@@ -1269,6 +1322,12 @@
     <p class="side-label">Trips</p>
     <nav id="tripNav" class="tripnav" aria-label="Your trips"></nav>
 
+    <button id="cloudLoginBtn" class="cloud-login-btn" type="button" aria-label="Open cloud login">
+      <span class="cloud-login-icon" aria-hidden="true">☁</span>
+      <span class="cloud-login-copy"><b>Cloud login</b><small id="cloudLoginState">Use on every device</small></span>
+      <span id="cloudLoginDot" class="cloud-login-dot" aria-hidden="true"></span>
+    </button>
+
     <!-- Jump to section -->
     <p class="side-label">Workspace</p>
     <nav class="jumpbar" aria-label="Jump to section">
@@ -1281,7 +1340,7 @@
 
     <div class="sidebar-note">
       <span class="save-dot" aria-hidden="true"></span>
-      <p><b>Saved automatically</b><br />Your trip stays on this device.</p>
+      <p><b>Saved automatically</b><br /><span id="saveLocationNote">Your trip stays on this device.</span></p>
     </div>
     </aside>
 
@@ -1429,10 +1488,7 @@
 
     <footer>
       <p>Sipit · made for simpler trips</p>
-      <div class="flinks">
-        <button id="footSettings" type="button">⚙️ Settings</button>
-      </div>
-      <p id="cloudStatus" class="cloudline"></p>
+      <p id="cloudStatus" class="cloudline" role="status" aria-live="polite"></p>
       <input type="file" id="restoreFile" accept=".json,application/json" hidden />
     </footer>
 
@@ -1460,7 +1516,7 @@
         <div class="setrow"><span class="seticon">📳</span><div class="setlabel"><b>Vibration</b><small>Tiny buzz on actions (phones)</small></div><button id="swBuzz" class="sw" type="button" role="switch" aria-checked="true" aria-label="Vibration"></button></div>
       </div>
       <div class="setgroup" role="group" aria-label="Quick actions">
-        <button id="setCloud" class="setlink" type="button"><span class="seticon">☁️</span> Cloud sync — PC + phone <span class="chev">›</span></button>
+        <button id="setCloud" class="setlink" type="button"><span class="seticon">☁️</span> Cloud account — all devices <span class="chev">›</span></button>
         <button id="setA2hs" class="setlink" type="button"><span class="seticon">📲</span> Add to home screen <span class="chev">›</span></button>
         <button id="setBackup" class="setlink" type="button"><span class="seticon">💾</span> Save backup <span class="chev">›</span></button>
         <button id="setCsv" class="setlink" type="button"><span class="seticon">📊</span> Export CSV <span class="chev">›</span></button>
@@ -1477,7 +1533,7 @@
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cloudTitle">
       <div class="modal-head">
         <svg class="mini" aria-hidden="true"><use href="#uwiSym"/></svg>
-        <h3 id="cloudTitle">☁️ Cloud sync</h3>
+        <h3 id="cloudTitle">☁️ Cloud login</h3>
         <button id="cloudClose" class="icon-btn" type="button" aria-label="Close">✕</button>
       </div>
       <div id="cloudBody"></div>
@@ -1503,6 +1559,7 @@
 
   <div id="toast" class="toast" role="status"></div>
 
+  <script id="puterSdk" src="https://js.puter.com/v2/" defer></script>
   <script>
     'use strict';
 
@@ -1678,7 +1735,7 @@
       const overdue = todosOf().filter((t) => !t.done && t.due && t.due < todayISO()).length;
       const smart = [];
       if (overdue) smart.push(overdue + ' task' + (overdue > 1 ? 's are' : ' is') + ' overdue — go go go! ⏰');
-      if (!cloud && (trip().expenses.length || trip().people.length)) smart.push('Want this on your PC AND phone? Open ⚙️ Settings → Cloud sync!');
+      if (!cloud && (trip().expenses.length || trip().people.length)) smart.push('Want this on your PC AND phone? Tap Cloud login and sign in once ☁️');
       let lastBk = 0; try { lastBk = Number(localStorage.getItem('uwingUwiLastBackup')) || 0; } catch (e) {}
       if ((trip().expenses.length > 3 || collected > 0) && Date.now() - lastBk > 14 * 86400000) smart.push('No recent backup — ⚙️ Settings → Save backup takes 2 seconds 💾');
       if (total > 0 && collected >= total) smart.push('Trip is fully funded — you legends! 🎉');
@@ -1808,7 +1865,7 @@
       if (buzzOn) buzz(20);
       syncSwitches();
     });
-    $('setCloud').addEventListener('click', () => { $('settingsModal').hidden = true; renderCloudModal(); $('cloudModal').hidden = false; });
+    $('setCloud').addEventListener('click', () => { $('settingsModal').hidden = true; openCloudModal(); });
     $('setA2hs').addEventListener('click', () => { $('settingsModal').hidden = true; openA2hs(); });
     $('setBackup').addEventListener('click', () => { $('settingsModal').hidden = true; downloadBackup(); });
     $('setCsv').addEventListener('click', () => { $('settingsModal').hidden = true; exportCSV(); });
@@ -1880,7 +1937,11 @@
     // One-tap spreadsheet of the whole trip
     function exportCSV() {
       const t = trip();
-      const esc = (v) => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"';
+      const esc = (v) => {
+        let cell = String(v == null ? '' : v);
+        if (/^[=+\-@]/.test(cell)) cell = "'" + cell;
+        return '"' + cell.replace(/"/g, '""') + '"';
+      };
       const rows = [['SPENDING — ' + t.name], ['Item', 'Category', 'Amount (PHP)', 'Paid by', 'Date']];
       t.expenses.forEach((e) => rows.push([e.name, e.category, e.amount, e.paidBy === POT ? 'Shared money' : ((personById(e.paidBy) || {}).name || 'Not paid yet'), e.date]));
       rows.push([], ['MONEY GIVEN'], ['Friend', 'Amount (PHP)', 'Date']);
@@ -1888,9 +1949,11 @@
       rows.push([], ['Trip total', tripTotal()], ['Collected', totalCollected()], ['Each person', Math.round(shareEach())]);
       const csv = '\ufeff' + rows.map((r) => r.map(esc).join(',')).join('\r\n');
       const a = document.createElement('a');
-      a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+      const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+      a.href = url;
       a.download = (t.name.replace(/[^\w\- ]+/g, '').trim().replace(/\s+/g, '-').toLowerCase() || 'trip') + '-money.csv';
       document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
       play('done'); toast('Spreadsheet downloaded 📊');
     }
 
@@ -2503,128 +2566,312 @@
       play('del'); render(); toast('Cleared finished tasks', true);
     }
 
-    /* ---------- Cloud sync (free & optional) ---------- */
-    const CLOUD_KEY = 'uwingUwiCloudV1';
-    const CLOUD_BASE = 'https://jsonblob.com/api/jsonBlob';
+    /* ---------- Account cloud save (Puter.js; no API key required) ---------- */
+    const CLOUD_DATA_KEY = 'sipit-trip-money-state-v4';
+    const CLOUD_ACCOUNT_KEY = 'sipit-cloud-account-v1';
+    const CLOUD_MAX_BYTES = 390000;
     let cloud = null;
-    try { cloud = JSON.parse(localStorage.getItem(CLOUD_KEY) || 'null'); } catch (e) {}
     let cloudTimer = null;
+    let cloudBusy = false;
+    let cloudQueued = false;
+    let cloudError = '';
+    let cloudSdkFailed = false;
     let adopting = false;
 
-    function setCloudStatus(text) { const el = $('cloudStatus'); if (el) el.textContent = text; }
-    function fetchT(url, opts) {
-      const ctrl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
-      const t = ctrl ? setTimeout(() => ctrl.abort(), 12000) : null;
-      return fetch(url, Object.assign({ headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' } }, opts, ctrl ? { signal: ctrl.signal } : {}))
-        .finally(() => { if (t) clearTimeout(t); });
+    function cloudSdkReady() {
+      return !!(window.puter && puter.auth && puter.kv);
+    }
+    function cloudHosted() {
+      return /^https?:$/.test(location.protocol);
+    }
+    function shortClock() {
+      return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    }
+    function cloudName() {
+      return cloud && cloud.username ? '@' + cloud.username : 'Cloud account';
+    }
+    function cloudIdentity(value) {
+      return String((value && (value.uuid || value.username)) || '');
+    }
+    function rememberedCloudIdentity() {
+      try { return localStorage.getItem(CLOUD_ACCOUNT_KEY) || ''; } catch (e) { return ''; }
+    }
+    function rememberCloudIdentity() {
+      try { localStorage.setItem(CLOUD_ACCOUNT_KEY, cloudIdentity(cloud)); } catch (e) {}
+    }
+    function setCloudStatus(text, shortText) {
+      const footer = $('cloudStatus');
+      const side = $('cloudLoginState');
+      const button = $('cloudLoginBtn');
+      const saveNote = $('saveLocationNote');
+      if (footer) footer.textContent = text || '';
+      if (side) side.textContent = shortText || (cloud ? cloudName() + ' · cloud on' : 'Use on every device');
+      if (button) {
+        button.classList.toggle('on', !!cloud);
+        button.setAttribute('aria-label', cloud ? 'Open cloud account for ' + cloudName() : 'Open cloud login');
+      }
+      if (saveNote) saveNote.textContent = cloud ? 'Cloud and this device.' : 'Your trip stays on this device.';
+    }
+    function cloudFailureMessage(err) {
+      const code = String((err && (err.error || err.code)) || '');
+      if (code === 'popup_blocked') return 'Your browser blocked the sign-in window. Allow popups for this site and try again.';
+      if (code === 'auth_window_closed') return 'Sign-in was cancelled.';
+      if (navigator.onLine === false) return 'You are offline. Your changes are safe on this device and will sync when you reconnect.';
+      return 'Cloud could not be reached. Your local copy is safe—check the connection and try again.';
+    }
+    function cloudPayload() {
+      return { schema: 1, app: 'sipit', savedAt: String(state.updatedAt || ''), state: state };
+    }
+    function cloudState(raw) {
+      if (raw == null) return null;
+      if (typeof raw === 'string') {
+        try { raw = JSON.parse(raw); } catch (e) { return null; }
+      }
+      return normalizeState(raw && raw.state ? raw.state : raw);
+    }
+    function payloadSize(payload) {
+      const json = JSON.stringify(payload);
+      return typeof Blob === 'undefined' ? json.length : new Blob([json]).size;
+    }
+    function adoptCloudState(data) {
+      adopting = true;
+      try {
+        state = data;
+        editingExp = null; editingPerson = null; editingTodo = null; payFor = null;
+        searchText = ''; payFilter = 'all'; todoFilter = 'all';
+        $('search').value = '';
+        try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+        render(false);
+      } finally {
+        adopting = false;
+      }
     }
     function queueCloudPush() {
-      if (!cloud || adopting || typeof fetch === 'undefined') return;
-      setCloudStatus('☁️ syncing…');
+      if (!cloud || adopting) return;
+      if (navigator.onLine === false) {
+        setCloudStatus('☁️ Offline — changes are saved on this device', 'Offline · saved locally');
+        cloudQueued = true;
+        return;
+      }
+      setCloudStatus('☁️ Saving changes…', 'Saving changes…');
       clearTimeout(cloudTimer);
-      cloudTimer = setTimeout(cloudPush, 900);
+      cloudTimer = setTimeout(() => cloudPush(true), 750);
     }
-    function cloudPush() {
-      if (!cloud) return;
-      fetchT(CLOUD_BASE + '/' + encodeURIComponent(cloud.id), { method: 'PUT', body: JSON.stringify(state) })
-        .then((r) => {
-          if (!r.ok) throw new Error('bad');
-          setCloudStatus('☁️ synced ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
-        })
-        .catch(() => setCloudStatus('☁️ offline — your changes will sync when internet is back'));
+    async function cloudPush(quiet) {
+      if (!cloud || !cloudSdkReady()) return false;
+      if (cloudBusy) { cloudQueued = true; return false; }
+      if (navigator.onLine === false) {
+        setCloudStatus('☁️ Offline — changes are saved on this device', 'Offline · saved locally');
+        cloudQueued = true;
+        return false;
+      }
+      const payload = cloudPayload();
+      if (payloadSize(payload) > CLOUD_MAX_BYTES) {
+        cloudError = 'This tracker has reached the cloud-size limit. Download a backup, then remove old activity or unused trips.';
+        setCloudStatus('☁️ Cloud limit reached — local saving is still on', 'Cloud limit reached');
+        renderCloudModal();
+        return false;
+      }
+      cloudBusy = true;
+      cloudError = '';
+      setCloudStatus('☁️ Saving changes…', 'Saving changes…');
+      try {
+        await puter.kv.set(CLOUD_DATA_KEY, payload, { disableSharing: true });
+        setCloudStatus('☁️ Saved to cloud at ' + shortClock(), cloudName() + ' · synced');
+        return true;
+      } catch (err) {
+        cloudError = cloudFailureMessage(err);
+        setCloudStatus('☁️ Cloud unavailable — using this device’s copy', 'Offline · saved locally');
+        if (!quiet) toast(cloudError);
+        return false;
+      } finally {
+        cloudBusy = false;
+        if (cloudQueued && cloud && navigator.onLine !== false) {
+          cloudQueued = false;
+          clearTimeout(cloudTimer);
+          cloudTimer = setTimeout(() => cloudPush(true), 300);
+        }
+      }
     }
-    function cloudPull(quiet) {
-      if (!cloud || typeof fetch === 'undefined') return;
-      setCloudStatus('☁️ checking for updates…');
-      fetchT(CLOUD_BASE + '/' + encodeURIComponent(cloud.id))
-        .then((r) => { if (!r.ok) throw new Error('bad'); return r.json(); })
-        .then((raw) => {
-          if (String(raw.updatedAt || '') > String(state.updatedAt || '')) {
-            const data = normalizeState(raw);
-            if (data) {
-              adopting = true;
-              state = data;
-              editingExp = null; editingPerson = null; editingTodo = null; payFor = null;
-              render();
-              adopting = false;
-              if (!quiet) toast('Updated from the cloud ☁️');
-            }
+    async function cloudPull(quiet, uploadNewerLocal, preferRemote) {
+      if (!cloud || !cloudSdkReady() || cloudBusy) return false;
+      if (navigator.onLine === false) {
+        setCloudStatus('☁️ Offline — using this device’s copy', 'Offline · saved locally');
+        return false;
+      }
+      cloudBusy = true;
+      cloudError = '';
+      setCloudStatus('☁️ Checking the cloud…', 'Checking cloud…');
+      try {
+        const raw = await puter.kv.get(CLOUD_DATA_KEY);
+        const remote = cloudState(raw);
+        if (raw != null && !remote) throw new Error('invalid_cloud_data');
+
+        if (!remote) {
+          const payload = cloudPayload();
+          if (payloadSize(payload) > CLOUD_MAX_BYTES) throw new Error('cloud_size');
+          await puter.kv.set(CLOUD_DATA_KEY, payload, { disableSharing: true });
+        } else {
+          const remoteStamp = String(remote.updatedAt || '');
+          const localStamp = String(state.updatedAt || '');
+          if (preferRemote || !localStamp || (remoteStamp && remoteStamp > localStamp)) {
+            adoptCloudState(remote);
+            if (!quiet) toast('Newest cloud copy loaded ☁️');
+          } else if (uploadNewerLocal && localStamp > remoteStamp) {
+            const payload = cloudPayload();
+            if (payloadSize(payload) > CLOUD_MAX_BYTES) throw new Error('cloud_size');
+            await puter.kv.set(CLOUD_DATA_KEY, payload, { disableSharing: true });
           }
-          setCloudStatus('☁️ synced ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
-        })
-        .catch(() => setCloudStatus('☁️ offline — using this device’s copy'));
+        }
+        setCloudStatus('☁️ Saved to cloud at ' + shortClock(), cloudName() + ' · synced');
+        return true;
+      } catch (err) {
+        cloudError = String(err && err.message) === 'cloud_size'
+          ? 'This tracker has reached the cloud-size limit. Download a backup, then remove old activity or unused trips.'
+          : cloudFailureMessage(err);
+        setCloudStatus('☁️ Cloud unavailable — using this device’s copy', 'Offline · saved locally');
+        if (!quiet) toast(cloudError);
+        return false;
+      } finally {
+        cloudBusy = false;
+        if (cloudQueued && cloud && navigator.onLine !== false) {
+          cloudQueued = false;
+          clearTimeout(cloudTimer);
+          cloudTimer = setTimeout(() => cloudPush(true), 300);
+        }
+      }
     }
-    function enableCloud() {
-      if (typeof fetch === 'undefined') { toast('This browser can’t reach the internet'); return; }
-      setCloudStatus('☁️ setting up…');
-      fetchT(CLOUD_BASE, { method: 'POST', body: JSON.stringify(state) })
-        .then((r) => {
-          if (!r.ok) throw new Error('bad');
-          const loc = r.headers.get('Location') || r.headers.get('location') || '';
-          const id = (loc.split('/').pop() || '').trim();
-          if (!id) throw new Error('noloc');
-          cloud = { provider: 'jsonblob', id: id };
-          try { localStorage.setItem(CLOUD_KEY, JSON.stringify(cloud)); } catch (e) {}
-          renderCloudModal();
-          setCloudStatus('☁️ synced — cloud sync is on');
-          toast('Cloud sync is on! Share the trip code 🎉'); confetti();
-        })
-        .catch(() => { setCloudStatus(''); toast('Could not reach the free cloud — check your internet and try again'); });
-    }
-    function joinCloudClick() { joinCloud(($('joinCode') || { value: '' }).value); }
-    function joinCloud(code) {
-      code = String(code || '').trim().split('/').pop();
-      if (!code) { toast('Paste the trip code first'); return; }
-      if (typeof fetch === 'undefined') { toast('This browser can’t reach the internet'); return; }
-      setCloudStatus('☁️ joining…');
-      fetchT(CLOUD_BASE + '/' + encodeURIComponent(code))
-        .then((r) => { if (!r.ok) throw new Error('bad'); return r.json(); })
-        .then((raw) => {
-          const data = normalizeState(raw);
-          if (!data) throw new Error('shape');
-          adopting = true;
-          state = data;
-          try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
-          editingExp = null; editingPerson = null; editingTodo = null; payFor = null;
-          render();
-          adopting = false;
-          cloud = { provider: 'jsonblob', id: code };
-          try { localStorage.setItem(CLOUD_KEY, JSON.stringify(cloud)); } catch (e) {}
-          renderCloudModal();
-          setCloudStatus('☁️ synced — following the trip cloud');
-          toast('Joined! This device now follows the trip ☁️'); confetti();
-        })
-        .catch(() => { setCloudStatus(''); toast('Code not found — double-check it and try again'); });
-    }
-    function leaveCloud() {
-      cloud = null;
-      try { localStorage.removeItem(CLOUD_KEY); } catch (e) {}
+    async function cloudSignIn(switchAccount) {
+      if (!cloudHosted()) {
+        cloudError = 'Cloud login works after you upload this folder to your website. Local saving still works when index.html is opened directly.';
+        renderCloudModal();
+        toast('Upload the tracker to your website first');
+        return;
+      }
+      if (!cloudSdkReady()) {
+        cloudError = cloudSdkFailed
+          ? 'The secure cloud login could not load. Check your internet, refresh the page, and try again.'
+          : 'Cloud login is still loading. Wait a moment and try again.';
+        renderCloudModal();
+        toast(cloudError);
+        return;
+      }
+      const previousCloud = cloud;
+      cloudBusy = true;
+      cloudError = '';
       renderCloudModal();
-      setCloudStatus('');
-      toast('Cloud sync turned off on this device');
+      try {
+        const result = await puter.auth.signIn(switchAccount ? { request_auth: true } : undefined);
+        const user = await puter.auth.getUser();
+        cloud = {
+          username: String((user && user.username) || (result && result.username) || 'account'),
+          uuid: String((user && user.uuid) || '')
+        };
+        try { localStorage.removeItem('uwingUwiCloudV1'); } catch (e) {}
+        cloudBusy = false;
+        const sameAccount = rememberedCloudIdentity() === cloudIdentity(cloud);
+        const synced = await cloudPull(true, sameAccount || !switchAccount, !!switchAccount && !sameAccount);
+        rememberCloudIdentity();
+        renderCloudModal();
+        setBubble();
+        toast(synced ? 'Cloud login connected — your trips now follow you ☁️' : 'Signed in — local saving is safe and cloud will retry');
+        if (synced) confetti();
+      } catch (err) {
+        cloudBusy = false;
+        cloud = previousCloud;
+        const cancelled = String((err && (err.error || err.code)) || '') === 'auth_window_closed';
+        cloudError = cancelled ? '' : cloudFailureMessage(err);
+        setCloudStatus(cloud ? '☁️ Still connected to ' + cloudName() : '', cloud ? cloudName() + ' · cloud on' : 'Use on every device');
+        renderCloudModal();
+        if (!cancelled) toast(cloudError);
+      }
     }
-    function copyCode() {
+    async function cloudSignOut() {
+      if (!cloudSdkReady()) return;
+      cloudBusy = true;
+      renderCloudModal();
+      try { await Promise.resolve(puter.auth.signOut()); } catch (e) {}
+      cloudBusy = false;
+      cloud = null;
+      cloudQueued = false;
+      clearTimeout(cloudTimer);
+      setCloudStatus('', 'Use on every device');
+      renderCloudModal();
+      setBubble();
+      toast('Signed out — the local copy stays on this device');
+    }
+    async function cloudSyncNow() {
       if (!cloud) return;
-      const done = () => toast('Trip code copied — send it to the barkada 💌');
-      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(cloud.id).then(done).catch(() => fallbackCopy(cloud.id, done));
-      else fallbackCopy(cloud.id, done);
+      const button = $('cloudSyncNowBtn');
+      if (button) button.disabled = true;
+      const ok = await cloudPull(false, true);
+      if (button) button.disabled = false;
+      if (ok) toast('Everything is up to date ✓');
+      renderCloudModal();
+    }
+    async function initCloud() {
+      if (!cloudSdkReady() || !cloudHosted()) {
+        setCloudStatus('', 'Use on every device');
+        return;
+      }
+      try {
+        if (!puter.auth.isSignedIn()) {
+          setCloudStatus('', 'Use on every device');
+          return;
+        }
+        const user = await puter.auth.getUser();
+        cloud = { username: String((user && user.username) || 'account'), uuid: String((user && user.uuid) || '') };
+        const sameAccount = rememberedCloudIdentity() === cloudIdentity(cloud);
+        await cloudPull(true, sameAccount, !sameAccount);
+        rememberCloudIdentity();
+        renderCloudModal();
+        setBubble();
+      } catch (err) {
+        cloud = null;
+        cloudError = cloudFailureMessage(err);
+        setCloudStatus('', 'Use on every device');
+      }
+    }
+    function openCloudModal() {
+      renderCloudModal();
+      $('cloudModal').hidden = false;
+      setTimeout(() => { const first = cloud ? $('cloudSyncNowBtn') : $('cloudSignInBtn'); (first || $('cloudClose')).focus(); }, 40);
+    }
+    function closeCloudModal() {
+      $('cloudModal').hidden = true;
+      $('cloudLoginBtn').focus();
     }
     function renderCloudModal() {
       const body = $('cloudBody');
       if (!body) return;
+      body.setAttribute('aria-busy', cloudBusy ? 'true' : 'false');
+      const disabled = (cloudBusy || (!cloud && cloudHosted() && !cloudSdkReady())) ? ' disabled' : '';
       if (!cloud) {
+        const hostNotice = !cloudHosted()
+          ? '<div class="cloud-error">Upload this folder to your website first. Cloud login needs one consistent web address; local saving still works from the file.</div>'
+          : !cloudSdkReady() && cloudSdkFailed
+            ? '<div class="cloud-error">Cloud login could not load. Check your connection and refresh this page.</div>'
+            : !cloudSdkReady()
+              ? '<div class="cloud-panel"><b>Cloud login is loading…</b><p>You can keep using the tracker while the secure sign-in service gets ready.</p></div>'
+            : '';
         body.innerHTML =
-          '<p class="hint">Turn this on and the whole tracker saves to a free cloud. Open the file on any other phone or computer, paste the <b>trip code</b>, and everything appears — and stays in sync.</p>' +
-          '<button class="btn btn-primary w100" type="button" onclick="enableCloud()">☁️ Turn on cloud sync</button>' +
-          '<p class="hint" style="margin:16px 0 8px"><b>Got a code from a friend?</b></p>' +
-          '<div class="row-form"><input id="joinCode" class="field" placeholder="Paste the trip code" autocomplete="off" /><button class="btn btn-green" type="button" onclick="joinCloudClick()">Join</button></div>' +
-          '<p class="tipline">💡 Anyone with the code can see and edit this trip — share it with the barkada only. Uses a free community service (jsonblob.com), so keep an occasional backup too. Works offline; syncs when internet returns.</p>';
+          '<div class="cloud-intro"><div class="cloud-mark" aria-hidden="true">☁️</div><h4>Your trips, wherever you are</h4>' +
+          '<p>Sign in with a free Puter account to keep every trip backed up and available on your computer, phone, and tablet.</p></div>' +
+          '<button id="cloudSignInBtn" class="btn btn-primary w100" type="button" onclick="cloudSignIn(false)"' + disabled + '>☁️ ' + (cloudBusy ? 'Opening secure login…' : 'Sign in to cloud') + '</button>' +
+          '<div class="cloud-benefits"><span>💻 Any computer</span><span>📱 Any phone</span><span>🔒 Private to you</span></div>' +
+          '<p class="tipline">Use the same tracker website address and the same Puter account on every device. The tracker keeps saving locally if you go offline.</p>' +
+          hostNotice + (cloudError && !hostNotice ? '<div class="cloud-error">' + escapeHtml(cloudError) + '</div>' : '');
       } else {
+        const name = cloudName();
         body.innerHTML =
-          '<p class="hint">This device follows a trip cloud. Share this code with the barkada, or type it on your other devices:</p>' +
-          '<div class="row-form"><input id="codeShow" class="field" readonly value="' + escapeHtml(cloud.id) + '" onclick="this.select()" /><button class="btn btn-primary" type="button" onclick="copyCode()">Copy</button></div>' +
-          '<p class="tipline">💡 On the other device: open the tracker → ☁️ Cloud sync → paste the code → Join. Last save wins if two people edit at the exact same time.</p>' +
-          '<button class="btn btn-ghost small w100" style="margin-top:14px" type="button" onclick="leaveCloud()">Turn off on this device</button>';
+          '<div class="cloud-account"><div class="cloud-avatar">' + escapeHtml((cloud.username || 'C').slice(0, 1)) + '</div>' +
+          '<div class="cloud-account-copy"><b>' + escapeHtml(name) + '</b><small>Puter cloud account</small></div><span class="cloud-pill">Connected</span></div>' +
+          '<div class="cloud-panel"><b>Automatic cloud save is on</b><p>Changes save on this device first, then sync quietly to your account. The newest copy loads when you return.</p></div>' +
+          '<div class="cloud-actions"><button id="cloudSyncNowBtn" class="btn btn-primary wide" type="button" onclick="cloudSyncNow()"' + disabled + '>↻ ' + (cloudBusy ? 'Syncing…' : 'Sync now') + '</button>' +
+          '<button class="btn btn-ghost small" type="button" onclick="cloudSignIn(true)"' + disabled + '>Switch account</button>' +
+          '<button class="btn btn-ghost small" type="button" onclick="cloudSignOut()"' + disabled + '>Sign out</button></div>' +
+          '<p class="tipline">Open this same website on another device, tap <b>Cloud login</b>, and sign in to the same Puter account. Your saved trips will appear automatically.</p>' +
+          (cloudError ? '<div class="cloud-error">' + escapeHtml(cloudError) + '</div>' : '');
       }
     }
 
@@ -2696,10 +2943,11 @@
     function downloadBackup() {
       const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
       const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
+      const url = URL.createObjectURL(blob);
+      link.href = url;
       link.download = 'trip-money-backup.json';
-      link.click();
-      URL.revokeObjectURL(link.href);
+      document.body.appendChild(link); link.click(); link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
       try { localStorage.setItem('uwingUwiLastBackup', String(Date.now())); } catch (e) {}
       toast('Backup downloaded 📥 (all trips included)');
     }
@@ -2741,7 +2989,20 @@
     $('tripNotes').addEventListener('input', () => {
       trip().notes = $('tripNotes').value.slice(0, 5000);
       clearTimeout(notesTimer);
-      notesTimer = setTimeout(save, 500);
+      notesTimer = setTimeout(() => { notesTimer = null; save(); }, 500);
+    });
+    window.addEventListener('pagehide', () => {
+      if (!notesTimer) return;
+      clearTimeout(notesTimer);
+      notesTimer = null;
+      save();
+    });
+    window.addEventListener('storage', (e) => {
+      if (e.key !== KEY || !e.newValue) return;
+      try {
+        const incoming = normalizeState(JSON.parse(e.newValue));
+        if (incoming && String(incoming.updatedAt || '') > String(state.updatedAt || '')) adoptCloudState(incoming);
+      } catch (err) {}
     });
     $('clearDoneBtn').addEventListener('click', clearDone);
     $('search').addEventListener('input', () => { searchText = $('search').value; renderExpenses(); });
@@ -2791,20 +3052,22 @@
       if (e.key === 'Escape') {
         if (!$('settingsModal').hidden) { $('settingsModal').hidden = true; return; }
         if (!$('a2hs').hidden) { $('a2hs').hidden = true; return; }
-        if (!$('cloudModal').hidden) { $('cloudModal').hidden = true; return; }
+        if (!$('cloudModal').hidden) { closeCloudModal(); return; }
         if (editingExp || editingPerson || editingTodo || payFor) closeEditors();
       } else if (e.key === '/' && !/^(INPUT|SELECT|TEXTAREA)$/.test((e.target && e.target.tagName) || '')) {
         e.preventDefault(); $('search').focus();
       }
     });
-    $('cloudClose').addEventListener('click', () => { $('cloudModal').hidden = true; });
-    $('cloudModal').addEventListener('click', (e) => { if (e.target === $('cloudModal')) $('cloudModal').hidden = true; });
-    window.addEventListener('online', () => { cloudPull(true); queueCloudPush(); });
-    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') cloudPull(true); });
-    window.addEventListener('focus', () => cloudPull(true));
-    setInterval(() => { // keeps PC + phone fresh while the app is open
+    $('cloudLoginBtn').addEventListener('click', openCloudModal);
+    $('cloudClose').addEventListener('click', closeCloudModal);
+    $('cloudModal').addEventListener('click', (e) => { if (e.target === $('cloudModal')) closeCloudModal(); });
+    window.addEventListener('online', () => { if (cloud) { cloudPull(true); queueCloudPush(); } else initCloud(); });
+    window.addEventListener('offline', () => { if (cloud) setCloudStatus('☁️ Offline — changes are saved on this device', 'Offline · saved locally'); });
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') { if (cloud) cloudPull(true); else initCloud(); } });
+    window.addEventListener('focus', () => { if (cloud) cloudPull(true); else initCloud(); });
+    setInterval(() => { // keeps computers and phones fresh without constant network traffic
       if (cloud && document.visibilityState === 'visible' && navigator.onLine !== false) cloudPull(true);
-    }, 25000);
+    }, 45000);
     function eraseAll() {
       if (!confirm('Erase ALL trips, items, friends, and payments?')) return;
       snapshotForUndo();
@@ -2813,14 +3076,25 @@
       editingExp = null; editingPerson = null; editingTodo = null; payFor = null;
       play('del'); render(); toast('Everything erased', true);
     }
-    $('footSettings').addEventListener('click', () => { syncSwitches(); $('settingsModal').hidden = false; });
-
     applyTheme(document.documentElement.classList.contains('dark'), false);
     let storedGlass = 'on'; try { storedGlass = localStorage.getItem(GLASS_KEY) || 'on'; } catch (e) {}
     applyGlass(storedGlass, false);
     setBubble();
     render(false);
-    if (cloud) { setCloudStatus('☁️ cloud sync is on'); cloudPull(true); }
+    const puterSdk = $('puterSdk');
+    if (puterSdk) {
+      puterSdk.addEventListener('load', () => {
+        cloudSdkFailed = false;
+        initCloud();
+        if (!$('cloudModal').hidden) renderCloudModal();
+      });
+      puterSdk.addEventListener('error', () => {
+        cloudSdkFailed = true;
+        cloudError = 'Cloud login could not load. Local saving is still working.';
+        if (!$('cloudModal').hidden) renderCloudModal();
+      });
+    }
+    initCloud();
 
     if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
       window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
@@ -2835,7 +3109,7 @@
     window.closeEditors = closeEditors; window.undoLast = undoLast;
     window.setPrio = setPrio; window.setTodoFilter = setTodoFilter; window.addSuggested = addSuggested;
     window.toggleTodo = toggleTodo; window.editTodo = editTodo; window.saveTodo = saveTodo; window.deleteTodo = deleteTodo;
-    window.enableCloud = enableCloud; window.joinCloudClick = joinCloudClick; window.leaveCloud = leaveCloud; window.copyCode = copyCode;
+    window.cloudSignIn = cloudSignIn; window.cloudSignOut = cloudSignOut; window.cloudSyncNow = cloudSyncNow;
     window.jump = jump; window.fillPay = fillPay;
   </script>
 </body>

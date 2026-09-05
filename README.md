@@ -8,7 +8,8 @@ A calm trip-money workspace for tracking expenses, contributions, balances, task
 - Responsive layouts for wide monitors, laptops, tablets, and small phones without horizontal overflow.
 - Faster entry flows, quieter visual styling, clearer labels, and restrained use of color.
 - Installable web-app support with offline caching and dedicated home-screen icons.
-- Safer amount validation, duplicate-name protection, and cloud loading that no longer pushes stale local data on startup.
+- Real account-based cloud login, safer conflict handling, and automatic cross-device saves through Puter.
+- Safer amount validation, duplicate-name protection, protected CSV exports, and more reliable backup downloads.
 - All original trip data and core tools remain compatible.
 
 ## 🦀 Meet Sipit
@@ -17,11 +18,11 @@ That little crab at the top is **Sipit** ("claw" — the claw that holds the bar
 
 ## 📲 Put it on your home screen
 
-Open **⚙️ Settings** (gear at the top, or the Settings button at the bottom) → **📲 Add to home screen**, then follow the steps for your phone (iPhone: Share → Add to Home Screen · Android: ⋮ menu → Add to Home screen). After that it opens like a real app, with Sipit as the icon.
+Open **⚙️ Settings** from the sidebar or top bar → **📲 Add to home screen**, then follow the steps for your phone (iPhone: Share → Add to Home Screen · Android: ⋮ menu → Add to Home screen). After that it opens like a real app, with Sipit as the icon.
 
 ## How to open it
 
-Just double-click **index.html** and it opens in your browser (Chrome, Safari, Edge — anything works). On a phone, open the file from your Files app or tap it in your chat/email. That's it. Everything you type saves automatically on that phone or computer.
+Double-click **index.html** to use the tracker locally in Chrome, Safari, or Edge. Everything you type saves automatically on that device. For cloud login and cross-device saving, upload the included files to one website address first, then open that same address on every device.
 
 ## The four parts
 
@@ -63,7 +64,7 @@ Tap ✏️ on any item or friend to change it, or ✕ to remove it instantly —
 - **🕓 Recent activity** (near the bottom) — a little diary of who gave money, what got paid, and which tasks got done, with times. Great for "wait, who paid for the BBQ?"
 - **Jump bar** — the 🧾 👥 ✅ pills under your trips scroll you straight to any section.
 - **"Waiting on" chips** — the green card shows exactly who still needs to give money (tap to jump to them). On a brand-new trip it shows the 3 getting-started steps instead.
-- **⚙️ One-tap Settings** — the gear at the top (or the single Settings button at the bottom) opens an iPhone-style settings sheet: switches for **Dark mode**, **Sounds**, and **Vibration**, a slider-style picker for the **✨ Glassy look**, and every app action in one tidy place — Cloud sync, Add to home screen, Save/Load backup, Export CSV, plus a red "careful zone" for Delete this trip and Erase everything. Every choice is remembered.
+- **⚙️ One-tap Settings** — the gear in the sidebar or top bar opens an iPhone-style settings sheet: switches for **Dark mode**, **Sounds**, and **Vibration**, a slider-style picker for the **✨ Glassy look**, and app actions in one tidy place — Cloud account, Add to home screen, Save/Load backup, Export CSV, plus a red "careful zone" for Delete this trip and Erase everything. Every choice is remembered.
 - **✨ Glassy look with 4 levels** — pick **Off / Soft / Glassy / Ultra** in ⚙️ Settings. **Ultra** is thoroughly frosted, like iPhone notifications — heavy blur, cards you can almost see through. Soft is a light touch for older phones, Off turns it all the way down. Buttons give a springy little squish when pressed whichever you pick.
 - **Auto dark mode** — it follows your phone's light/dark setting until you pick one yourself in ⚙️ Settings.
 - **🔊 Little sounds** — soft blips when you hover and tap, a coin *ding* when money moves, a happy chime when tasks get done, and a mini fanfare with the confetti. Not your thing? Flip **Sounds** off in ⚙️ Settings — it remembers your choice.
@@ -79,21 +80,21 @@ Tap ✏️ on any item or friend to change it, or ✕ to remove it instantly —
 - **📝 Trip notes** — a free space for meet-up time, addresses, contact numbers. Saves as you type and syncs with the cloud like everything else.
 - **📊 Breakdown & settle-up** — bars showing where the money goes by category, plus the fewest transfers to get everyone square ("Zendee → Josh: ₱1,000"). The settle-up list is included in the group chat update too.
 
-## ☁️ Cloud sync — same data on every device
+## ☁️ Cloud login — same data on every device
 
-Want the same trips on your **PC and your iPhone**? Two minutes:
+After the files are uploaded to your website:
 
-1. On your **PC**: open the tracker → **⚙️ Settings** → **☁️ Cloud sync** → **Turn on cloud sync** → copy the **trip code**.
-2. Send the code to yourself (Messenger, Notes, anything).
-3. On your **iPhone**: open the tracker → **⚙️ Settings** → **☁️ Cloud sync** → paste the code → **Join**.
+1. Open the tracker and select **Cloud login** in the sidebar.
+2. Select **Sign in to cloud**, then sign in to or create a free Puter account.
+3. Open the same tracker website on your other computer, phone, or tablet and sign in with that same Puter account.
 
-Done — from then on **everything you do syncs automatically**: items, payments, friends, to-dos, notes, even renames. It saves to the cloud moments after every change, pulls fresh data when you open or switch back to the app, and while it's open it quietly re-checks every ~25 seconds, so your PC and phone stay in step. The status line at the bottom always tells you what's happening. Share the same code with the barkada and everyone stays in sync too.
+Your expenses, payments, people, tasks, notes, and trip names then save automatically to your private account. The newest copy loads when the app opens or regains focus, and it checks quietly every 45 seconds while visible. **Sync now** is available whenever you want an immediate check.
 
-Honest fine print: it uses a free community service (jsonblob.com), so treat it as convenient, not sacred — anyone who has the code can see and edit the trip, and free services can occasionally reset, so tap **Save backup** once in a while. No internet? No problem — the app keeps working offline and syncs when you're back.
+Local saving remains active at all times, including offline. When the connection returns, pending changes upload automatically. Cloud data is private to the signed-in account and the tracker never includes a secret API key.
 
 ## Good to know
 
-- Without cloud sync, everything saves **on the device you're using** only. With cloud sync on, all trips follow the trip code.
+- Without cloud login, everything saves **on the device you're using** only. With cloud login, all trips follow the signed-in Puter account when you use the same tracker website address.
 - **Save backup** (in ⚙️ Settings) downloads one small file with all your trips. **Load backup** brings it back — this is also how you move everything to a new phone.
 - Clearing your browser's history/data can erase the tracker, so download a backup once in a while.
 - The app starts as a **blank canvas** — name your trip with the ✏️ button, then add your own items and friends. **Delete this trip** removes the trip you're viewing (Undo appears if it was a mistake). **Erase everything** wipes all trips — it's the only button that asks first.
