@@ -398,6 +398,8 @@
     .row-form .field { flex: 1; min-width: 0; }
     .slim { min-height: 46px; margin-top: 10px; }
     .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .grid2 > * { min-width: 0; }
+    .stack > * { min-width: 0; }
     @media (max-width: 380px) { .grid2 { grid-template-columns: 1fr; } }
 
     .chips { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -418,6 +420,7 @@
 
     /* ---------- Two columns ---------- */
     .cols { display: grid; gap: 18px; }
+    .cols > * { min-width: 0; }
     @media (min-width: 980px) { .cols { grid-template-columns: 1.12fr .88fr; align-items: start; } }
     .colstack { display: grid; gap: 18px; align-content: start; }
     .notesarea { min-height: 150px; resize: vertical; line-height: 1.55; font-size: 15px; }
@@ -488,6 +491,7 @@
     /* ---------- To-do list ---------- */
     .todocard { margin-top: 18px; }
     .cols2 { display: grid; gap: 18px; }
+    .cols2 > * { min-width: 0; }
     @media (min-width: 980px) { .cols2 { grid-template-columns: .9fr 1.1fr; align-items: start; } }
     .todo-check {
       width: 34px; height: 34px; border-radius: 999px; border: 2.5px solid var(--line);

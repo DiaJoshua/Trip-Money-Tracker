@@ -1,4 +1,4 @@
-const CACHE_NAME = "sipit-v5-cloud-2026-09-05";
+const CACHE_NAME = "sipit-v6-cloud-2026-09-05";
 const CORE_ASSETS = [
   "./",
   "./index.html",
